@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DealSplashDamage : NonTargetEffect
+public class SelfHeal : NonTargetEffect
 {
-    public int damage;
+    public int heal;
 
     public override void Use(Creature user) {
-        FindObjectsOfType<Monster>().ForEach(m => m.Hit(damage));
+        user.Heal(heal);
     }
 }

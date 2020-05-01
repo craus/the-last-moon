@@ -29,8 +29,7 @@ public class MonsterSpawner : Monster
     }
 
     Monster NewMonster() {
-        var m = Instantiate(sample);
-        m.transform.SetParent(parent);
+        var m = Instantiate(sample, parent);
         return m;
     }
 
@@ -38,7 +37,7 @@ public class MonsterSpawner : Monster
         --mana;
         var m = NewMonster();
         for (int i = 0; i < 100 && mana > 0; i++) {
-            if (Rand.rndEvent(0.1f)) {
+            if (Rand.rndEvent(0.05f)) {
                 break;
             }
             BuffMonster(m);
@@ -49,15 +48,22 @@ public class MonsterSpawner : Monster
         if (Rand.rndEvent(0.1f)) {
             m.armor += 1;
             mana -= 1;
+            return;
+        }
+        if (Rand.rndEvent(0.1f) && m.hp - 1 < m.regeneration) {
+            m.regeneration += 1;
+            mana -= 1;
+            return;
         }
         if (Rand.rndEvent(0.1f)) {
             m.armor -= 1;
             mana += 1;
+            return;
         }
-        if (Rand.rndEvent(0.5f)) {
-            m.hp += 2;
-            m.maxHp += 2;
-            mana -= 1;
+        if (Rand.rndEvent(0.7f)) {
+            m.hp += 1;
+            m.maxHp += 1;
+            mana -= 0.5f;
             return;
         }
         m.damage += 1;

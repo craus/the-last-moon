@@ -8,9 +8,16 @@ public class Battle : Singletone<Battle>
     public int moveNumber;
 
     public void Click(Creature creature) {
-        if (player.Alive && BattleUI.instance.currentAbility != null) {
-            player.UseAbility(BattleUI.instance.currentAbility, creature);
+        if (BattleUI.instance.currentAbility != null) {
+            UseAbility(BattleUI.instance.currentAbility, creature);
+        }
+    }
+
+    public void UseAbility(Ability a, Creature target = null) {
+        if (player.Alive) {
+            player.UseAbility(a, target);
             moveNumber++;
+            player.AfterMove();
             if (player.stunned < 0) {
                 player.stunned++;
             } else {

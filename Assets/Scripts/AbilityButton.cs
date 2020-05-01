@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEditor;
+using System.Linq;
 
 [ExecuteInEditMode]
 public class AbilityButton : MonoBehaviour
@@ -14,7 +15,11 @@ public class AbilityButton : MonoBehaviour
     public Color selectedMultiplier;
 
     public void Click() {
-        BattleUI.instance.currentAbility = ability;
+        if (ability.effects.All(e => !e.RequireTarget)) {
+            Battle.instance.UseAbility(ability);
+        } else {
+            BattleUI.instance.currentAbility = ability;
+        }
     }
 
     [ContextMenu("Reset Colors")]
@@ -29,6 +34,7 @@ public class AbilityButton : MonoBehaviour
     public void Update() {
         if (!Extensions.InEditMode()) {
             button.colors = BattleUI.instance.currentAbility == ability ? selectedColors : baseColors;
+            button.interactable = ability.Available;
         }
     }
 }

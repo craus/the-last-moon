@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CyclicEffect : AbilityEffect
 {
+    public override bool RequireTarget => current.RequireTarget;
+
     public List<AbilityEffect> effects;
     public AbilityEffect current;
 

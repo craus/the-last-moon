@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Creature : MonoBehaviour
 {
@@ -10,10 +11,11 @@ public class Creature : MonoBehaviour
     public bool maxedHp = true;
     public int stunned = 0;
     public int armor = 0;
+    public int regeneration = 0;
     public bool Alive => hp > 0;
 
     private void OnValidate() {
-        if (maxedHp) {
+        if (maxedHp && maxHp != hp) {
             maxHp = hp;
         }
     }
@@ -26,6 +28,10 @@ public class Creature : MonoBehaviour
     public void LoseHp(int damage = 1) {
         hp -= damage;
         DeathCheck();
+    }
+
+    public void Poison(int poison = 1) {
+        regeneration -= poison;
     }
 
     public void Heal(int heal = 1) {
@@ -53,6 +59,7 @@ public class Creature : MonoBehaviour
     }
 
     public virtual void Die() {
+        GlobalEvents.instance.onDeath(this);
         Destroy(gameObject);
     }
 
@@ -70,9 +77,14 @@ public class Creature : MonoBehaviour
         }
         if (stunned > 0) {
             stunned--;
-            return;
+        } else {
+            TakeAction();
         }
-        TakeAction();
+        AfterMove();
+    }
+
+    public void AfterMove() {
+        Heal(regeneration);
     }
 
     public virtual void TakeAction() {
