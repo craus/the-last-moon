@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Creature : MonoBehaviour
 {
-    public int damage;
-    public int hp;
-    public int maxHp;
-    public bool maxedHp;
-    public int stunned;
+    public int damage = 1;
+    public int hp = 1;
+    public int maxHp = 1;
+    public bool maxedHp = true;
+    public int stunned = 0;
     public bool Alive => hp > 0;
 
     private void OnValidate() {

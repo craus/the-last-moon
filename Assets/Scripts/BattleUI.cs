@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI : Singletone<UI>
+public class BattleUI : Singletone<BattleUI>
 {
     public Ability currentAbility;
 }

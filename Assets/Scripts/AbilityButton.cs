@@ -14,7 +14,7 @@ public class AbilityButton : MonoBehaviour
     public Color selectedMultiplier;
 
     public void Click() {
-        UI.instance.currentAbility = ability;
+        BattleUI.instance.currentAbility = ability;
     }
 
     [ContextMenu("Reset Colors")]
@@ -28,7 +28,7 @@ public class AbilityButton : MonoBehaviour
 
     public void Update() {
         if (!Extensions.InEditMode()) {
-            button.colors = UI.instance.currentAbility == ability ? selectedColors : baseColors;
+            button.colors = BattleUI.instance.currentAbility == ability ? selectedColors : baseColors;
         }
     }
 }
