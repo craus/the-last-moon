@@ -7,13 +7,15 @@ public class MonsterSpawner : Monster
     public Monster sample;
     public Transform parent;
     public float mana;
-    public float manaPerTurn = 3;
+    public float manaPerTurn = 2.15f;
+    public float manaPerTurn2 = 0.0015f;
 
     public override void TakeAction() {
         base.TakeAction();
         DebugManager.LogFormat("MonsterSpawner TakeAction");
 
         mana += manaPerTurn;
+        manaPerTurn += manaPerTurn2;
 
         if (Rand.rndEvents(0.2f, (int)mana) >= 1) {
             SpendMana();

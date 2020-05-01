@@ -96,7 +96,8 @@ MonoBehaviour:
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
   mana: 0
-  manaPerTurn: 2.2
+  manaPerTurn: 2.15
+  manaPerTurn2: 0.0015
 --- !u!1 &4967579292806032987
 GameObject:
   m_ObjectHideFlags: 0
