@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Monster : Creature
 {
-    public void MakeMove() {
+    public override void TakeAction() {
         Attack(Battle.instance.player);
     }
 }

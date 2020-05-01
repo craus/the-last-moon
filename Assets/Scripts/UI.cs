@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class UI : Singletone<UI>
 {
+    public Ability currentAbility;
 }

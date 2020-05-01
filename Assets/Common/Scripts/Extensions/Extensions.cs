@@ -673,6 +673,10 @@ public static class Extensions
         return s;
     }
 
+    public static string repeat(this string s, int cnt) {
+        return string.Concat(Enumerable.Repeat(s, cnt));
+    }
+
     public static void SetName(this MonoBehaviour mb, string newName)
     {
         if (mb.name != newName)
