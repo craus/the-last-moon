@@ -29,6 +29,9 @@ public class AbilityText : MonoBehaviour
         if (e is Spend) {
             return " ({0})".i((e as Spend).usages);
         }
+        if (e is CyclicEffect) {
+            return (e as CyclicEffect).effects.Select(e2 => ((e as CyclicEffect).current == e2 ? "<b>{0}</b>" : "{0}").i(EffectText(e2))).Join("/");
+        }
         return "?";
     }
 

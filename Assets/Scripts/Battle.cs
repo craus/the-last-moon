@@ -5,10 +5,12 @@ using UnityEngine;
 public class Battle : Singletone<Battle>
 {
     public Player player;
+    public int moveNumber;
 
     public void Click(Creature creature) {
         if (player.Alive && BattleUI.instance.currentAbility != null) {
             player.UseAbility(BattleUI.instance.currentAbility, creature);
+            moveNumber++;
             if (player.stunned < 0) {
                 player.stunned++;
             } else {

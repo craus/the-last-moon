@@ -18,4 +18,8 @@ public static class StringExtensions
         }
         return s.Substring(s.Length - length);
     }
+
+    public static string Join<T>(this IEnumerable<T> list, string separator = "") {
+        return string.Join(separator, list);
+    }
 }
