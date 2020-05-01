@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creature: {fileID: 6505685705459312533}
   text: {fileID: 6505685705135762415}
-  format: '{damage}/{hp}{stunned}'
+  format: '{damage}/{hp}{armor}{stunned}'
 --- !u!1 &6505685705459312523
 GameObject:
   m_ObjectHideFlags: 0
@@ -298,6 +298,7 @@ MonoBehaviour:
   maxHp: 1
   maxedHp: 1
   stunned: 0
+  armor: 0
 --- !u!1 &6505685705932901978
 GameObject:
   m_ObjectHideFlags: 0

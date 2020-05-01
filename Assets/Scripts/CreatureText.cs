@@ -16,6 +16,7 @@ public class CreatureText : MonoBehaviour
             { "maxHp", creature.maxHp },
             { "hpStatus", creature.Alive ? "{0}/{1}".i(creature.hp, creature.maxHp) : "DEAD" },
             { "stunned", creature.stunned < 4 ? "*".repeat(creature.stunned) : "*{0}".i(creature.stunned) },
+            { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
         });
     }
 }

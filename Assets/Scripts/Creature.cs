@@ -9,6 +9,7 @@ public class Creature : MonoBehaviour
     public int maxHp = 1;
     public bool maxedHp = true;
     public int stunned = 0;
+    public int armor = 0;
     public bool Alive => hp > 0;
 
     private void OnValidate() {
@@ -18,6 +19,7 @@ public class Creature : MonoBehaviour
     }
 
     public void Hit(int damage = 1) {
+        damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
         hp -= damage;
         DeathCheck();
     }
