@@ -674,6 +674,7 @@ public static class Extensions
     }
 
     public static string repeat(this string s, int cnt) {
+        if (cnt <= 0) return "";
         return string.Concat(Enumerable.Repeat(s, cnt));
     }
 

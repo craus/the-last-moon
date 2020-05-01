@@ -9,7 +9,11 @@ public class Battle : Singletone<Battle>
     public void Click(Creature creature) {
         if (player.Alive && BattleUI.instance.currentAbility != null) {
             player.UseAbility(BattleUI.instance.currentAbility, creature);
-            FindObjectsOfType<Monster>().ForEach(m => m.MakeMove());
+            if (player.stunned < 0) {
+                player.stunned++;
+            } else {
+                FindObjectsOfType<Monster>().ForEach(m => m.MakeMove());
+            }
         }
     }
 }

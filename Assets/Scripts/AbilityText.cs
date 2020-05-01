@@ -23,6 +23,12 @@ public class AbilityText : MonoBehaviour
         if (e is Stun) {
             return "*".repeat((e as Stun).stun);
         }
+        if (e is Afterburner) {
+            return "+".repeat((e as Afterburner).power);
+        }
+        if (e is Spend) {
+            return " ({0})".i((e as Spend).usages);
+        }
         return "?";
     }
 

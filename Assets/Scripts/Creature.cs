@@ -34,6 +34,10 @@ public class Creature : MonoBehaviour
         stunned += stun;
     }
 
+    public void Afterburner(int power = 1) {
+        stunned -= power;
+    }
+
     public void HpCheck() {
         hp = Mathf.Clamp(hp, 0, maxHp);
     }

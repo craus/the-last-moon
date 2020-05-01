@@ -9,13 +9,17 @@ public class CreatureText : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
     public string format = "{0}/{1}";
 
+    public string StunString(int s, string c = "*") {
+        return s < 0 ? StunString(-s, "+") : s < 4 ? c.repeat(s) : c + "{0}".i(s);
+    }
+
     public void Update() {
         text.text = format.i(new Dictionary<string, object>() {
             { "damage", creature.damage },
             { "hp", creature.hp },
             { "maxHp", creature.maxHp },
             { "hpStatus", creature.Alive ? "{0}/{1}".i(creature.hp, creature.maxHp) : "DEAD" },
-            { "stunned", creature.stunned < 4 ? "*".repeat(creature.stunned) : "*{0}".i(creature.stunned) },
+            { "stunned", StunString(creature.stunned) },
             { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
         });
     }
