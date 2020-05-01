@@ -21,16 +21,19 @@ public class AbilityText : MonoBehaviour
             return "H" + (e as Heal).heal.ToString();
         }
         if (e is Stun) {
-            return "*".repeat((e as Stun).stun);
+            return CreatureText.StunString((e as Stun).stun);
         }
         if (e is Afterburner) {
-            return "+".repeat((e as Afterburner).power);
+            return CreatureText.StunString(-(e as Afterburner).power);
         }
         if (e is Spend) {
             return " ({0})".i((e as Spend).usages);
         }
         if (e is CyclicEffect) {
             return (e as CyclicEffect).effects.Select(e2 => ((e as CyclicEffect).current == e2 ? "<b>{0}</b>" : "{0}").i(EffectText(e2))).Join("/");
+        }
+        if (e is SelfDamage) {
+            return "X" + (e as SelfDamage).damage;
         }
         return "?";
     }

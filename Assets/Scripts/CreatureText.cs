@@ -9,7 +9,7 @@ public class CreatureText : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
     public string format = "{0}/{1}";
 
-    public string StunString(int s, string c = "*") {
+    public static string StunString(int s, string c = "*") {
         return s < 0 ? StunString(-s, "+") : s < 4 ? c.repeat(s) : c + "{0}".i(s);
     }
 

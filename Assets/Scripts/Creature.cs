@@ -20,6 +20,10 @@ public class Creature : MonoBehaviour
 
     public void Hit(int damage = 1) {
         damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
+        LoseHp(damage);
+    }
+
+    public void LoseHp(int damage = 1) {
         hp -= damage;
         DeathCheck();
     }
