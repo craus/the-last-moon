@@ -354,8 +354,8 @@ MonoBehaviour:
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
   mana: 0
-  manaPerTurn: 2.15
-  manaPerTurn2: 0.0015
+  manaPerTurn: 2.4
+  manaPerTurn2: 0.0005
 --- !u!1 &4967579292806032987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3223,6 +3223,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4967579292368691652}
     m_Modifications:
+    - target: {fileID: 1880472282286870971, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3306,12 +3311,12 @@ PrefabInstance:
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -35.8
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -3331,7 +3336,7 @@ PrefabInstance:
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -3341,7 +3346,7 @@ PrefabInstance:
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -3357,6 +3362,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}

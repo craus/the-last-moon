@@ -50,7 +50,7 @@ public class MonsterSpawner : Monster
             mana -= 1;
             return;
         }
-        if (Rand.rndEvent(0.1f) && m.hp - 1 < m.regeneration) {
+        if (Rand.rndEvent(0.1f) && m.hp - 1 > m.regeneration) {
             m.regeneration += 1;
             mana -= 1;
             return;
