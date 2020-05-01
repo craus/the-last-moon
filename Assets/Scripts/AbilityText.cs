@@ -14,6 +14,7 @@ public class AbilityText : MonoBehaviour
             { "damage", ability.damage > 0 ? "{0}".i(ability.damage) : "" },
             { "splash", ability.splashDamage > 0 ? "S{0}".i(ability.splashDamage) : "" },
             { "stun", "*".repeat(ability.stun) },
+            { "heal", ability.heal > 0 ? "H{0}".i(ability.heal) : "" },
         });
     }
 }

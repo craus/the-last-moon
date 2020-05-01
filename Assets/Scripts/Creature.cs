@@ -7,12 +7,24 @@ public class Creature : MonoBehaviour
     public int damage;
     public int hp;
     public int maxHp;
+    public bool maxedHp;
     public int stunned;
     public bool Alive => hp > 0;
 
+    private void OnValidate() {
+        if (maxedHp) {
+            maxHp = hp;
+        }
+    }
+
     public void Hit(int damage = 1) {
         hp -= damage;
-        //HpCheck();
+        DeathCheck();
+    }
+
+    public void Heal(int heal = 1) {
+        hp += heal;
+        HpCheck();
         DeathCheck();
     }
 
