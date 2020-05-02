@@ -16,9 +16,9 @@ public class AbilityButton : MonoBehaviour
 
     public void Click() {
         if (ability.effects.All(e => !e.RequireTarget)) {
-            Battle.instance.UseAbility(ability);
+            GameManager.instance.PlayerUseAbility(ability);
         } else {
-            BattleUI.instance.currentAbility = ability;
+            AbilitiesController.instance.currentAbility = ability;
         }
     }
 
@@ -33,7 +33,7 @@ public class AbilityButton : MonoBehaviour
 
     public void Update() {
         if (!Extensions.InEditMode()) {
-            button.colors = BattleUI.instance.currentAbility == ability ? selectedColors : baseColors;
+            button.colors = AbilitiesController.instance.currentAbility == ability ? selectedColors : baseColors;
             button.interactable = ability.Available;
         }
     }

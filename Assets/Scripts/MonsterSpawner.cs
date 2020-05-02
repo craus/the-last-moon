@@ -22,7 +22,7 @@ public class MonsterSpawner : Monster
         }
     }
 
-    void SpendMana() {
+    public void SpendMana() {
         for (int i = 0; i < 100 && mana > 0; i++) {
             SpawnMonster();
         }

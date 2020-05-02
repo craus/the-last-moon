@@ -71,7 +71,7 @@ public class Creature : MonoBehaviour
         ability.Use(this, target);
     }
 
-    public void MakeMove() {
+    public virtual void MakeMove() {
         if (!Alive) {
             return;
         }
@@ -83,7 +83,7 @@ public class Creature : MonoBehaviour
         AfterMove();
     }
 
-    public void AfterMove() {
+    public virtual void AfterMove() {
         Heal(regeneration);
     }
 

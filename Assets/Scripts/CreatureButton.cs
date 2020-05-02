@@ -8,6 +8,6 @@ public class CreatureButton : MonoBehaviour
     public Creature creature;
 
     public void Click() {
-        Battle.instance.Click(creature);
+        GameManager.instance.Click(creature);
     }
 }
