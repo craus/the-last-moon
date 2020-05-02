@@ -21,7 +21,7 @@ public class GameManager : Singletone<GameManager>
     }
 
     public void NewBattle() {
-        var battle = Instantiate(battleSample);
+        Instantiate(battleSample);
     }
 
     public void Restart() {
