@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class GameManager : Singletone<GameManager>
@@ -32,6 +33,17 @@ public class GameManager : Singletone<GameManager>
     public void Click(Creature creature) {
         if (AbilitiesController.instance.currentAbility != null) {
             PlayerUseAbility(AbilitiesController.instance.currentAbility, creature);
+        }
+    }
+
+    public void ClickAbility(Ability ability) {
+        if (Battle.instance == null) {
+            return;
+        }
+        if (ability.effects.All(e => !e.RequireTarget)) {
+            PlayerUseAbility(ability);
+        } else {
+            AbilitiesController.instance.currentAbility = ability;
         }
     }
 

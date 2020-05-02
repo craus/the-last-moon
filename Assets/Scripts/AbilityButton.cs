@@ -15,11 +15,7 @@ public class AbilityButton : MonoBehaviour
     public Color selectedMultiplier;
 
     public void Click() {
-        if (ability.effects.All(e => !e.RequireTarget)) {
-            GameManager.instance.PlayerUseAbility(ability);
-        } else {
-            AbilitiesController.instance.currentAbility = ability;
-        }
+        GameManager.instance.ClickAbility(ability);
     }
 
     [ContextMenu("Reset Colors")]
