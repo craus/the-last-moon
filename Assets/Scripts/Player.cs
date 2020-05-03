@@ -5,7 +5,13 @@ using UnityEngine;
 
 public class Player : Creature
 {
+    public static Player instance;
+
     Action plannedAction;
+
+    public void Awake() {
+        instance = this;
+    }
 
     public override void Die() {
         

@@ -15,7 +15,7 @@ public class AbilityButton : MonoBehaviour
     public Color selectedMultiplier;
 
     public void Click() {
-        GameManager.instance.ClickAbility(ability);
+        Game.instance.ClickAbility(ability);
     }
 
     [ContextMenu("Reset Colors")]

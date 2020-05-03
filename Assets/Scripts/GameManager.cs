@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class GameManager : Singletone<GameManager>
 {
-    public Battle battleSample;
     public Game gameSample;
     public Game game;
 
@@ -23,15 +22,8 @@ public class GameManager : Singletone<GameManager>
             return;
         }
         if (Input.GetKeyDown(KeyCode.R)) {
-            RestartBattle();
+            game.RestartBattle();
             return;
-        }
-    }
-
-    public void DestroyBattle() {
-        var battle = FindObjectOfType<Battle>();
-        if (battle != null) {
-            Destroy(battle.gameObject);
         }
     }
 
@@ -41,46 +33,12 @@ public class GameManager : Singletone<GameManager>
         }
     }
 
-    public void NewBattle() {
-        Instantiate(battleSample, game.transform);
-    }
-
     public void NewGame() {
         game = Instantiate(gameSample);
-    }
-
-    public void RestartBattle() {
-        DestroyBattle();
-        NewBattle();
     }
 
     public void RestartGame() {
         DestroyGame();
         NewGame();
-    }
-
-    public void Click(Creature creature) {
-        if (AbilitiesController.instance.currentAbility != null) {
-            PlayerUseAbility(AbilitiesController.instance.currentAbility, creature);
-        }
-    }
-
-    public void ClickAbility(Ability ability) {
-        if (Battle.instance == null && ability.BattleOnly) {
-            return;
-        }
-        if (!ability.RequireTarget) {
-            PlayerUseAbility(ability);
-        } else {
-            AbilitiesController.instance.currentAbility = ability;
-        }
-    }
-
-    public void PlayerUseAbility(Ability a, Creature t = null) {
-        if (Battle.instance != null) {
-            Game.instance.player.MakeMove(a, t);
-        } else {
-            Game.instance.player.UseAbility(a, t);
-        }
     }
 }
