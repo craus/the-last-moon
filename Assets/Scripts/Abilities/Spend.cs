@@ -12,4 +12,8 @@ public class Spend : NonTargetEffect
     public override void Use(Creature user) {
         usages -= 1;
     }
+
+    public override string Text() {
+        return " ({0})".i((int)usages);
+    }
 }

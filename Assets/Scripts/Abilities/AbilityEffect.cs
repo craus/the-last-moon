@@ -9,4 +9,8 @@ public abstract class AbilityEffect : MonoBehaviour
     public virtual bool BattleOnly => true;
 
     public abstract void Use(Creature user, Creature target);
+
+    public virtual string Text() {
+        return "?";
+    }
 }

@@ -9,4 +9,8 @@ public class Stun : AbilityEffect
     public override void Use(Creature user, Creature target) {
         target.Stun(stun);
     }
+
+    public override string Text() {
+        return CreatureText.StunString(stun);
+    }
 }

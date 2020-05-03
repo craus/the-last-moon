@@ -6,7 +6,7 @@ using UnityEngine;
 public class Monster : Creature
 {
     public override void TakeAction() {
-        Attack(GameManager.instance.player);
+        Attack(Game.instance.player);
     }
 
     public override void Die() {

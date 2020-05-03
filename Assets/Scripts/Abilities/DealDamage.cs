@@ -9,4 +9,8 @@ public class DealDamage : AbilityEffect
     public override void Use(Creature user, Creature target) {
         target.Hit(damage);
     }
+
+    public override string Text() {
+        return damage.ToString();
+    }
 }

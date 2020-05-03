@@ -9,5 +9,10 @@ public class Battle : Singletone<Battle>
     public void Finish() {
         Destroy(gameObject);
         AbilitiesController.instance.currentAbility = null;
+        GlobalEvents.instance.onBattleEnd(this);
+    }
+
+    public void Start() {
+        GlobalEvents.instance.onBattleStart(this);
     }
 }

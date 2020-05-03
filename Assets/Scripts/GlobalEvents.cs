@@ -11,4 +11,6 @@ using System;
 public class GlobalEvents : Singletone<GlobalEvents>
 {
     public Action<Creature> onDeath = c => { };
+    public Action<Battle> onBattleStart = b => { };
+    public Action<Battle> onBattleEnd = b => { };
 }

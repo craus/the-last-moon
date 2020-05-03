@@ -12,6 +12,7 @@ public class Creature : MonoBehaviour
     public int stunned = 0;
     public int armor = 0;
     public int regeneration = 0;
+    public int protectionUntilEndOfCombat = 0;
     public bool Alive => hp > 0;
 
     private void OnValidate() {
@@ -20,8 +21,15 @@ public class Creature : MonoBehaviour
         }
     }
 
+    public void ApplyProtection(ref int damage, ref int protection) {
+        var value = Mathf.Min(damage, protection);
+        damage -= value;
+        protection -= value;
+    }
+
     public void Hit(int damage = 1) {
         damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
+        ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
         LoseHp(damage);
     }
 
@@ -88,5 +96,19 @@ public class Creature : MonoBehaviour
     }
 
     public virtual void TakeAction() {
+    }
+
+    public void Start() {
+        GlobalEvents.instance.onBattleEnd += OnBattleEnd;
+    }
+
+    public void OnDestroy() {
+        if (GlobalEvents.instance) {
+            GlobalEvents.instance.onBattleEnd -= OnBattleEnd;
+        }
+    }
+
+    private void OnBattleEnd(Battle b) {
+        protectionUntilEndOfCombat = 0;
     }
 }

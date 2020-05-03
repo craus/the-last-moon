@@ -9,4 +9,8 @@ public class DealSplashDamage : NonTargetEffect
     public override void Use(Creature user) {
         FindObjectsOfType<Monster>().ForEach(m => m.Hit(damage));
     }
+
+    public override string Text() {
+        return "S" + damage.ToString();
+    }
 }

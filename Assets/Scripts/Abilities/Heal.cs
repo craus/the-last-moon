@@ -10,4 +10,8 @@ public class Heal : AbilityEffect
     public override void Use(Creature user, Creature target) {
         target.Heal(heal);
     }
+
+    public override string Text() {
+        return "H" + heal.ToString();
+    }
 }

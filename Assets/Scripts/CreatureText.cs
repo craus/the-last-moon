@@ -17,11 +17,16 @@ public class CreatureText : MonoBehaviour
         return v < 0 ? "<color=#00a000ff>P{0}</color>".i(-v) : v > 0 ? "<color=#40b0b0ff>R{0}</color>".i(v) : "";
     }
 
+    public static string ProtectionString(int v) {
+        return v > 0 ? "<color=#808080ff>p{0}</color>".i(v) : "";
+    }
+
     public void Update() {
         text.text = format.i(new Dictionary<string, object>() {
             { "damage", creature.damage },
             { "hp", creature.hp },
             { "maxHp", creature.maxHp },
+            { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
             { "hpStatus", creature.Alive ? "{0}/{1}".i(creature.hp, creature.maxHp) : "DEAD" },
             { "stunned", StunString(creature.stunned) },
             { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },

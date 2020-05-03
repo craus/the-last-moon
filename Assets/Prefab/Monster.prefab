@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creature: {fileID: 6505685705459312533}
   text: {fileID: 6505685705135762415}
-  format: '{damage}/{hp}{regeneration}{armor}{stunned}'
+  format: '{damage}/{hp}{regeneration}{protection}{armor}{stunned}'
 --- !u!1 &6505685705459312523
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +300,7 @@ MonoBehaviour:
   stunned: 0
   armor: 0
   regeneration: 0
+  protectionUntilEndOfCombat: 0
 --- !u!1 &6505685705932901978
 GameObject:
   m_ObjectHideFlags: 0

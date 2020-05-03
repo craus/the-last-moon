@@ -6,11 +6,25 @@ using UnityEngine;
 public class GameManager : Singletone<GameManager>
 {
     public Battle battleSample;
-    public Player player;
+    public Game gameSample;
+    public Game game;
+
+    public void Awake() {
+        game = FindObjectOfType<Game>();
+    }
 
     public void Update() {
+        CheckButtons();
+    }
+
+    public void CheckButtons() {
+        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift)) {
+            RestartGame();
+            return;
+        }
         if (Input.GetKeyDown(KeyCode.R)) {
-            Restart();
+            RestartBattle();
+            return;
         }
     }
 
@@ -21,13 +35,28 @@ public class GameManager : Singletone<GameManager>
         }
     }
 
-    public void NewBattle() {
-        Instantiate(battleSample);
+    public void DestroyGame() {
+        if (game != null) {
+            Destroy(game.gameObject);
+        }
     }
 
-    public void Restart() {
+    public void NewBattle() {
+        Instantiate(battleSample, game.transform);
+    }
+
+    public void NewGame() {
+        game = Instantiate(gameSample);
+    }
+
+    public void RestartBattle() {
         DestroyBattle();
         NewBattle();
+    }
+
+    public void RestartGame() {
+        DestroyGame();
+        NewGame();
     }
 
     public void Click(Creature creature) {
@@ -49,9 +78,9 @@ public class GameManager : Singletone<GameManager>
 
     public void PlayerUseAbility(Ability a, Creature t = null) {
         if (Battle.instance != null) {
-            player.MakeMove(a, t);
+            Game.instance.player.MakeMove(a, t);
         } else {
-            player.UseAbility(a, t);
+            Game.instance.player.UseAbility(a, t);
         }
     }
 }
