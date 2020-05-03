@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class Ability : MonoBehaviour
 {
-    public bool Available => effects.All(e => e.AllowUsage);
+    public bool Available => effects.All(e => e.AllowUsage) && (!BattleOnly || Battle.instance != null);
+    public bool BattleOnly => effects.All(e => e.BattleOnly);
 
     public List<AbilityEffect> effects;
 

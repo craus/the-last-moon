@@ -37,7 +37,7 @@ public class GameManager : Singletone<GameManager>
     }
 
     public void ClickAbility(Ability ability) {
-        if (Battle.instance == null) {
+        if (Battle.instance == null && ability.BattleOnly) {
             return;
         }
         if (ability.effects.All(e => !e.RequireTarget)) {
@@ -48,6 +48,10 @@ public class GameManager : Singletone<GameManager>
     }
 
     public void PlayerUseAbility(Ability a, Creature t = null) {
-        player.MakeMove(a, t);
+        if (Battle.instance != null) {
+            player.MakeMove(a, t);
+        } else {
+            player.UseAbility(a, t);
+        }
     }
 }
