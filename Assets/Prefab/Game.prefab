@@ -247,6 +247,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2134857490367191785}
     m_Modifications:
+    - target: {fileID: 7728100721491836889, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100721491836889, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100721491836889, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100721491836889, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7728100722329941401, guid: 23b4085edbe33e54c8adbe3afa37a85f,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -263,6 +283,26 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7728100722329941401, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100722577861591, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100722577861591, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100722577861591, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7728100722577861591, guid: 23b4085edbe33e54c8adbe3afa37a85f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0

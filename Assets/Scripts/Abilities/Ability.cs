@@ -13,4 +13,8 @@ public class Ability : MonoBehaviour
     public void Use(Creature user, Creature target) {
         effects.ForEach(e => e.Use(user, target));
     }
+
+    public string Text() {
+        return string.Join("", effects.Select(e => e.Text()));
+    }
 }

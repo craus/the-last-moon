@@ -9,6 +9,8 @@ public abstract class ValueProvider<T> : AbstractValueProvider {
 		get;
 	}
 
+	public override object ObjectValue => Value;
+
 	public event Action onChange;
 
 	public void Changed() {
@@ -17,11 +19,11 @@ public abstract class ValueProvider<T> : AbstractValueProvider {
 		}
 	}
 
-	[SerializeField] [ReadOnly] private T value;
+	[SerializeField] [ReadOnly] private T valuePreview;
 
 	protected virtual void Update() {
 #if UNITY_EDITOR
-		value = Value;
+		valuePreview = Value;
 #endif
 	}
 }

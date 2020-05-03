@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
-public abstract class Counter<T> : AbstractCounter {
-	public T value;
+public class Counter : IntValueProvider {
+	public int value;
+
+	public override int Value => value;
+
+	public void Increment() {
+		value += 1;
+	}
+	public void Decrement() {
+		value -= 1;
+	}
+	public void Reset() {
+		value = 0;
+	}
 }

@@ -11,6 +11,6 @@ public class AbilityText : MonoBehaviour
     public string format = "{damage}{splash}{stun}";
 
     public void Update() {
-        text.text = string.Join("", ability.effects.Select(e => e.Text()));
+        text.text = ability.Text();
     }
 }
