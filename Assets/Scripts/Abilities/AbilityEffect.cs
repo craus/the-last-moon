@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class AbilityEffect : MonoBehaviour
 {
+    public virtual bool Available => !BattleOnly || Battle.On;
     public virtual bool RequireTarget => true;
     public virtual bool AllowUsage => true;
     public virtual bool BattleOnly => true;

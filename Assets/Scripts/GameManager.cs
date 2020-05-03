@@ -69,7 +69,7 @@ public class GameManager : Singletone<GameManager>
         if (Battle.instance == null && ability.BattleOnly) {
             return;
         }
-        if (ability.effects.All(e => !e.RequireTarget)) {
+        if (!ability.RequireTarget) {
             PlayerUseAbility(ability);
         } else {
             AbilitiesController.instance.currentAbility = ability;

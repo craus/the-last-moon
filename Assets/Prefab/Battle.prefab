@@ -229,9 +229,10 @@ MonoBehaviour:
   stunned: 0
   armor: 0
   regeneration: 0
+  protectionUntilEndOfCombat: 0
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
-  mana: 4
+  mana: 3
   manaPerTurn: 2.4
   manaPerTurn2: 0.0005
 --- !u!114 &455400909
@@ -330,7 +331,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 887502453140a4f4dadc72847d9d9e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   moveNumber: 0
 --- !u!1 &4967579292923784624
 GameObject:

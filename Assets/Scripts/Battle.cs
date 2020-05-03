@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Battle : Singletone<Battle>
 {
+    public static bool On => instance != null;
+
     public int moveNumber;
 
     public void Finish() {

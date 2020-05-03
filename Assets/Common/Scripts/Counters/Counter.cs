@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 
 public class Counter : IntValueProvider {
-	public int value;
+	[SerializeField] private int value;
 
 	public override int Value => value;
 
