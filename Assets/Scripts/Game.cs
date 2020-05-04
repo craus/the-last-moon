@@ -18,7 +18,9 @@ public class Game : Singletone<Game>
         Instantiate(battleSample, transform);
     }
     public void RestartBattle() {
-        DestroyBattle();
+        if (Battle.instance != null) {
+            Battle.instance.Finish();
+        }
         NewBattle();
     }
 

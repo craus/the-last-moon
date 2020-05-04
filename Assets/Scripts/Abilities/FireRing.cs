@@ -10,6 +10,9 @@ public class FireRing : AbilityEffect
     public Counter counter;
 
     public override void Use(Creature user, Creature target) {
+        if (!Available) {
+            return;
+        }
         int power = 1;
         counter.Decrement();
         target.Hit(power);

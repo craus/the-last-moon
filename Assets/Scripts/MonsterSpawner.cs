@@ -45,9 +45,9 @@ public class MonsterSpawner : Monster
     }
 
     void BuffMonster(Monster m) {
-        if (Rand.rndEvent(0.1f)) {
-            m.armor += 1;
-            mana -= 1;
+        if (Rand.rndEvent(0.07f)) {
+            m.bubbles++;
+            mana -= 1.3f;
             return;
         }
         if (Rand.rndEvent(0.1f) && m.hp - 1 > m.regeneration) {
@@ -56,6 +56,16 @@ public class MonsterSpawner : Monster
             return;
         }
         if (Rand.rndEvent(0.1f)) {
+            m.away += 1;
+            mana += 1;
+            return;
+        }
+        if (Rand.rndEvent(0.1f)) {
+            m.armor += 1;
+            mana -= 1;
+            return;
+        }
+        if (Rand.rndEvent(0.1f) && m.hp - 1 > -m.armor) {
             m.armor -= 1;
             mana += 1;
             return;

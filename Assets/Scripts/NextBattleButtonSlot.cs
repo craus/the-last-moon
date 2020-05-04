@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEditor;
 using System.Linq;
 
-[ExecuteInEditMode]
 public class NextBattleButtonSlot : MonoBehaviour
 {
     public Button button;

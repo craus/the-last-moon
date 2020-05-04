@@ -10,6 +10,9 @@ public class LightningRing : AbilityEffect
     public Counter counter;
 
     public override void Use(Creature user, Creature target) {
+        if (!Available) {
+            return;
+        }
         int power = counter.Value;
         counter.Reset();
         target.Hit(power);

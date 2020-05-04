@@ -13,7 +13,11 @@ public class Creature : MonoBehaviour
     public int armor = 0;
     public int regeneration = 0;
     public int protectionUntilEndOfCombat = 0;
+    public int bubbles = 0;
+    public int away = 0;
     public bool Alive => hp > 0;
+
+    public bool Targetable => away == 0;
 
     private void OnValidate() {
         if (maxedHp && maxHp != hp) {
@@ -27,8 +31,19 @@ public class Creature : MonoBehaviour
         protection -= value;
     }
 
+    public void ApplyBubbles(ref int damage, ref int bubbles) {
+        if (damage > 0 && bubbles > 0) {
+            damage = 0;
+            bubbles--;
+        }
+    }
+
     public void Hit(int damage = 1) {
+        if (away > 0) {
+            return;
+        }
         damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
+        ApplyBubbles(ref damage, ref bubbles);
         ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
         LoseHp(damage);
     }
@@ -85,6 +100,8 @@ public class Creature : MonoBehaviour
         }
         if (stunned > 0) {
             stunned--;
+        } else if (away > 0) {
+            away--;
         } else {
             TakeAction();
         }
@@ -110,5 +127,7 @@ public class Creature : MonoBehaviour
 
     private void OnBattleEnd(Battle b) {
         protectionUntilEndOfCombat = 0;
+        bubbles = 0;
+        away = 0;
     }
 }

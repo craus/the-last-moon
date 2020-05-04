@@ -10,10 +10,11 @@ public class CreatureText : MonoBehaviour
     public string format = "{0}/{1}";
 
     public static string StatusString(Creature creature) {
-        return "{regeneration}{protection}{armor}{stunned}".i(new Dictionary<string, object>() {
+        return "{regeneration}{protection}{armor}{bubbles}{stunned}".i(new Dictionary<string, object>() {
             { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
             { "stunned", StunString(creature.stunned) },
             { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
+            { "bubbles", creature.bubbles > 0 ? "()".repeat(creature.bubbles) : "" },
             { "regeneration", RegenerationString(creature.regeneration) },
         });
     }
@@ -32,6 +33,7 @@ public class CreatureText : MonoBehaviour
 
     public static string FormatCreature(string format, Creature creature) {
         return format.i(new Dictionary<string, object>() {
+            { "away", "<".repeat(creature.away) },
             { "damage", creature.damage },
             { "hp", creature.hp },
             { "maxHp", creature.maxHp },
@@ -39,6 +41,7 @@ public class CreatureText : MonoBehaviour
             { "hpStatus", creature.Alive ? "{0}/{1}".i(creature.hp, creature.maxHp) : "DEAD" },
             { "stunned", StunString(creature.stunned) },
             { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
+            { "bubble", "()".repeat(creature.bubbles) },
             { "regeneration", RegenerationString(creature.regeneration) },
             { "status", StatusString(creature) },
         });

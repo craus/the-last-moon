@@ -230,9 +230,10 @@ MonoBehaviour:
   armor: 0
   regeneration: 0
   protectionUntilEndOfCombat: 0
+  bubbles: 0
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
-  mana: 3
+  mana: 4
   manaPerTurn: 2.4
   manaPerTurn2: 0.0005
 --- !u!114 &455400909

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class GenericAbility : Ability
 {
-    public override bool Available => effects.All(e => e.AllowUsage) && effects.Any(e => e.Available);
+    public override bool Available => effects.All(e => e.AllowUsage) && (effects.Any(e => e.Available) || effects.Count() == 0);
     public override bool BattleOnly => effects.All(e => e.BattleOnly);
     public override bool RequireTarget => effects.Any(e => e.RequireTarget);
 
