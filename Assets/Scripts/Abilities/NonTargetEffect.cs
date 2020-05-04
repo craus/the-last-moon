@@ -10,5 +10,6 @@ public abstract class NonTargetEffect : AbilityEffect
         Use(user);
     }
 
-    public abstract void Use(Creature user);
+    public virtual void Use(Creature user) {
+    }
 }
