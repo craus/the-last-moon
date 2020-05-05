@@ -16,6 +16,7 @@ public class Creature : MonoBehaviour
     public int protectionUntilEndOfCombat = 0;
     public int bubbles = 0;
     public int away = 0;
+    public int attack = 0;
     public bool Alive => hp > 0;
 
     public bool Targetable => away == 0;
@@ -39,10 +40,11 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public void Hit(int damage = 1) {
+    public void Hit(Creature attacker, int damage = 1) {
         if (away > 0) {
             return;
         }
+        damage += attacker.attack;
         damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
         ApplyBubbles(ref damage, ref bubbles);
         ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
@@ -88,7 +90,7 @@ public class Creature : MonoBehaviour
     }
 
     public void Attack(Creature target) {
-        target.Hit(damage);
+        target.Hit(this, damage);
     }
 
     public void UseAbility(Ability ability, Creature target) {
@@ -130,5 +132,6 @@ public class Creature : MonoBehaviour
         protectionUntilEndOfCombat = 0;
         bubbles = 0;
         away = 0;
+        attack = 0;
     }
 }

@@ -10,7 +10,7 @@ public class Stun : AbilityEffect
         target.Stun(stun);
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return CreatureText.StunString(stun);
     }
 }

@@ -15,7 +15,7 @@ public class GenericAbility : Ability
         effects.ForEach(e => e.Use(user, target));
     }
 
-    public override string Text() {
-        return string.Join("", effects.Select(e => e.Text()));
+    public override string Text(Creature user) {
+        return string.Join("", effects.Select(e => e.Text(user)));
     }
 }

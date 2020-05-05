@@ -10,7 +10,7 @@ public class SelfProtection : NonTargetEffect
         user.protectionUntilEndOfCombat += protection;
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return CreatureText.ProtectionString(protection);
     }
 }

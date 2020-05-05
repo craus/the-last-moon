@@ -13,7 +13,7 @@ public class ListEffect : AbilityEffect
         effects.ForEach(e => e.Use(user, target));
     }
 
-    public override string Text() {
-        return effects.Select(e => e.Text()).Join();
+    public override string Text(Creature user) {
+        return effects.Select(e => e.Text(user)).Join();
     }
 }

@@ -13,7 +13,7 @@ public class Spend : NonTargetEffect
         usages -= 1;
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return " ({0})".i((int)usages);
     }
 }

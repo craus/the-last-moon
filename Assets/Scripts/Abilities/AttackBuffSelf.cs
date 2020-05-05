@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DealSplashDamage : NonTargetEffect
+public class AttackBuffSelf : NonTargetEffect
 {
-    public int damage;
+    public int attack;
 
     public override void Use(Creature user) {
-        FindObjectsOfType<Monster>().ForEach(m => m.Hit(user, damage));
+        user.attack += attack;
     }
 
     public override string Text(Creature user) {
-        return "S" + (damage).ToString();
+        return CreatureText.AttackString(attack);
     }
 }

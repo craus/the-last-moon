@@ -9,16 +9,20 @@ public class LightningRing : AbilityEffect
 
     public Counter counter;
 
+    int Power(Creature user) {
+        return counter.Value;
+    }
+
     public override void Use(Creature user, Creature target) {
         if (!Available) {
             return;
         }
-        int power = counter.Value;
+        int power = Power(user);
         counter.Reset();
-        target.Hit(power);
+        target.Hit(user, power);
     }
 
-    public override string Text() {
-        return "<color=#ff8000ff>{0}</color>".i(counter.Value);
+    public override string Text(Creature user) {
+        return "<color=#ff8000ff>{0}</color>".i(Power(user));
     }
 }

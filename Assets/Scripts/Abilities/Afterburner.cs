@@ -10,7 +10,7 @@ public class Afterburner : NonTargetEffect
         user.Afterburner(power);
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return CreatureText.StunString(-power);
     }
 }

@@ -10,7 +10,7 @@ public class ApplyPoison : AbilityEffect
         target.Poison(poison);
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return CreatureText.RegenerationString(-poison);
     }
 }

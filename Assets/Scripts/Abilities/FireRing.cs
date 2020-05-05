@@ -15,11 +15,11 @@ public class FireRing : AbilityEffect
         }
         int power = 1;
         counter.Decrement();
-        target.Hit(power);
+        target.Hit(user, power);
         user.Afterburner(1);
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return "1f (<color=#ff0000ff>{0}</color>)".i(counter.Value);
     }
 }

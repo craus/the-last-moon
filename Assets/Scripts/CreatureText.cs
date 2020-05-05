@@ -27,6 +27,10 @@ public class CreatureText : MonoBehaviour
         return v < 0 ? "<color=#00a000ff>P{0}</color>".i(-v) : v > 0 ? "<color=#40b0b0ff>R{0}</color>".i(v) : "";
     }
 
+    public static string AttackString(int v) {
+        return v != 0 ? "<color=#ff8080ff>a{0}{1}</color>".i(v > 0 ? "+" : "", v) : "";
+    }
+
     public static string ProtectionString(int v) {
         return v > 0 ? "<color=#808080ff>p{0}</color>".i(v) : "";
     }
@@ -35,7 +39,8 @@ public class CreatureText : MonoBehaviour
         return format.i(new Dictionary<string, object>() {
             { "gold", "${0}".i(creature.gold) },
             { "away", "<".repeat(creature.away) },
-            { "damage", creature.damage },
+            { "damage", creature.damage + creature.attack },
+            { "attack", AttackString(creature.attack) },
             { "hp", creature.hp },
             { "maxHp", creature.maxHp },
             { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },

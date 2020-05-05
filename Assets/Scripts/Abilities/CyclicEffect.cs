@@ -15,8 +15,8 @@ public class CyclicEffect : AbilityEffect
         current = effects.CyclicNext(current);
     }
 
-    public override string Text() {
-        return effects.Select(e2 => (current == e2 ? "<b>{0}</b>" : "{0}").i(e2.Text())).Join("/");
+    public override string Text(Creature user) {
+        return effects.Select(e2 => (current == e2 ? "<b>{0}</b>" : "{0}").i(e2.Text(user))).Join("/");
     }
 
     public void Start() {

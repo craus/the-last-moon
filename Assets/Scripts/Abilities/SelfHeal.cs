@@ -11,7 +11,7 @@ public class SelfHeal : NonTargetEffect
         user.Heal(heal);
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return "h" + heal.ToString();
     }
 }

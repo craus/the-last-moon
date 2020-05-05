@@ -9,10 +9,10 @@ public class DealDamage : AbilityEffect
     public int Damage => damageProvider != null ? damageProvider.Value : damage;
 
     public override void Use(Creature user, Creature target) {
-        target.Hit(Damage);
+        target.Hit(user, Damage);
     }
 
-    public override string Text() {
-        return Damage.ToString();
+    public override string Text(Creature user) {
+        return (Damage).ToString();
     }
 }

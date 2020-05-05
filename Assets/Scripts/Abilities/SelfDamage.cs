@@ -10,7 +10,7 @@ public class SelfDamage : NonTargetEffect
         user.LoseHp(damage);
     }
 
-    public override string Text() {
+    public override string Text(Creature user) {
         return "X" + damage;
     }
 }
