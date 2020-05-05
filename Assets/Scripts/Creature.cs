@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class Creature : MonoBehaviour
 {
+    public int gold;
     public int damage = 1;
     public int hp = 1;
     public int maxHp = 1;
@@ -125,7 +126,7 @@ public class Creature : MonoBehaviour
         }
     }
 
-    private void OnBattleEnd(Battle b) {
+    protected virtual void OnBattleEnd(Battle b) {
         protectionUntilEndOfCombat = 0;
         bubbles = 0;
         away = 0;

@@ -35,4 +35,9 @@ public class Player : Creature
     public override void TakeAction() {
         plannedAction();
     }
+
+    protected override void OnBattleEnd(Battle b) {
+        base.OnBattleEnd(b);
+        gold += 1;
+    }
 }
