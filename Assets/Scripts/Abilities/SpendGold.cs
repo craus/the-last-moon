@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SpendGold : NonTargetEffect
 {
+    public override bool BattleOnly => false;
+
     public override bool AllowUsage(Creature user) => user.gold >= amount;
 
     public int amount;

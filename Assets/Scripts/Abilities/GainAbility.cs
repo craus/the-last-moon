@@ -15,6 +15,6 @@ public class GainAbility : NonTargetEffect
     }
 
     public override string Text(Creature user) {
-        return "^ " + ability.Text(user);
+        return "^ " + ability?.Text(user);
     }
 }
