@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UsagesPerBattle : NonTargetEffect
 {
-    public override bool AllowUsage => usages >= 1;
+    public override bool AllowUsage(Creature user) => usages >= 1;
 
     public int usages;
     public int usagesPerBattle;

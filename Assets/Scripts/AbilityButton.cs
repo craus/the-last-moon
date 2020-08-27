@@ -30,7 +30,7 @@ public class AbilityButton : MonoBehaviour
     public void Update() {
         if (!Extensions.InEditMode()) {
             button.colors = AbilitiesController.instance.currentAbility == ability ? selectedColors : baseColors;
-            button.interactable = ability.Available;
+            button.interactable = ability.Available(Player.instance);
         }
     }
 }

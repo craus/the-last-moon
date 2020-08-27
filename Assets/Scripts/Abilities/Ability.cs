@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Ability : MonoBehaviour
 {
-    public virtual bool Available => true;
+    public virtual bool Available(Creature user) => true;
     public virtual bool BattleOnly => true;
     public virtual bool RequireTarget => true;
 

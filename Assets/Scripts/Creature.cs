@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -18,6 +19,11 @@ public class Creature : MonoBehaviour
     public int away = 0;
     public int attack = 0;
     public bool Alive => hp > 0;
+
+    public Action<Creature, Creature, int> beforeAttack = (a,b,d) => { };
+    public Action<Creature, Creature, int> afterAttack = (a, b, d) => { };
+
+    public List<Buff> buffs = new List<Buff>();
 
     public bool Targetable => away == 0;
 
@@ -90,7 +96,13 @@ public class Creature : MonoBehaviour
     }
 
     public void Attack(Creature target) {
+        Attack(target, damage);
+    }
+
+    public void Attack(Creature target, int damage) {
+        beforeAttack(this, target, damage);
         target.Hit(this, damage);
+        afterAttack(this, target, damage);
     }
 
     public void UseAbility(Ability ability, Creature target) {

@@ -7,6 +7,8 @@ public class Player : Creature
 {
     public static Player instance;
 
+    public Transform abilitiesFolder;
+
     Action plannedAction;
 
     public void Awake() {
@@ -15,6 +17,14 @@ public class Player : Creature
 
     public override void Die() {
         
+    }
+
+    public void GainAbility(Ability a) {
+        a.transform.SetParent(abilitiesFolder);
+    }
+
+    public void LoseAbility(Ability a) {
+        Destroy(a.gameObject);
     }
 
     public void MakeMove(Ability a, Creature target) {

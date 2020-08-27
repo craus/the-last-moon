@@ -2,17 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spend : NonTargetEffect
+public class BuffSelf : NonTargetEffect
 {
-    public override bool AllowUsage(Creature user) => usages >= 1;
-
-    public int usages;
+    public Buff buff;
 
     public override void Use(Creature user) {
-        usages -= 1;
+        buff.Apply(user);
     }
 
     public override string Text(Creature user) {
-        return " ({0})".i((int)usages);
+        return buff.Text();
     }
 }
