@@ -842,6 +842,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089730805100775}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -3907,6 +3911,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089731185345119}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5059,6 +5067,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 7954984003840193837}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5439,6 +5451,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089730235002598}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5786,6 +5802,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 7953706649420797878}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -5966,6 +5986,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 4354400414255012992}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -6156,6 +6180,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 7989561154938554341}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7162,6 +7190,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089729584535041}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7589,6 +7621,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089730802953659}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7976,6 +8012,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089731274881342}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
