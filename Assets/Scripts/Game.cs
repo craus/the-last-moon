@@ -48,4 +48,8 @@ public class Game : Singletone<Game>
             player.UseAbility(a, t);
         }
     }
+
+    public void Start() {
+        GlobalEvents.instance.onGameStart.Invoke(this);
+    }
 }

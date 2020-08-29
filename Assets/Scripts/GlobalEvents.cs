@@ -12,5 +12,6 @@ public class GlobalEvents : Singletone<GlobalEvents>
 {
     public Action<Creature> onDeath = c => { };
     public Action<Battle> onBattleStart = b => { };
+    public Action<Game> onGameStart = g => { };
     public Action<Battle> onBattleEnd = b => { };
 }

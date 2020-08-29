@@ -69,22 +69,6 @@ public static class Extensions
         y = buf;
     }
 
-    public static T rnd<T>(this List<T> list) where T : class
-    {
-        if (list.Count == 0) return null;
-        return list[UnityEngine.Random.Range(0, list.Count)];
-    }
-
-    public static T rndExcept<T>(this List<T> list, ICollection<T> except) where T : class
-    {
-        return list.Except(except).ToList().rnd();
-    }
-
-    public static T rndExcept<T>(this List<T> list, params T[] except) where T : class
-    {
-        return list.Except(except).ToList().rnd();
-    }
-
     public static Vector3 RandomPointInBounds(Bounds bounds) {
         return new Vector3(
             UnityEngine.Random.Range(bounds.min.x, bounds.max.x),
@@ -544,29 +528,6 @@ public static class Extensions
         }
     }
 
-    public static List<T> RndSelection<T>(this List<T> collection, int cnt)
-    {
-        if (cnt > collection.Count)
-        {
-            return collection;
-        }
-        List<T> result = new List<T>();
-        int trash = collection.Count - cnt;
-        collection.ForEach(x =>
-        {
-            if (UnityEngine.Random.Range(0, cnt + trash) < cnt)
-            {
-                result.Add(x);
-                --cnt;
-            }
-            else
-            {
-                --trash;
-            }
-        });
-        return result;
-    }
-
     public static List<T> Range<T>(this List<T> collection, int from, int to)
     {
         if (from < 0)
@@ -605,21 +566,6 @@ public static class Extensions
     public static Vector2 Clamp(this Vector2 v, Vector2 max)
     {
         return Clamp(v, Vector2.zero, max);
-    }
-
-    public static double Rnd(double min, double max)
-    {
-        return (double)(UnityEngine.Random.Range((float)min, (float)max));
-    }
-
-    public static float GaussianRnd()
-    {
-        float sum = 0;
-        for (int i = 0; i < 12; i++)
-        {
-            sum += UnityEngine.Random.Range(-1f, 1f);
-        }
-        return sum;
     }
 
     public static bool InUnityEditor(this MonoBehaviour x)

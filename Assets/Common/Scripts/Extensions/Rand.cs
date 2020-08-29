@@ -49,4 +49,46 @@ public static class Rand
 		}
 		return rnd(matrix);
 	}
+
+	public static List<T> RndSelection<T>(this List<T> collection, int cnt) {
+		if (cnt > collection.Count) {
+			return collection;
+		}
+		List<T> result = new List<T>();
+		int trash = collection.Count - cnt;
+		collection.ForEach(x => {
+			if (UnityEngine.Random.Range(0, cnt + trash) < cnt) {
+				result.Add(x);
+				--cnt;
+			} else {
+				--trash;
+			}
+		});
+		return result;
+	}
+
+	public static double Rnd(double min, double max) {
+		return (double)(UnityEngine.Random.Range((float)min, (float)max));
+	}
+
+	public static float GaussianRnd() {
+		float sum = 0;
+		for (int i = 0; i < 12; i++) {
+			sum += UnityEngine.Random.Range(-1f, 1f);
+		}
+		return sum;
+	}
+
+	public static T rnd<T>(this List<T> list) where T : class {
+		if (list.Count == 0) return null;
+		return list[UnityEngine.Random.Range(0, list.Count)];
+	}
+
+	public static T rndExcept<T>(this List<T> list, ICollection<T> except) where T : class {
+		return list.Except(except).ToList().rnd();
+	}
+
+	public static T rndExcept<T>(this List<T> list, params T[] except) where T : class {
+		return list.Except(except).ToList().rnd();
+	}
 }
