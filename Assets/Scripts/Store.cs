@@ -14,7 +14,7 @@ public class Store : Singletone<Store>
 
 #if UNITY_EDITOR
     public void AddAbilityToStore(Ability ability) {
-        var buyAbility = Instantiate(buyAbilitySample);
+        var buyAbility = PrefabUtility.InstantiatePrefab(buyAbilitySample) as Ability;
         buyAbility.transform.SetParent(buyAbilitiesFolder);
         EditorUtility.SetDirty(buyAbility.gameObject);
         EditorUtility.SetDirty(buyAbilitiesFolder.gameObject);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class GainAbility : NonTargetEffect
 {
     public Transform abilityFolder;
@@ -17,5 +18,11 @@ public class GainAbility : NonTargetEffect
 
     public override string Text(Creature user) {
         return "^ " + ability?.Text(user);
+    }
+
+    public void Update() {
+        if (Extensions.InEditMode()) {
+            name = $"Buy {ability.name}";
+        }
     }
 }
