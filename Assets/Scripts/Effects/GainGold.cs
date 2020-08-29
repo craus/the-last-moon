@@ -2,20 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealEffect : Common.Effect
+public class GainGold : Common.Effect
 {
     public Creature creature;
     public int amount;
 
     public override void Run() {
         if (creature != null) {
-            creature.Heal(amount);
-        }
-    }
-
-    public void RunByAmount(int amount) {
-        if (creature != null) {
-            creature.Heal(amount);
+            creature.gold += amount;
         }
     }
 }

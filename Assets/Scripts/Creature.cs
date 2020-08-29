@@ -59,8 +59,12 @@ public class Creature : MonoBehaviour
     }
 
     public void LoseHp(int damage = 1, AbilityEffect source = null) {
+        if (damage > hp) {
+            damage = hp;
+        }
         hp -= damage;
         DeathCheck(source);
+        GlobalEvents.instance.onLoseHp(this, damage, source);
     }
 
     public void Poison(int poison = 1) {
