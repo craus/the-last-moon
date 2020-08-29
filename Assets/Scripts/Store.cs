@@ -11,6 +11,7 @@ public class Store : Singletone<Store>
 {
     public Ability buyAbilitySample;
     public Transform buyAbilitiesFolder;
+    public Transform goodsFolder;
 
 #if UNITY_EDITOR
     public void AddAbilityToStore(Ability ability) {
@@ -19,9 +20,9 @@ public class Store : Singletone<Store>
         EditorUtility.SetDirty(buyAbility.gameObject);
         EditorUtility.SetDirty(buyAbilitiesFolder.gameObject);
         buyAbility.GetComponent<GainAbility>().ability = ability;
-        ability.transform.SetParent(buyAbility.GetComponent<GainAbility>().abilityFolder);
+        ability.transform.SetParent(goodsFolder);
         EditorUtility.SetDirty(ability.gameObject);
-        EditorUtility.SetDirty(buyAbility.GetComponent<GainAbility>().abilityFolder.gameObject);
+        EditorUtility.SetDirty(goodsFolder.gameObject);
     }
 
     [ContextMenu("Add all abilities to store")]
@@ -30,6 +31,19 @@ public class Store : Singletone<Store>
             var a = c.GetComponent<Ability>();
             if (a?.GetComponent<GainAbility>() == null) {
                 AddAbilityToStore(a);
+            }
+        });
+    }
+
+    [ContextMenu("Move all abilities to folder")]
+    public void MoveAllAbilitiesToFolder() {
+        buyAbilitiesFolder.Children().ForEach(c => {
+            var a = c.GetComponent<Ability>();
+            var ba = a?.GetComponent<GainAbility>();
+            if (ba != null) {
+                ba.ability.transform.SetParent(goodsFolder);
+                EditorUtility.SetDirty(ba.ability.gameObject);
+                EditorUtility.SetDirty(goodsFolder.gameObject);
             }
         });
     }

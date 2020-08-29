@@ -14,11 +14,16 @@ public class GenericAbility : Ability
     [TextArea]
     public string manualDescription = "";
 
+    public string manualText = "";
+
     public override void Use(Creature user, Creature target) {
         effects.ForEach(e => e.Use(user, target));
     }
 
     public override string Text(Creature user) {
+        if (manualText != "") {
+            return manualText;
+        }
         if (effects.Count == 0) {
             return "pass";
         }

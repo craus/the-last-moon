@@ -51,7 +51,7 @@ public class Player : Creature
     protected override void OnBattleEnd(Battle b) {
         base.OnBattleEnd(b);
         if (Battle.instance.AllMonstersDead) {
-            gold += 1;
+            gold += 2;
         }
     }
 }
