@@ -10,6 +10,6 @@ public class AbilityDescription : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
 
     public void Update() {
-        text.text = ability.Description(Player.instance);
+        text.text = $"<b>{ability.name}</b>\n\n{ability.Description(Player.instance)}";
     }
 }

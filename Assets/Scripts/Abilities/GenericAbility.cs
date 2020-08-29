@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class GenericAbility : Ability
 {
     public override bool Available(Creature user) => effects.All(e => e.AllowUsage(user)) && (effects.Any(e => e.Available) || effects.Count() == 0);
@@ -38,6 +39,14 @@ public class GenericAbility : Ability
             return string.Join("\n", effects.Select(e => e.Description(user)));
         } else {
             return "End turn";
+        }
+    }
+
+    public void Update() {
+        if (Extensions.InEditMode()) {
+            if (GetComponent<GainAbility>() == null) {
+                gameObject.name = this.name;
+            }
         }
     }
 }

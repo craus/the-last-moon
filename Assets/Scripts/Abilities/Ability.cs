@@ -9,6 +9,8 @@ public abstract class Ability : MonoBehaviour
     public virtual bool BattleOnly => true;
     public virtual bool RequireTarget => true;
 
+    public new string name;
+
     public virtual void Use(Creature user, Creature target) {
     }
 

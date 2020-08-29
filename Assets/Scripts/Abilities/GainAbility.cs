@@ -21,12 +21,17 @@ public class GainAbility : NonTargetEffect
     }
 
     public override string Description(Creature user) {
-        return $"Buy: {ability.Description(user)}";
+        return $"{ability.Description(user)}";
+    }
+
+    public void Start() {
+        GetComponent<Ability>().name = ability.name;
     }
 
     public void Update() {
         if (Extensions.InEditMode()) {
             name = $"Buy {ability.name}";
+            GetComponent<Ability>().name = ability.name;
         }
     }
 }

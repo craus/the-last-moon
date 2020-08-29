@@ -13,7 +13,7 @@ public class Store : Singletone<Store>
     public Transform buyAbilitiesFolder;
     public Transform goodsFolder;
 
-    public void Start() {
+    public void Awake() {
         goodsFolder.gameObject.SetActive(false);
     }
 
