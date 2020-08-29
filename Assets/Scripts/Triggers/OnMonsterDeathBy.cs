@@ -2,14 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OnMonsterDeath : Common.Trigger
+public class OnMonsterDeathBy : Common.Trigger
 {
+    public AbilityEffect source;
+
     public void Start() {
         GlobalEvents.instance.onDeath += OnDeath; 
     }
 
     private void OnDeath(Creature c, AbilityEffect source) {
-        if (c is Monster) {
+        if (c is Monster && source == this.source) {
             Run();
         }
     }

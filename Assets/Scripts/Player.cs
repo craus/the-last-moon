@@ -16,7 +16,7 @@ public class Player : Creature
         instance = this;
     }
 
-    public override void Die() {
+    public override void Die(AbilityEffect source) {
         
     }
 

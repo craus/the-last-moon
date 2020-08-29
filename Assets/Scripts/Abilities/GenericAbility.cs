@@ -11,6 +11,7 @@ public class GenericAbility : Ability
 
     public List<AbilityEffect> effects;
 
+    [TextArea]
     public string manualDescription = "";
 
     public override void Use(Creature user, Creature target) {

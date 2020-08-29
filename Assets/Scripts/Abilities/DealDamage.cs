@@ -9,7 +9,7 @@ public class DealDamage : AbilityEffect
     public int Damage => damageProvider != null ? damageProvider.Value : damage;
 
     public override void Use(Creature user, Creature target) {
-        target.Hit(user, Damage);
+        target.Hit(user, Damage, this);
     }
 
     public override string Text(Creature user) {

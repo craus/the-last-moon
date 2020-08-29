@@ -9,8 +9,8 @@ public class Monster : Creature
         Attack(Game.instance.player);
     }
 
-    public override void Die() {
-        base.Die();
+    public override void Die(AbilityEffect source) {
+        base.Die(source);
         if (Battle.instance.AllMonstersDead) {
             Battle.instance.Finish();
         }

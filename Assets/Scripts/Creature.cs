@@ -47,7 +47,7 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public void Hit(Creature attacker, int damage = 1) {
+    public void Hit(Creature attacker, int damage = 1, AbilityEffect source = null) {
         if (away > 0) {
             return;
         }
@@ -55,12 +55,12 @@ public class Creature : MonoBehaviour
         damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
         ApplyBubbles(ref damage, ref bubbles);
         ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
-        LoseHp(damage);
+        LoseHp(damage, source);
     }
 
-    public void LoseHp(int damage = 1) {
+    public void LoseHp(int damage = 1, AbilityEffect source = null) {
         hp -= damage;
-        DeathCheck();
+        DeathCheck(source);
     }
 
     public void Poison(int poison = 1) {
@@ -85,14 +85,18 @@ public class Creature : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, maxHp);
     }
 
-    public void DeathCheck() {
+    public void DeathCheck(AbilityEffect source = null) {
         if (hp <= 0) {
-            Die();
+            Die(source);
         }
     }
 
-    public virtual void Die() {
-        GlobalEvents.instance.onDeath(this);
+    public void Die() {
+        Die(null);
+    }
+
+    public virtual void Die(AbilityEffect source = null) {
+        GlobalEvents.instance.onDeath(this, source);
         Destroy(gameObject);
     }
 

@@ -1149,6 +1149,11 @@ PrefabInstance:
       propertyPath: m_textInfo.wordCount
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 1110109969609791602, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: creature
+      value: 
+      objectReference: {fileID: 5327965992039721882}
     - target: {fileID: 1132880105037055560, guid: 90692595e07ab8b45b3fbb121286b0b6,
         type: 3}
       propertyPath: m_Enabled
