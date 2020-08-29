@@ -52,17 +52,19 @@ public class Creature : MonoBehaviour
             return;
         }
         damage += attacker.attack;
-        damage = Mathf.Clamp(damage - armor, 0, int.MaxValue);
+        damage -= armor;
+        damage = Mathf.Clamp(damage, 0, int.MaxValue);
         ApplyBubbles(ref damage, ref bubbles);
         ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
-        LoseHp(damage, source);
+        LoseHp(damage, source, attacker);
     }
 
-    public void LoseHp(int damage = 1, AbilityEffect source = null) {
+    public void LoseHp(int damage = 1, AbilityEffect source = null, Creature attacker = null) {
         if (damage > hp) {
             damage = hp;
         }
         hp -= damage;
+        GameLog.Message($"{name} lost {damage} hp{(source == null ? (attacker == null ? "" : $" by {attacker.Text()}") : $" by {source}")}");
         DeathCheck(source);
         GlobalEvents.instance.onLoseHp(this, damage, source);
     }
@@ -72,8 +74,14 @@ public class Creature : MonoBehaviour
     }
 
     public void Heal(int heal = 1) {
+        var oldhp = hp;
         hp += heal;
         HpCheck();
+        var delta = hp - oldhp;
+        if (delta == 0) {
+            return;
+        }
+        GameLog.Message($"{name} healed by {delta}");
         DeathCheck();
     }
 
@@ -157,5 +165,9 @@ public class Creature : MonoBehaviour
         bubbles = 0;
         away = 0;
         attack = 0;
+    }
+
+    public virtual string Text() {
+        return name;
     }
 }

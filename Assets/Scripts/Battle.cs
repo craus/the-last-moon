@@ -21,5 +21,6 @@ public class Battle : Singletone<Battle>
 
     public void Start() {
         GlobalEvents.instance.onBattleStart(this);
+        GameLog.Message($"Battle started - Day {Game.instance.day}");
     }
 }
