@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnGameStart : Common.Trigger
 {
-    public void Start() {
+    public void Awake() {
         GlobalEvents.instance.onGameStart += onGameStart; 
     }
 

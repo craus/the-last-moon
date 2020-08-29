@@ -2403,6 +2403,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8532316855624601219, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 92.90039
+      objectReference: {fileID: 0}
     - target: {fileID: 9086198542498697076, guid: d8fee5cfecf8fa047b8e768eed9734ff,
         type: 3}
       propertyPath: m_textInfo.characterCount
