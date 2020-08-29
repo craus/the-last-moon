@@ -234,9 +234,10 @@ MonoBehaviour:
   bubbles: 0
   away: 0
   attack: 0
+  buffs: []
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
-  mana: 4
+  mana: 3
   manaPerTurn: 2.4
   manaPerTurn2: 0.0005
 --- !u!114 &455400909
@@ -336,6 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveNumber: 0
+  on: 1
 --- !u!1 &4967579292923784624
 GameObject:
   m_ObjectHideFlags: 0

@@ -593,7 +593,7 @@ MonoBehaviour:
     m_Top: 0
     m_Bottom: 0
   m_ChildAlignment: 0
-  m_Spacing: 23.67
+  m_Spacing: 13
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -6244,6 +6244,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.99999696
       objectReference: {fileID: 0}
+    - target: {fileID: 6762914679967585072, guid: 77f0112a699d2264283c61bc14fdc16c,
+        type: 3}
+      propertyPath: manualDescription
+      value: Gain 1 bubble on battle start
+      objectReference: {fileID: 0}
     - target: {fileID: 8401045329575112928, guid: 77f0112a699d2264283c61bc14fdc16c,
         type: 3}
       propertyPath: m_Enabled
@@ -7648,6 +7653,16 @@ PrefabInstance:
       propertyPath: m_padding
       value: 1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 1880472282286870971, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282286870971, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -7834,6 +7849,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 542319434, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
+    - target: {fileID: 5755431578134616118, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 78.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &8880640009064305435 stripped

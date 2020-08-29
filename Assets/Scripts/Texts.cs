@@ -6,5 +6,5 @@ using UnityEngine;
 public static class Texts
 {
     public const string G = "$";
-    public const string DKIG = "∯";
+    public const string DKIG = "∯₮";
 }
