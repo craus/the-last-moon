@@ -13,6 +13,10 @@ public class Store : Singletone<Store>
     public Transform buyAbilitiesFolder;
     public Transform goodsFolder;
 
+    public void Start() {
+        goodsFolder.gameObject.SetActive(false);
+    }
+
 #if UNITY_EDITOR
     public void AddAbilityToStore(Ability ability) {
         var buyAbility = PrefabUtility.InstantiatePrefab(buyAbilitySample) as Ability;

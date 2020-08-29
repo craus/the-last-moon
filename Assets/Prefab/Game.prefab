@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c4bd36e1a28b248a04f08794e286b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveNumber: 0
+  day: 0
   battleSample: {fileID: 4967579292806032986, guid: d0ed1726607503741b9f23a0f91fc3ce,
     type: 3}
   player: {fileID: 5327965992039721882}
@@ -1874,6 +1874,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6800144714317152227, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: creature
+      value: 
+      objectReference: {fileID: 5327965992039721882}
     - target: {fileID: 6809893612687885527, guid: 90692595e07ab8b45b3fbb121286b0b6,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -1985,6 +1990,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5327965992039721882}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8528078566205031619, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: activate.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8880640008733548415, guid: 90692595e07ab8b45b3fbb121286b0b6,
         type: 3}
