@@ -11,7 +11,7 @@ public class Monster : Creature
 
     public override void Die() {
         base.Die();
-        if (FindObjectsOfType<Monster>().All(m => !m.Alive)) {
+        if (Battle.instance.AllMonstersDead) {
             Battle.instance.Finish();
         }
     }

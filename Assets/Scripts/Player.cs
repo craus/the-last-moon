@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Player : Creature
@@ -21,6 +22,7 @@ public class Player : Creature
 
     public void GainAbility(Ability a) {
         a.transform.SetParent(abilitiesFolder);
+        a.gameObject.SetActive(true);
     }
 
     public void LoseAbility(Ability a) {
@@ -48,6 +50,8 @@ public class Player : Creature
 
     protected override void OnBattleEnd(Battle b) {
         base.OnBattleEnd(b);
-        gold += 1;
+        if (Battle.instance.AllMonstersDead) {
+            gold += 1;
+        }
     }
 }

@@ -19,6 +19,7 @@ public class Creature : MonoBehaviour
     public int away = 0;
     public int attack = 0;
     public bool Alive => hp > 0;
+    public bool Dead => !Alive;
 
     public Action<Creature, Creature, int> beforeAttack = (a,b,d) => { };
     public Action<Creature, Creature, int> afterAttack = (a, b, d) => { };
@@ -110,7 +111,10 @@ public class Creature : MonoBehaviour
     }
 
     public virtual void MakeMove() {
-        if (!Alive) {
+        if (!Battle.On) {
+            return;
+        }
+        if (Dead) {
             return;
         }
         if (stunned > 0) {
