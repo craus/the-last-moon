@@ -7,7 +7,7 @@ using System.Linq;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
     public UnityEvent onShow;
     public UnityEvent onHide;
@@ -24,6 +24,10 @@ public class Tooltip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     }
 
     public void OnPointerExit(PointerEventData eventData) {
+        hovered = false;
+    }
+
+    public void OnPointerClick(PointerEventData eventData) {
         hovered = false;
     }
 
