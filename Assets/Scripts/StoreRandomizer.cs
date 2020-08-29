@@ -14,6 +14,10 @@ public class StoreRandomizer : MonoBehaviour
 
     public int itemsInStore;
 
+    public void Start() {
+        goodsFolder.gameObject.SetActive(false);
+    }
+
     public void RandomizeStore() {
         goodsFolder.Children().RndSelection(itemsInStore).ForEach(item => item.transform.SetParent(store));
     }

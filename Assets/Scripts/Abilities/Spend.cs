@@ -15,4 +15,8 @@ public class Spend : NonTargetEffect
     public override string Text(Creature user) {
         return " ({0})".i((int)usages);
     }
+
+    public override string Description(Creature user) {
+        return $"{usages} usages";
+    }
 }
