@@ -13,4 +13,8 @@ public class ApplyPoison : AbilityEffect
     public override string Text(Creature user) {
         return CreatureText.RegenerationString(-poison);
     }
+
+    public override string Description(Creature user) {
+        return $"Apply {poison} poison";
+    }
 }

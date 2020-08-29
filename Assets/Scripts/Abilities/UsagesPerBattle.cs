@@ -18,6 +18,10 @@ public class UsagesPerBattle : NonTargetEffect
         return " ({0}/{1}R)".i(usages, usagesPerBattle);
     }
 
+    public override string Description(Creature user) {
+        return $"{usagesPerBattle} usages per battle ({usages} this battle)";
+    }
+
     public void Start() {
         GlobalEvents.instance.onBattleStart += OnBattleStart;
         GlobalEvents.instance.onBattleEnd += OnBattleEnd;

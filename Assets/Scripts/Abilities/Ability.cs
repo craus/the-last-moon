@@ -15,4 +15,8 @@ public abstract class Ability : MonoBehaviour
     public virtual string Text(Creature user) {
         return "?";
     }
+
+    public virtual string Description(Creature user) {
+        return "Непонятно, что делает эта способность";
+    }
 }

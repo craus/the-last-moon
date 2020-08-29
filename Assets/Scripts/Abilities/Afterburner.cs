@@ -13,4 +13,8 @@ public class Afterburner : NonTargetEffect
     public override string Text(Creature user) {
         return CreatureText.StunString(-power);
     }
+
+    public override string Description(Creature user) {
+        return $"Gain {power} extra turns";
+    }
 }

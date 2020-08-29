@@ -19,8 +19,13 @@ public class CyclicEffect : AbilityEffect
         return effects.Select(e2 => (current == e2 ? "<b>{0}</b>" : "{0}").i(e2.Text(user))).Join("/");
     }
 
+    public override string Description(Creature user) {
+        return effects.Select(e2 => (current == e2 ? "<b>{0}</b>" : "{0}").i(e2.Description(user))).Join("\n\n");
+    }
+
     public void Start() {
         GlobalEvents.instance.onBattleStart += OnBattleStart;
+        Reset();
     }
 
     public void OnDestroy() {
@@ -29,7 +34,11 @@ public class CyclicEffect : AbilityEffect
         }
     }
 
-    private void OnBattleStart(Battle battle) {
+    private void Reset() {
         current = effects[0];
+    }
+
+    private void OnBattleStart(Battle battle) {
+        Reset();
     }
 }

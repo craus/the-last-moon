@@ -16,4 +16,8 @@ public class ListEffect : AbilityEffect
     public override string Text(Creature user) {
         return effects.Select(e => e.Text(user)).Join();
     }
+
+    public override string Description(Creature user) {
+        return effects.Select(e => e.Description(user)).Join("\n");
+    }
 }

@@ -14,4 +14,8 @@ public class Heal : AbilityEffect
     public override string Text(Creature user) {
         return "H" + heal.ToString();
     }
+
+    public override string Description(Creature user) {
+        return $"Heal {heal} hp";
+    }
 }

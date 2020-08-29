@@ -13,4 +13,8 @@ public class Stun : AbilityEffect
     public override string Text(Creature user) {
         return CreatureText.StunString(stun);
     }
+
+    public override string Description(Creature user) {
+        return $"Stun for {stun} turns";
+    }
 }

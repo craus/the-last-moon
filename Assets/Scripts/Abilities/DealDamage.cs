@@ -15,4 +15,8 @@ public class DealDamage : AbilityEffect
     public override string Text(Creature user) {
         return (Damage).ToString();
     }
+
+    public override string Description(Creature user) {
+        return $"Deal {damage} damage";
+    }
 }

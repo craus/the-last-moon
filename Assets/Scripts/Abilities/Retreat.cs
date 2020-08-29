@@ -13,4 +13,8 @@ public class Retreat : AbilityEffect
     public override string Text(Creature user) {
         return "<—";
     }
+
+    public override string Description(Creature user) {
+        return "Retreat from combat (no rewards)";
+    }
 }

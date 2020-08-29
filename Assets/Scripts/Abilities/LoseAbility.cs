@@ -17,4 +17,8 @@ public class LoseAbility : NonTargetEffect
     public override string Text(Creature user) {
         return "";// "v " + ability.Text(user);
     }
+
+    public override string Description(Creature user) {
+        return "";
+    }
 }

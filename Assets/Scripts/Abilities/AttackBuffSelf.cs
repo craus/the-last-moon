@@ -13,4 +13,8 @@ public class AttackBuffSelf : NonTargetEffect
     public override string Text(Creature user) {
         return CreatureText.AttackString(attack);
     }
+
+    public override string Description(Creature user) {
+        return $"Increase all damage dealt by {attack} until end of battle";
+    }
 }

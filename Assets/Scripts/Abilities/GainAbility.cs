@@ -20,6 +20,10 @@ public class GainAbility : NonTargetEffect
         return "^ " + ability?.Text(user);
     }
 
+    public override string Description(Creature user) {
+        return $"Buy: {ability.Description(user)}";
+    }
+
     public void Update() {
         if (Extensions.InEditMode()) {
             name = $"Buy {ability.name}";

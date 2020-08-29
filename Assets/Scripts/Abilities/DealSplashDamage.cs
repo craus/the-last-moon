@@ -13,4 +13,8 @@ public class DealSplashDamage : NonTargetEffect
     public override string Text(Creature user) {
         return "S" + (damage).ToString();
     }
+
+    public override string Description(Creature user) {
+        return $"Deal {damage} damage to all enemies in battle";
+    }
 }

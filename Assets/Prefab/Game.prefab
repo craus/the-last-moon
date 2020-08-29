@@ -1058,7 +1058,7 @@ PrefabInstance:
     - target: {fileID: 6229270688234070109, guid: 90692595e07ab8b45b3fbb121286b0b6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 189
+      value: -136
       objectReference: {fileID: 0}
     - target: {fileID: 6229270688234070109, guid: 90692595e07ab8b45b3fbb121286b0b6,
         type: 3}
@@ -1109,6 +1109,58 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Store
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078132731785047083, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_text
+      value: '<color=#ffa000ff>($3)</color>
+
+        Full heal'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078132731785047083, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078132731785047083, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078132731785047083, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078132731785047083, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880640008733548415, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_text
+      value: "<color=#ffa000ff>($3)</color>h\u221E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880640008733548415, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 30.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880640008733548415, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880640008733548415, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8880640008733548415, guid: 90692595e07ab8b45b3fbb121286b0b6,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8880640009064305434, guid: 90692595e07ab8b45b3fbb121286b0b6,
         type: 3}

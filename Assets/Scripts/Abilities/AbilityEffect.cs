@@ -14,4 +14,8 @@ public abstract class AbilityEffect : MonoBehaviour
     public virtual string Text(Creature user) {
         return "?";
     }
+
+    public virtual string Description(Creature user) {
+        return "";
+    }
 }

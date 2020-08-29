@@ -18,4 +18,12 @@ public class GenericAbility : Ability
     public override string Text(Creature user) {
         return string.Join("", effects.Select(e => e.Text(user)));
     }
+
+    public override string Description(Creature user) {
+        if (effects.Count > 0) {
+            return string.Join("\n", effects.Select(e => e.Description(user)));
+        } else {
+            return "End turn";
+        }
+    }
 }

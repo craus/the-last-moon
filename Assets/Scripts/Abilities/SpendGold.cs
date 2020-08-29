@@ -16,6 +16,10 @@ public class SpendGold : NonTargetEffect
     }
 
     public override string Text(Creature user) {
-        return " <color=#ffa000ff>(${0})</color>".i(amount);
+        return $"<color=#a01a24ff>(${amount})</color>";
+    }
+
+    public override string Description(Creature user) {
+        return $"<color=#ffa000ff>(${amount})</color>";
     }
 }

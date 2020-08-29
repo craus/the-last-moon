@@ -14,4 +14,12 @@ public class SelfHeal : NonTargetEffect
     public override string Text(Creature user) {
         return $"h{(heal >= 100500 ? "∞" : heal.ToString())}";
     }
+
+    public override string Description(Creature user) {
+        if (heal >= 100500) {
+            return $"Full heal";
+        } else {
+            return $"Heal yourself by {heal}";
+        }
+    }
 }

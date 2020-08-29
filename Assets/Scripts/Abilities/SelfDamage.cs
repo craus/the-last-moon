@@ -13,4 +13,8 @@ public class SelfDamage : NonTargetEffect
     public override string Text(Creature user) {
         return "X" + damage;
     }
+
+    public override string Description(Creature user) {
+        return $"Damage yourself by{damage}.";
+    }
 }

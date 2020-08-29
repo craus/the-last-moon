@@ -13,4 +13,8 @@ public class SelfProtection : NonTargetEffect
     public override string Text(Creature user) {
         return CreatureText.ProtectionString(protection);
     }
+
+    public override string Description(Creature user) {
+        return $"Prevents next {protection} damage taken.";
+    }
 }

@@ -22,4 +22,8 @@ public class FireRing : AbilityEffect
     public override string Text(Creature user) {
         return "1f (<color=#ff0000ff>{0}</color>)".i(counter.Value);
     }
+
+    public override string Description(Creature user) {
+        return $"Deal {1} damage. Gain an extra turn. Spend 1 charge.\n{counter.Value} charges.\nGain 1 charge on enemy death.";
+    }
 }
