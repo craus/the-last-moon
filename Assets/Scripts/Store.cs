@@ -26,9 +26,9 @@ public class Store : Singletone<Store>
 
     [ContextMenu("Add all abilities to store")]
     public void AddAllAbilitiesToStore() {
-        transform.Children().ForEach(c => {
+        buyAbilitiesFolder.Children().ForEach(c => {
             var a = c.GetComponent<Ability>();
-            if (a.GetComponent<GainAbility>() == null) {
+            if (a?.GetComponent<GainAbility>() == null) {
                 AddAbilityToStore(a);
             }
         });

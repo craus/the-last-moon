@@ -19,6 +19,6 @@ public class StoreRandomizer : MonoBehaviour
     }
 
     public void RandomizeStore() {
-        goodsFolder.Children().RndSelection(itemsInStore).ForEach(item => item.transform.SetParent(store));
+        goodsFolder.Children().RndSelection(itemsInStore).Shuffled().ForEach(item => item.transform.SetParent(store));
     }
 }
