@@ -138,7 +138,7 @@ public class Creature : MonoBehaviour
     public virtual void TakeAction() {
     }
 
-    public void Start() {
+    public virtual void Start() {
         GlobalEvents.instance.onBattleEnd += OnBattleEnd;
     }
 

@@ -12,7 +12,7 @@ public class GameText : MonoBehaviour
 
     public void Update() {
         text.text = format.i(new Dictionary<string, object>() {
-            { "moveNumber", game.moveNumber },
+            { "moveNumber", game.day },
         });
     }
 }

@@ -7,8 +7,13 @@ public class MonsterSpawner : Monster
     public Monster sample;
     public Transform parent;
     public float mana;
+    public float manaPerGameDay = 0.5f;
     public float manaPerTurn = 2.15f;
     public float manaPerTurn2 = 0.0015f;
+
+    public override void Start() {
+        base.Start();
+    }
 
     public override void TakeAction() {
         base.TakeAction();

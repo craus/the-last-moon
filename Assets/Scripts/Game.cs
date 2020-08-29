@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Game : Singletone<Game>
 {
-    public int moveNumber;
+    public int day;
 
     public Battle battleSample;
     public Player player;
@@ -17,9 +17,10 @@ public class Game : Singletone<Game>
     }
 
     public void NewBattle() {
-        moveNumber++;
+        day++;
         var battle = Instantiate(battleSample, transform);
-        battle.GetComponentInChildren<MonsterSpawner>().mana += moveNumber;
+        var spawner = battle.GetComponentInChildren<MonsterSpawner>();
+        spawner.mana += Game.instance.day * spawner.manaPerGameDay;
     }
 
     public void RestartBattle() {
