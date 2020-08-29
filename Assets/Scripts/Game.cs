@@ -57,5 +57,6 @@ public class Game : Singletone<Game>
 
     public void Start() {
         GlobalEvents.instance.onGameStart.Invoke(this);
+        GameLog.Message("Game started");
     }
 }
