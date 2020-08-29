@@ -169,7 +169,7 @@ MonoBehaviour:
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 9
   m_fontSizeMax: 36
   m_fontStyle: 0
   m_textAlignment: 514
@@ -293,6 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e99674978a759349bb1e118e73e4b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gold: 0
   damage: 1
   hp: 1
   maxHp: 1
@@ -303,6 +304,8 @@ MonoBehaviour:
   protectionUntilEndOfCombat: 0
   bubbles: 0
   away: 0
+  attack: 0
+  buffs: []
 --- !u!1 &6505685705932901978
 GameObject:
   m_ObjectHideFlags: 0

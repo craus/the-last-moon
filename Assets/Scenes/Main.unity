@@ -533,5 +533,25 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7280495767203899913, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280495767203899913, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280495767203899913, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280495767203899913, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8fee5cfecf8fa047b8e768eed9734ff, type: 3}

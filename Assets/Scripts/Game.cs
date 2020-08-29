@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Game : Singletone<Game>
 {
+    public int moveNumber;
+
     public Battle battleSample;
     public Player player;
 
@@ -15,8 +17,11 @@ public class Game : Singletone<Game>
     }
 
     public void NewBattle() {
-        Instantiate(battleSample, transform);
+        moveNumber++;
+        var battle = Instantiate(battleSample, transform);
+        battle.GetComponentInChildren<MonsterSpawner>().mana += moveNumber;
     }
+
     public void RestartBattle() {
         if (Battle.instance != null) {
             Battle.instance.Finish();
