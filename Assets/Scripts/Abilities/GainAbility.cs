@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GainAbility : NonTargetEffect
 {
+    public Transform abilityFolder;
     public Ability ability;
 
     public override void Use(Creature user) {
