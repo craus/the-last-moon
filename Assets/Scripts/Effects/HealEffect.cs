@@ -5,17 +5,19 @@ using UnityEngine;
 public class HealEffect : Common.Effect
 {
     public Creature creature;
+    public CreatureProvider creatureProvider;
+
+    public Creature Creature => creatureProvider != null ? creatureProvider.Value : creature;
+
     public int amount;
 
     public override void Run() {
-        if (creature != null) {
-            creature.Heal(amount);
-        }
+        RunByAmount(amount);
     }
 
     public void RunByAmount(int amount) {
-        if (creature != null) {
-            creature.Heal(amount);
+        if (Creature != null) {
+            Creature.Heal(amount);
         }
     }
 }
