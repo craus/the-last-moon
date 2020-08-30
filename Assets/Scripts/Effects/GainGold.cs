@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GainGold : Common.Effect
+public class GainGold : CreatureEffect
 {
-    public Creature creature;
     public int amount;
 
     public override void Run() {
-        if (creature != null) {
-            creature.gold += amount;
+        if (Creature != null) {
+            Creature.gold += amount;
         }
     }
 }
