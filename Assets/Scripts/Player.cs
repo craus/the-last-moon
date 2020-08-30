@@ -21,6 +21,15 @@ public class Player : Creature
     }
 
     public void GainAbility(Ability a) {
+        var spend = a.GetComponent<Spend>();
+        if (spend != null) {
+            var oldAbility = GetComponentsInChildren<Ability>().FirstOrDefault(a2 => a2.name == a.name);
+            if (oldAbility != null) {
+                oldAbility.GetComponent<Spend>().usages += spend.usages;
+                Destroy(a.gameObject);
+                return;
+            }
+        }
         a.transform.SetParent(abilitiesFolder);
         a.transform.localScale = Vector3.one;
         a.gameObject.SetActive(true);

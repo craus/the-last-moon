@@ -170,7 +170,7 @@ MonoBehaviour:
   manualDescription: 
   manualText: 
   usages: 3
-  destroyOnUsagesEnd: 0
+  destroyOnUsagesEnd: 1
 --- !u!114 &9032434012438330637
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -822,7 +822,7 @@ MonoBehaviour:
   manualDescription: 
   manualText: 
   usages: 3
-  destroyOnUsagesEnd: 0
+  destroyOnUsagesEnd: 1
 --- !u!114 &6871902632472836863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3597,6 +3597,10 @@ PrefabInstance:
     - target: {fileID: 1141139245, guid: 32a89605d4b34804fa85fd95a9842291, type: 3}
       propertyPath: usages
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1141139245, guid: 32a89605d4b34804fa85fd95a9842291, type: 3}
+      propertyPath: destroyOnUsagesEnd
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3576904432366115964, guid: 32a89605d4b34804fa85fd95a9842291,
         type: 3}
