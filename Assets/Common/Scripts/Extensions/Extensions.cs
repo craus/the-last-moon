@@ -10,6 +10,16 @@ using UnityEditor;
 
 public static class Extensions
 {
+    public static string ExtToString(this Matrix4x4 mx) {
+        var s = "\t";
+        const int x = -12;
+        return
+            $"{mx.m00,x:0.####################}{s}{mx.m01,x:0.####################}{s}{mx.m02,x:0.####################}{s}{mx.m03,x:0.####################}{s}\n" +
+            $"{mx.m10,x:0.####################}{s}{mx.m11,x:0.####################}{s}{mx.m12,x:0.####################}{s}{mx.m13,x:0.####################}{s}\n" +
+            $"{mx.m20,x:0.####################}{s}{mx.m21,x:0.####################}{s}{mx.m22,x:0.####################}{s}{mx.m23,x:0.####################}{s}\n" +
+            $"{mx.m30,x:0.####################}{s}{mx.m31,x:0.####################}{s}{mx.m32,x:0.####################}{s}{mx.m33,x:0.####################}{s}\n";
+    }
+
     public static TResult Tap<TObject, TResult>(this TObject obj, Func<TObject, TResult> func)
     {
         return func(obj);
@@ -75,6 +85,18 @@ public static class Extensions
             UnityEngine.Random.Range(bounds.min.y, bounds.max.y),
             UnityEngine.Random.Range(bounds.min.z, bounds.max.z)
         );
+    }
+
+    public static Vector3 Inverse(Vector3 v) {
+        return new Vector3(-v.x, -v.y, -v.z);
+    }
+
+    public static Vector3 GetTranslation(Vector3 from, Vector3 to) {
+        return Inverse(from) + to;
+    }
+
+    public static Quaternion GetRotation(Quaternion from, Quaternion to) {
+        return Quaternion.Inverse(from) * to;
     }
 
     public static T GenerateWithCondition<T>(Func<T> generate, Predicate<T> condition, int steps = 100) {
