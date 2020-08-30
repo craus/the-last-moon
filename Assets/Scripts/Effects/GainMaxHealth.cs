@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GainMaxHealth : Common.Effect
+public class GainMaxHealth : CreatureEffect
 {
-    public Creature creature;
     public int amount;
 
     public override void Run() {
-        if (creature != null) {
-            creature.maxHp += amount;
+        if (Creature != null) {
+            Creature.maxHp += amount;
         }
     }
 }

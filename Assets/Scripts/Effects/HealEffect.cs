@@ -2,13 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HealEffect : Common.Effect
+public class HealEffect : CreatureEffect
 {
-    public Creature creature;
-    public CreatureProvider creatureProvider;
-
-    public Creature Creature => creatureProvider != null ? creatureProvider.Value : creature;
-
     public int amount;
 
     public override void Run() {
