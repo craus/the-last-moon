@@ -60,9 +60,9 @@ public class MonsterSpawner : Monster
             mana -= 1;
             return;
         }
-        if (Rand.rndEvent(0.1f)) {
+        if (Rand.rndEvent(0.1f / (1+m.away))) {
             m.away += 1;
-            mana += 1;
+            mana += 1f / (1+m.away);
             return;
         }
         if (Rand.rndEvent(0.1f)) {

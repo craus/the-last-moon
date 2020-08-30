@@ -20,7 +20,9 @@ public class CyclicEffect : AbilityEffect
     }
 
     public override string Description(Creature user) {
-        return effects.Select(e2 => (current == e2 ? "<b>{0}</b>" : "{0}").i(e2.Description(user))).Join("\n\n");
+        return effects
+            .Select((e2, index) => (current == e2 ? "<b>{0}</b>" : "{0}").i($"Phase {index}: {e2.Description(user)}"))
+            .Join("\n\n");
     }
 
     public void Start() {

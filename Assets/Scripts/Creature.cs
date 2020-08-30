@@ -63,6 +63,9 @@ public class Creature : MonoBehaviour
         if (damage > hp) {
             damage = hp;
         }
+        if (damage == 0) {
+            return;
+        }
         hp -= damage;
         GameLog.Message($"{name} lost {damage} hp{(source == null ? (attacker == null ? "" : $" by {attacker.Text()}") : $" by {source}")}");
         DeathCheck(source);
