@@ -11,11 +11,14 @@ public abstract class AbilityEffect : MonoBehaviour
 
     public abstract void Use(Creature user, Creature target);
 
+    public string manualDescription;
+    public string manualText;
+
     public virtual string Text(Creature user) {
-        return "?";
+        return manualText != "" ? manualText : "?";
     }
 
     public virtual string Description(Creature user) {
-        return "";
+        return manualDescription;
     }
 }
