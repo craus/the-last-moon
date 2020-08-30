@@ -5,10 +5,13 @@ using UnityEngine;
 public class GainBubble : Common.Effect
 {
     public Creature creature;
+    public CreatureProvider creatureProvider;
+
+    public Creature Creature => creatureProvider != null ? creatureProvider.Value : creature;
 
     public override void Run() {
-        if (creature != null) {
-            creature.bubbles++;
+        if (Creature != null) {
+            Creature.bubbles++;
         }
     }
 }

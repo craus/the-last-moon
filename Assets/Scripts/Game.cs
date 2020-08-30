@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ public class Game : Singletone<Game>
     public int day;
 
     public Battle battleSample;
+    public Store storeSample;
+    public Transform storeSlot;
+    public Store store;
     public Player player;
 
     public void DestroyBattle() {
@@ -17,10 +21,24 @@ public class Game : Singletone<Game>
     }
 
     public void NewBattle() {
+        DestroyStore();
         day++;
         var battle = Instantiate(battleSample, transform);
         var spawner = battle.GetComponentInChildren<MonsterSpawner>();
         spawner.mana += Game.instance.day * spawner.manaPerGameDay;
+    }
+
+    public void NewStore() {
+        if (store != null) {
+            Destroy(store.gameObject);
+        }
+        store = Instantiate(storeSample, storeSlot);
+    }
+
+    public void DestroyStore() {
+        if (store != null) {
+            Destroy(store.gameObject);
+        }
     }
 
     public void RestartBattle() {
@@ -57,6 +75,15 @@ public class Game : Singletone<Game>
 
     public void Start() {
         GlobalEvents.instance.onGameStart.Invoke(this);
+        NewStore();
         GameLog.Message("Game started");
+
+        GlobalEvents.instance.onBattleEnd += OnBattleEnd;
+    }
+
+    public void OnBattleEnd(Battle battle) {
+        if (Rand.rndEvent(0.2f)) {
+            NewStore();
+        }
     }
 }

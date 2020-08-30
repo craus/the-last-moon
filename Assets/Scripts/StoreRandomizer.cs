@@ -16,6 +16,7 @@ public class StoreRandomizer : MonoBehaviour
 
     public void Start() {
         goodsFolder.gameObject.SetActive(false);
+        RandomizeStore();
     }
 
     public void RandomizeStore() {
