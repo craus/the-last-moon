@@ -25,11 +25,16 @@ public class GainAbility : NonTargetEffect
     }
 
     public void Start() {
-        GetComponent<Ability>().name = ability.name;
+        if (!Extensions.InEditMode()) {
+            GetComponent<Ability>().name = ability.name;
+        }
     }
 
     public void Update() {
         if (Extensions.InEditMode()) {
+            if (ability == null) {
+                return;
+            }
             name = $"Buy {ability.name}";
             GetComponent<Ability>().name = ability.name;
         }
