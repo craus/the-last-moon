@@ -9929,7 +9929,7 @@ PrefabInstance:
     - target: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Name
-      value: Vampire Bite
+      value: Vampire Byte
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -9974,7 +9974,7 @@ PrefabInstance:
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: name
-      value: Vampire Bite
+      value: Vampire Byte
       objectReference: {fileID: 0}
     - target: {fileID: 6361225435359322550, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
