@@ -22,6 +22,7 @@ public class Player : Creature
 
     public void GainAbility(Ability a) {
         a.transform.SetParent(abilitiesFolder);
+        a.transform.localScale = Vector3.one;
         a.gameObject.SetActive(true);
     }
 

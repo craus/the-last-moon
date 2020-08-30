@@ -8,12 +8,18 @@ public class GainAbility : NonTargetEffect
     public Transform abilityFolder;
     public Ability ability;
 
+    public bool gainCopy = false;
+
     public override void Use(Creature user) {
         var player = user as Player;
         if (player == null) {
             return;
         }
-        player.GainAbility(ability);
+        if (gainCopy) {
+            player.GainAbility(Instantiate(ability));
+        } else {
+            player.GainAbility(ability);
+        }
     }
 
     public override string Text(Creature user) {
@@ -27,6 +33,7 @@ public class GainAbility : NonTargetEffect
     public void Start() {
         if (!Extensions.InEditMode()) {
             GetComponent<Ability>().name = ability.name;
+            abilityFolder.gameObject.SetActive(false);
         }
     }
 

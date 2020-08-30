@@ -8,8 +8,13 @@ public class Spend : NonTargetEffect
 
     public int usages;
 
+    public bool destroyOnUsagesEnd = false;
+
     public override void Use(Creature user) {
         usages -= 1;
+        if (usages == 0 && destroyOnUsagesEnd) {
+            Destroy(gameObject);
+        }
     }
 
     public override string Text(Creature user) {
