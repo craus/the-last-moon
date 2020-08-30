@@ -22,4 +22,8 @@ public class GameLog : Singletone<GameLog>
     public void Message(string message) {
         text.text += message + "\n";
     }
+
+    public static void LogBattleRound() {
+        Message($"Battle round {Battle.instance.moveNumber}");
+    }
 }

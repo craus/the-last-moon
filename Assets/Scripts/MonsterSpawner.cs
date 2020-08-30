@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MonsterSpawner : Monster
@@ -31,6 +32,17 @@ public class MonsterSpawner : Monster
         for (int i = 0; i < 100 && mana > 0; i++) {
             SpawnMonster();
         }
+        GameLog.Message(
+            "Monsters: {0}".i(
+                FindObjectsOfType<Monster>()
+                    .Where(m => !(m is MonsterSpawner))
+                    .ExtToString(
+                        elementToString: m => m.Text(),
+                        format: "{0}"
+                    )
+            )
+        );
+        GameLog.LogBattleRound();
     }
 
     Monster NewMonster() {

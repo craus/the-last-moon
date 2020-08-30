@@ -81,9 +81,13 @@ public class Game : Singletone<Game>
         GlobalEvents.instance.onBattleEnd += OnBattleEnd;
     }
 
+    int daysWithNoStores = 0;
     public void OnBattleEnd(Battle battle) {
-        if (Rand.rndEvent(0.2f)) {
+        if (Rand.rndEvent(0.16f * daysWithNoStores)) {
             NewStore();
+            daysWithNoStores = 0;
+        } else {
+            daysWithNoStores++;
         }
     }
 }

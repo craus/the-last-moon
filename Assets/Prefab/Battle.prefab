@@ -237,8 +237,8 @@ MonoBehaviour:
   buffs: []
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
-  mana: 2
-  manaPerGameDay: 0.5
+  mana: 1.5
+  manaPerGameDay: 0.3
   manaPerTurn: 2.4
   manaPerTurn2: 0.0005
 --- !u!114 &455400909

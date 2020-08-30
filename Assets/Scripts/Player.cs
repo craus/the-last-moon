@@ -37,7 +37,7 @@ public class Player : Creature
 
     public override void AfterMove() {
         base.AfterMove();
-        Battle.instance.moveNumber++;
+        Battle.instance.NextRound();
         if (stunned < 0) {
             stunned++;
         } else {

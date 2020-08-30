@@ -23,4 +23,12 @@ public class Battle : Singletone<Battle>
         GlobalEvents.instance.onBattleStart(this);
         GameLog.Message($"Battle started - Day {Game.instance.day}");
     }
+
+    public void NextRound() {
+        if (!on) {
+            return;
+        }
+        moveNumber++;
+        GameLog.LogBattleRound();
+    }
 }
