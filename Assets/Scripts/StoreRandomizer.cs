@@ -14,12 +14,14 @@ public class StoreRandomizer : MonoBehaviour
 
     public int itemsInStore;
 
+    public List<Transform> alwaysInclude;
+
     public void Start() {
         goodsFolder.gameObject.SetActive(false);
         RandomizeStore();
     }
 
     public void RandomizeStore() {
-        goodsFolder.Children().RndSelection(itemsInStore).Shuffled().ForEach(item => item.transform.SetParent(store));
+        goodsFolder.Children().RndSelection(itemsInStore, alwaysInclude).Shuffled().ForEach(item => item.transform.SetParent(store));
     }
 }

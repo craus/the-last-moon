@@ -67,6 +67,10 @@ public static class Rand
 		return result;
 	}
 
+	public static List<T> RndSelection<T>(this List<T> collection, int cnt, IEnumerable<T> alwaysInclude) {
+		return alwaysInclude.Concat(RndSelection(collection.Except(alwaysInclude).ToList(), cnt - alwaysInclude.Count())).ToList();
+	}
+
 	public static double Rnd(double min, double max) {
 		return (double)(UnityEngine.Random.Range((float)min, (float)max));
 	}

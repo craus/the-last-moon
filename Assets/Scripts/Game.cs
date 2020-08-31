@@ -71,6 +71,9 @@ public class Game : Singletone<Game>
         } else {
             player.UseAbility(a, t);
         }
+        if (!a.Available(player) && AbilitiesController.instance.currentAbility == a) {
+            AbilitiesController.instance.currentAbility = null;
+        }
     }
 
     public void Start() {
