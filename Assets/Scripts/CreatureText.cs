@@ -38,6 +38,9 @@ public class CreatureText : MonoBehaviour
     public static string FormatCreature(string format, Creature creature) {
         return format.i(new Dictionary<string, object>() {
             { "gold", "${0}".i(creature.gold) },
+            { "experience", "{0}".i(creature.Experience) },
+            { "experienceForLevel", "{0}".i(creature.NextLevelCost) },
+            { "level", "{0}".i(creature.level) },
             { "away", "<".repeat(creature.away) },
             { "damage", creature.damage + creature.attack },
             { "attack", AttackString(creature.attack) },

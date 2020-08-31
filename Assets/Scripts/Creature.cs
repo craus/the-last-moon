@@ -7,6 +7,9 @@ using UnityEngine.Events;
 public class Creature : MonoBehaviour
 {
     public int gold;
+    [SerializeField] private int experience;
+    public int level;
+    public int skillPoints;
     public int damage = 1;
     public int hp = 1;
     public int maxHp = 1;
@@ -20,6 +23,26 @@ public class Creature : MonoBehaviour
     public int attack = 0;
     public bool Alive => hp > 0;
     public bool Dead => !Alive;
+
+    public static int LevelCost(int level) {
+        return level * 5;
+    }
+
+    public int NextLevelCost => LevelCost(level + 1);
+
+    public int Experience {
+        get {
+            return experience;
+        }
+        set {
+            experience = value;
+            for (int i = 0; i < 100 & experience >= NextLevelCost; i++) {
+                experience -= NextLevelCost;
+                level++;
+                skillPoints++;
+            }
+        }
+    }
 
     public Action<Creature, Creature, int> beforeAttack = (a,b,d) => { };
     public Action<Creature, Creature, int> afterAttack = (a, b, d) => { };

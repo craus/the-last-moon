@@ -16,6 +16,7 @@ public class Monster : Creature
         if (Battle.instance.AllMonstersDead) {
             Battle.instance.Finish();
         }
+        Player.instance.Experience += 1;
     }
 
     public override string Text() {
