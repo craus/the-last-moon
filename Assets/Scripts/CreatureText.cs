@@ -41,6 +41,7 @@ public class CreatureText : MonoBehaviour
             { "experience", "{0}".i(creature.Experience) },
             { "experienceForLevel", "{0}".i(creature.NextLevelCost) },
             { "level", "{0}".i(creature.level) },
+            { "skillPoints", "{0}".i(creature.skillPoints) },
             { "away", "<".repeat(creature.away) },
             { "damage", creature.damage + creature.attack },
             { "attack", AttackString(creature.attack) },
