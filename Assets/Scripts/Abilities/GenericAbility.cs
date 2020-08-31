@@ -15,6 +15,10 @@ public class GenericAbility : Ability
     [TextArea]
     public string manualDescription = "";
 
+    [TextArea]
+    [SerializeField]
+    private string descriptionPreview = "";
+
     public string manualText = "";
 
     public override void Use(Creature user, Creature target) {
@@ -47,6 +51,7 @@ public class GenericAbility : Ability
             if (GetComponent<GainAbility>() == null) {
                 gameObject.name = this.name;
             }
+            descriptionPreview = Description(null);
         }
     }
 }

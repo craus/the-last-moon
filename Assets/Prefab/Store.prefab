@@ -239,6 +239,7 @@ RectTransform:
   - {fileID: 4291446724937329196}
   - {fileID: 1246194061534422233}
   - {fileID: 327443408366297226}
+  - {fileID: 3880144922885226804}
   m_Father: {fileID: 6229270688234070109}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -340,6 +341,7 @@ RectTransform:
   - {fileID: 3643753509954315680}
   - {fileID: 3661323686000071815}
   - {fileID: 4454885305543571461}
+  - {fileID: 2020022892036976657}
   m_Father: {fileID: 6229270688234070109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -437,6 +439,36 @@ MonoBehaviour:
   - {fileID: 2601544175472019714}
   - {fileID: 4543897792027722085}
   current: {fileID: 0}
+--- !u!114 &2593307271129627331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020022892036976656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bb81b4fc1fec2142a44d7d8b9bf4c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valuePreview: 0
+  value: 9
+  minValue: 0
+--- !u!114 &6513607110444337861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020022892036976656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5602efd141320542b8c0f343407ed90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualDescription: 
+  manualText: 
+  counter: {fileID: 2593307271129627331}
 --- !u!114 &348392508331209912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1140,6 +1172,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valuePreview: 0
   value: 0
+  minValue: 0
 --- !u!114 &3802744567224963166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1449,6 +1482,7 @@ MonoBehaviour:
   itemsInStore: 5
   alwaysInclude:
   - {fileID: 327443408366297226}
+  - {fileID: 3880144922885226804}
 --- !u!114 &226590602634041120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,6 +1569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valuePreview: 0
   value: 0
+  minValue: 0
 --- !u!114 &4234954799956342310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1693,6 +1728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Vampire Byte
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: "Deal 2 damage. \nHeal by amount of hp lost by enemy.\n<color=#ffa000ff>($7)</color>\n"
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -1928,6 +1968,15 @@ PrefabInstance:
       propertyPath: name
       value: Punch
       objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 4 damage
+
+        <color=#ffa000ff>($10)</color>
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_Enabled
@@ -2158,6 +2207,17 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Hand of Midas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage.
+
+        If kills enemy, gain 1 gold.
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -2397,6 +2457,15 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Ring of Regen
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Heal 1 after each combat.
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -2843,17 +2912,22 @@ PrefabInstance:
       propertyPath: name
       value: Cure
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Heal yourself by 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &2219565089374564815 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392506632608634}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2219565089374564814 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392506632608634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2219565089374564815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 348392506632608634}
   m_PrefabAsset: {fileID: 0}
@@ -3084,20 +3158,13 @@ PrefabInstance:
       propertyPath: name
       value: Freeze
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Stun for 2 turns
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!224 &2219565089352665775 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392506737598491}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &2219565089352665774 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392506737598491}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3841089731185345119 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -3110,6 +3177,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2219565089352665774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392506737598491}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2219565089352665775 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392506737598491}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348392506808344109
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3335,20 +3414,13 @@ PrefabInstance:
       propertyPath: name
       value: Cleave
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Deal 2 damage to all enemies in battle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &2219565089550365848 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392506808344109}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2219565089550365849 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392506808344109}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3841089731384097897 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -3361,6 +3433,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2219565089550365849 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392506808344109}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2219565089550365848 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392506808344109}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348392507000620877
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3599,20 +3683,15 @@ PrefabInstance:
       propertyPath: name
       value: Mortal Sleep
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Stun for 7 turns
+
+        Damage yourself by 2.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &2219565089073655288 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507000620877}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2219565089073655289 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507000620877}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3841089730369987849 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -3625,6 +3704,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2219565089073655289 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507000620877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2219565089073655288 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507000620877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348392507309864546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3839,6 +3930,13 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Haste
+      objectReference: {fileID: 0}
+    - target: {fileID: 7350722103531245674, guid: 32a89605d4b34804fa85fd95a9842291,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Gain 2 extra turns
+
+        3 usages'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32a89605d4b34804fa85fd95a9842291, type: 3}
@@ -4104,17 +4202,24 @@ PrefabInstance:
       propertyPath: name
       value: Bash
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 2 damage
+
+        Stun for 1 turns'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!224 &2219565089033386910 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507358875946}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2219565089033386911 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507358875946}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2219565089033386910 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 348392507358875946}
   m_PrefabAsset: {fileID: 0}
@@ -4340,17 +4445,16 @@ PrefabInstance:
       propertyPath: name
       value: Punch
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Deal 4 damage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &2219565088904624150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507370721955}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2219565088904624151 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 348392507370721955}
   m_PrefabAsset: {fileID: 0}
@@ -4366,6 +4470,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2219565088904624151 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507370721955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348392507398000639
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4590,14 +4700,16 @@ PrefabInstance:
       propertyPath: name
       value: Adaptive Strike
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: '<b>Phase 1: Deal 4 damage</b>
+
+
+        Phase 2: Deal 6 damage'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &2219565088936060234 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507398000639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2219565088936060235 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -4616,6 +4728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2219565088936060234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507398000639}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348392507677034782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4869,6 +4987,14 @@ PrefabInstance:
       propertyPath: name
       value: Warshield
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Prevents next 3 damage taken.
+
+        1 usages per battle (1 this
+        battle)'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!114 &3841089729970563930 stripped
@@ -4883,15 +5009,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2219565088674063275 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507677034782}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2219565088674063274 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507677034782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2219565088674063275 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 348392507677034782}
   m_PrefabAsset: {fileID: 0}
@@ -5114,6 +5240,11 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Toxin
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Apply 1 poison
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
@@ -5367,8 +5498,25 @@ PrefabInstance:
       propertyPath: name
       value: Bashing Hit
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Phase 1: Deal 1 damage
+
+
+        Phase 2: Deal 1 damage
+
+        Stun
+        for 1 turns'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
+--- !u!224 &2219565088401237526 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392507940949154}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2219565088401237527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -5387,12 +5535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &2219565088401237526 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392507940949154}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &348392508331209797
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5588,14 +5730,13 @@ PrefabInstance:
       propertyPath: name
       value: Strike
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Deal 5 damage
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!224 &2219565087717646065 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 348392508331209797}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3841089729584535041 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -5608,6 +5749,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2219565087717646065 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 348392508331209797}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2219565087717646064 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -5629,6 +5776,17 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Stone of Retreat
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Retreat from combat (no rewards)
+
+        3 usages
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -5853,6 +6011,259 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 358805858509093273}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &436945430484130469
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2622822727222154067}
+    m_Modifications:
+    - target: {fileID: 1242380458702886277, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Lightning Ring</b>
+
+
+        Deal 1 damage for each charge. Spend
+        all charges.
+
+        0 charges.
+
+        Gain 1 charge on enemy death.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242380458702886277, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242380458702886277, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 106
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242380458702886277, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242380458702886277, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242380458702886277, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282286870971, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_text
+      value: 9--
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.99999696
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.99999696
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.99999696
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_Name
+      value: BluntSaber
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: effects.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: effects.Array.data[0]
+      value: 
+      objectReference: {fileID: 6513607110444337861}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: name
+      value: BluntSaber
+      objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 9 damage.
+
+        Lose 1 damage after each use.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
+--- !u!1 &2020022892036976656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 436945430484130469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &2020022892036976657 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 436945430484130469}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4002469080455461089 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 436945430484130469}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020022892036976656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &471989622576196758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5868,6 +6279,20 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Lightning Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage for each charge. Spend all charges.
+
+        0 charges.
+
+        Gain
+        1 charge on enemy death.
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -6105,6 +6530,15 @@ PrefabInstance:
       propertyPath: name
       value: Toxin
       objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Apply 1 poison
+
+        <color=#ffa000ff>($7)</color>
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_Enabled
@@ -6340,6 +6774,15 @@ PrefabInstance:
       propertyPath: name
       value: Freeze
       objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Stun for 2 turns
+
+        <color=#ffa000ff>($11)</color>
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_Enabled
@@ -6554,6 +6997,260 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
     type: 3}
   m_PrefabInstance: {fileID: 965785581393481412}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &977765367234918744
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 340712306050496238}
+    m_Modifications:
+    - target: {fileID: 542319432, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: ability
+      value: 
+      objectReference: {fileID: 4002469080455461089}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: name
+      value: BluntSaber
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 9 damage.
+
+        Lose 1 damage after each use.
+
+        <color=#ffa000ff>($7)</color>
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_text
+      value: '<b>Hand of Midas</b>
+
+
+        Deal 1 damage.
+
+        If kills enemy,
+        gain 1 gold.
+
+        <color=#ffa000ff>($7)</color>
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 3705801370063718237, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 15.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_text
+      value: ^ 9--<color=#a01a24ff>($7)</color>
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 25.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 104
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638177704045, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_Name
+      value: Buy BluntSaber
+      objectReference: {fileID: 0}
+    - target: {fileID: 4055688638774625123, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+--- !u!224 &3880144922885226804 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+    type: 3}
+  m_PrefabInstance: {fileID: 977765367234918744}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1006000340481310404
 PrefabInstance:
@@ -6778,17 +7475,19 @@ PrefabInstance:
       propertyPath: name
       value: Scratch
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Phase 1: Deal 2 damage
+
+
+        Phase 2: Deal 1 damage'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &1724527265581536369 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1006000340481310404}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &1724527265581536368 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 1006000340481310404}
   m_PrefabAsset: {fileID: 0}
@@ -6804,6 +7503,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1724527265581536368 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1006000340481310404}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1384701396103512378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6819,6 +7524,18 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Warshield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Prevents next 3 damage taken.
+
+        1 usages per battle (1 this
+        battle)
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7057,6 +7774,15 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Anger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Increase all damage dealt by 1 until end of battle
+
+        <color=#ffa000ff>($8)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7517,17 +8243,24 @@ PrefabInstance:
       propertyPath: name
       value: Stone of Retreat
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Retreat from combat (no rewards)
+
+        3 usages'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &412126491072962128 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 2279082338679223525}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &412126491072962129 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 2279082338679223525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &412126491072962128 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 2279082338679223525}
   m_PrefabAsset: {fileID: 0}
@@ -7558,6 +8291,17 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Bash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 2 damage
+
+        Stun for 1 turns
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7791,6 +8535,19 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Bandage
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Heal yourself by 3
+
+        3 usages
+
+        Out of battle only.
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -8256,8 +9013,24 @@ PrefabInstance:
       propertyPath: effects.Array.data[2]
       value: 
       objectReference: {fileID: 2798038553345316393}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 2 damage
+
+        Deal 2 damage
+
+        1 usages per battle (1
+        this battle)'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
+--- !u!1 &4454885305543571460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 2867149222483972785}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4454885305543571461 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -8276,12 +9049,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &4454885305543571460 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 2867149222483972785}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2921130888606584596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8547,6 +9314,13 @@ PrefabInstance:
       propertyPath: name
       value: Hand of Midas
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage.
+
+        If kills enemy, gain 1 gold.'
+      objectReference: {fileID: 0}
     - target: {fileID: 6361225435359322550, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Enabled
@@ -8802,17 +9576,19 @@ PrefabInstance:
       propertyPath: name
       value: Prepared Strike
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: '<b>Phase 1: Deal 0 damage</b>
+
+
+        Phase 2: Deal 12 damage'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &3661323686000071814 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 2942932952708546099}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3661323686000071815 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 2942932952708546099}
   m_PrefabAsset: {fileID: 0}
@@ -8828,6 +9604,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &3661323686000071815 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 2942932952708546099}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2955467126575373493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8847,6 +9629,18 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Prepared Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: '<b>Phase 1: Deal 0 damage</b>
+
+
+        Phase 2: Deal 12 damage
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -9086,6 +9880,17 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Haste
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Gain 2 extra turns
+
+        3 usages
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -9549,20 +10354,15 @@ PrefabInstance:
       propertyPath: name
       value: Feed
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage.
+
+        If kills enemy, gain 1 max hp.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &3145956693386464777 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 3580477573926872252}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &3145956693386464776 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 3580477573926872252}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &12277712817047288 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -9575,6 +10375,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &3145956693386464776 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 3580477573926872252}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3145956693386464777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 3580477573926872252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3667475366068963972
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9594,6 +10406,21 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Bashing Hit
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Phase 1: Deal 1 damage
+
+
+        Phase 2: Deal 1 damage
+
+        Stun
+        for 1 turns
+
+        <color=#ffa000ff>($5)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -9835,6 +10662,15 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Divine Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Gain 1 bubble on battle start
+
+        <color=#ffa000ff>($9)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -10311,20 +11147,17 @@ PrefabInstance:
       propertyPath: name
       value: Bandage
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Heal yourself by 3
+
+        3 usages
+
+        Out of battle only.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &2756453720156890546 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 4348264602442174215}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2756453720156890547 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 4348264602442174215}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &991869988347063619 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -10337,6 +11170,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2756453720156890547 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 4348264602442174215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2756453720156890546 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 4348264602442174215}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4378593262338578662
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10356,6 +11201,20 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Splitting Suriken
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 2 damage
+
+        Deal 2 damage
+
+        1 usages per battle (1
+        this battle)
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -10599,6 +11458,18 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Scratch
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Phase 1: Deal 2 damage
+
+
+        Phase 2: Deal 1 damage
+
+        <color=#ffa000ff>($5)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -11076,6 +11947,11 @@ PrefabInstance:
       propertyPath: name
       value: Vampire Byte
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: "Deal 2 damage. \nHeal by amount of hp lost by enemy."
+      objectReference: {fileID: 0}
     - target: {fileID: 6361225435359322550, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Enabled
@@ -11083,12 +11959,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &2733961292832283330 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 4604997536671232119}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &2733961292832283331 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -11107,6 +11977,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2733961292832283330 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 4604997536671232119}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4968395528874671133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11347,6 +12223,11 @@ PrefabInstance:
       propertyPath: name
       value: Ring of Regen
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Heal 1 after each combat.
+      objectReference: {fileID: 0}
     - target: {fileID: 6361225435359322550, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Enabled
@@ -11366,15 +12247,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6839717668284487337 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 4968395528874671133}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6839717668284487336 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 4968395528874671133}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6839717668284487337 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 4968395528874671133}
   m_PrefabAsset: {fileID: 0}
@@ -11633,6 +12514,11 @@ PrefabInstance:
       propertyPath: name
       value: Divine Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Gain 1 bubble on battle start
+      objectReference: {fileID: 0}
     - target: {fileID: 6361225435359322550, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Enabled
@@ -11640,6 +12526,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
+--- !u!1 &5213755675328295005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 5927366830370282216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5213755675328295004 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -11658,12 +12550,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &5213755675328295005 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 5927366830370282216}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5935747251481653951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11683,6 +12569,20 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Fire Ring
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage. Gain an extra turn. Spend 1 charge.
+
+        0 charges.
+
+        Gain
+        1 charge on enemy death.
+
+        <color=#ffa000ff>($8)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -11919,6 +12819,17 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Mortal Sleep
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Stun for 7 turns
+
+        Damage yourself by 2.
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -12180,6 +13091,17 @@ PrefabInstance:
       propertyPath: effects.Array.data[2]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Heal yourself by 1
+
+        1 usages
+
+        Out of battle only.
+
+        <color=#ffa000ff>($1)</color>'
+      objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_Enabled
@@ -12425,6 +13347,15 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Cleave
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 2 damage to all enemies in battle
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -12866,14 +13797,18 @@ PrefabInstance:
       propertyPath: name
       value: Fire Ring
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage. Gain an extra turn. Spend 1 charge.
+
+        0 charges.
+
+        Gain
+        1 charge on enemy death.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &5000033491607490324 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 6880207668006086049}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7989561154938554341 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
@@ -12889,6 +13824,12 @@ MonoBehaviour:
 --- !u!224 &5000033491607490325 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 6880207668006086049}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5000033491607490324 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 6880207668006086049}
   m_PrefabAsset: {fileID: 0}
@@ -13151,6 +14092,13 @@ PrefabInstance:
       propertyPath: name
       value: Medical Treatment
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: '<color=#ffa000ff>($3)</color>
+
+        Full heal'
+      objectReference: {fileID: 0}
     - target: {fileID: 5755431578134616118, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -13189,6 +14137,15 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 5 damage
+
+        <color=#ffa000ff>($12)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -13626,6 +14583,11 @@ PrefabInstance:
       propertyPath: name
       value: Anger
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: Increase all damage dealt by 1 until end of battle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &9200907462041245300 stripped
@@ -13671,6 +14633,18 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Adaptive Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: '<b>Phase 1: Deal 4 damage</b>
+
+
+        Phase 2: Deal 6 damage
+
+        <color=#ffa000ff>($14)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -14111,11 +15085,27 @@ PrefabInstance:
       propertyPath: name
       value: Lightning Ring
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage for each charge. Spend all charges.
+
+        0 charges.
+
+        Gain
+        1 charge on enemy death.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &8145093920851847363 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 7715203100287992438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8145093920851847362 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 7715203100287992438}
   m_PrefabAsset: {fileID: 0}
@@ -14131,12 +15121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 354f965447e92be47951e3bae4dcbb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &8145093920851847362 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 7715203100287992438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8342818689877194642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14405,6 +15389,13 @@ PrefabInstance:
       propertyPath: name
       value: Skin Improvement
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Gain +1 max hp
+
+        <color=#ffa000ff>($3)</color>'
+      objectReference: {fileID: 0}
     - target: {fileID: 6361225435359322550, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Enabled
@@ -14439,6 +15430,17 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Feed
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Deal 1 damage.
+
+        If kills enemy, gain 1 max hp.
+
+        <color=#ffa000ff>($7)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -14923,6 +15925,15 @@ PrefabInstance:
       propertyPath: name
       value: Crackers
       objectReference: {fileID: 0}
+    - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Heal yourself by 1
+
+        1 usages
+
+        Out of battle only.'
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!114 &5191493161874945677 stripped
@@ -14962,6 +15973,15 @@ PrefabInstance:
         type: 3}
       propertyPath: name
       value: Cure
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: descriptionPreview
+      value: 'Heal yourself by 3
+
+        <color=#ffa000ff>($9)</color>
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}

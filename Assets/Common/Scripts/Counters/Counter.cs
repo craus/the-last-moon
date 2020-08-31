@@ -8,12 +8,19 @@ public class Counter : IntValueProvider {
 
 	public override int Value => value;
 
+	public int minValue = int.MinValue;
+
 	public void Increment() {
 		value += 1;
 	}
+
 	public void Decrement() {
 		value -= 1;
+		if (value < minValue) {
+			value = minValue;
+		}
 	}
+
 	public void Reset() {
 		value = 0;
 	}
