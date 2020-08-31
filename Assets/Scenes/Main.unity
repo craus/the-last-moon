@@ -423,6 +423,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Global UI
       objectReference: {fileID: 0}
+    - target: {fileID: 5279149875028140030, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279149875028140030, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5327671488039976159, guid: 17926061893674a43a25b43106fcff55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -477,6 +487,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122945860426982964, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9122945860426982964, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17926061893674a43a25b43106fcff55, type: 3}
