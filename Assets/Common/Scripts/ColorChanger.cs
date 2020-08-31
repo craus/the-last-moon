@@ -2,16 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class ColorChanger : MonoBehaviour {
-	public ValueProvider<Color> provider;
+	public ColorProvider provider;
 
-	[SerializeField]
-	new Renderer renderer;
+	[SerializeField] private new Renderer renderer;
+	[SerializeField] private Button button;
+
+	[SerializeField] private ColorBlock buttonColorBlock;
+
+	[SerializeField] private bool checkOnUpdate = true;
 
 	public void Awake() {
 		renderer = GetComponent<Renderer>();
-		provider = GetComponent<ValueProvider<Color>>();
+		provider = GetComponent<ColorProvider>();
+		button = GetComponent<Button>();
+		if (button != null) {
+			buttonColorBlock = button.colors;
+		}
 	}
 
 	public void Start() {
@@ -20,6 +29,27 @@ public class ColorChanger : MonoBehaviour {
 	}
 
 	void ProviderOnChange() {
-		renderer.material.color = provider.Value;
+		UpdateColor();
+	}
+
+	void UpdateColor() {
+		if (renderer != null) {
+			renderer.material.color = provider.Value;
+		}
+		if (button != null) {
+			var newColorBlock = buttonColorBlock;
+			newColorBlock.highlightedColor *= provider.Value;
+			newColorBlock.disabledColor *= provider.Value;
+			newColorBlock.normalColor *= provider.Value;
+			newColorBlock.pressedColor *= provider.Value;
+			newColorBlock.selectedColor *= provider.Value;
+			button.colors = newColorBlock;
+		}
+	}
+
+	private void Update() {
+		if (checkOnUpdate) {
+			UpdateColor();
+		}
 	}
 }
