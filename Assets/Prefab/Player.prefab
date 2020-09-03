@@ -283,9 +283,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2099382358419027738}
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1176026642558277189}
+        m_MethodName: Show
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -577,6 +577,7 @@ GameObject:
   - component: {fileID: 8321109215096540332}
   - component: {fileID: 7345118999474601749}
   - component: {fileID: 8324401671286047359}
+  - component: {fileID: 1176026642558277189}
   m_Layer: 5
   m_Name: Skill Tree
   m_TagString: Untagged
@@ -595,10 +596,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5995339975723166722}
   - {fileID: 5876436003809148791}
   - {fileID: 4932481356562322597}
   - {fileID: 1029631373916985426}
+  - {fileID: 5995339975723166722}
   m_Father: {fileID: 8153623341013605910}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -653,6 +654,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1176026642558277189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099382358419027738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 287025ea44f334f4585fa2452f6b7751, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hiddenDevPart: {fileID: 2797601122529305964}
 --- !u!1 &2699706208683275936
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,7 +768,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403005676166068573}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -820,7 +834,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403005676166068573}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1352,7 +1366,7 @@ RectTransform:
   - {fileID: 6401058365726532737}
   - {fileID: 2141906655}
   m_Father: {fileID: 403005676166068573}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1594,7 +1608,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403005676166068573}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2437,6 +2451,8 @@ MonoBehaviour:
   stunned: 0
   armor: 0
   regeneration: 0
+  counterattack: 0
+  counterattackOn: 0
   protectionUntilEndOfCombat: 0
   bubbles: 0
   away: 0
@@ -3526,15 +3542,15 @@ PrefabInstance:
       objectReference: {fileID: 4734444141951220626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!224 &5493671933839429481 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 6207567873803658717}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5493671933839429480 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 6207567873803658717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &5493671933839429481 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 6207567873803658717}
   m_PrefabAsset: {fileID: 0}

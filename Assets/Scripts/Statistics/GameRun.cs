@@ -11,4 +11,8 @@ public class GameRun
     public GameRun(int day) {
         deathDay = day;
     }
+
+    public string Text() {
+        return $"Killed on day {deathDay}";
+    }
 }
