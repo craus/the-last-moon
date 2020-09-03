@@ -10,7 +10,8 @@ public static class Statistics
         var result = FileManager.LoadFromFile<SaveFileState>(SAVE_FILE_NAME);
         if (result == null) {
             DebugManager.LogFormat("No save file detected; creating new save file");
-            return new SaveFileState();
+            result = new SaveFileState();
+            Save(result);
         }
         return result;
     }
