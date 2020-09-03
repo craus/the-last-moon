@@ -17,7 +17,7 @@ public class Player : Creature
     }
 
     public override void Die(AbilityEffect source) {
-        
+        Game.instance.EndGame();
     }
 
     public void GainAbility(Ability a) {

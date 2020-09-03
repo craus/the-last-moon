@@ -25,6 +25,11 @@ public static class Extensions
         return func(obj);
     }
 
+    public static TObject Tap<TObject>(this TObject obj, Action<TObject> action) {
+        action(obj);
+        return obj;
+    }
+
     public static List<T> Sorted<T>(this List<T> list)
     {
         List<T> result = new List<T>(list);

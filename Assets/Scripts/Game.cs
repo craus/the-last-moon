@@ -76,6 +76,10 @@ public class Game : Singletone<Game>
         }
     }
 
+    public void EndGame() {
+        Statistics.RegisterRun(new GameRun(day));
+    }
+
     public void Start() {
         GlobalEvents.instance.onGameStart.Invoke(this);
         NewStore();

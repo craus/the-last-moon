@@ -82,6 +82,12 @@ public class MonsterSpawner : Monster
             mana -= 1;
             return;
         }
+        if (Rand.rndEvent(0.1f)) {
+            m.counterattackOn = true;
+            m.counterattack += 1;
+            mana -= 1;
+            return;
+        }
         if (Rand.rndEvent(0.1f) && m.hp - 1 > -m.armor) {
             m.armor -= 1;
             mana += 1;

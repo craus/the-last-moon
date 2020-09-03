@@ -17,6 +17,8 @@ public class Creature : MonoBehaviour
     public int stunned = 0;
     public int armor = 0;
     public int regeneration = 0;
+    public int counterattack = 0;
+    public bool counterattackOn = false;
     public int protectionUntilEndOfCombat = 0;
     public int bubbles = 0;
     public int away = 0;
@@ -70,16 +72,21 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public void Hit(Creature attacker, int damage = 1, AbilityEffect source = null) {
+    public void Hit(Creature attacker, int damage = 1, AbilityEffect source = null, DamageType damageType = DamageType.Default) {
         if (away > 0) {
             return;
         }
-        damage += attacker.attack;
+        if (damageType != DamageType.Thorns) {
+            damage += attacker.attack;
+        }
         damage -= armor;
         damage = Mathf.Clamp(damage, 0, int.MaxValue);
         ApplyBubbles(ref damage, ref bubbles);
         ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
         LoseHp(damage, source, attacker);
+        if (counterattackOn && damageType != DamageType.Thorns) {
+            attacker.Hit(this, counterattack, damageType: DamageType.Thorns);
+        }
     }
 
     public void LoseHp(int damage = 1, AbilityEffect source = null, Creature attacker = null) {
