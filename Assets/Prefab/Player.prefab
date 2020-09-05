@@ -667,6 +667,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hiddenDevPart: {fileID: 2797601122529305964}
+  onShow:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2699706208683275936
 GameObject:
   m_ObjectHideFlags: 0
@@ -1053,7 +1056,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: $20
+  m_text: $10
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2440,7 +2443,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857cc0d28014dfb40a2ec8ae890daf22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gold: 20
+  gold: 10
   experience: 0
   level: 0
   skillPoints: 0
@@ -2449,15 +2452,11 @@ MonoBehaviour:
   maxHp: 4
   maxedHp: 0
   stunned: 0
-  armor: 0
   regeneration: 0
-  counterattack: 0
   counterattackOn: 0
-  protectionUntilEndOfCombat: 0
-  bubbles: 0
-  away: 0
-  attack: 0
+  slow: 0
   buffs: []
+  m_buffsFolder: {fileID: 0}
   abilitiesFolder: {fileID: 8153623341690177901}
 --- !u!1 &8153623341690177902
 GameObject:
