@@ -1,0 +1,13 @@
+Текущий порядок модификаторов атаки:
+
+Away 30
+IncreasedAttack 40
+Armor 50
+PreventNextDamageDealtTo 60
+Bubble 70
+Protection 80
+  ProtectionUntilEndOfCombat
+LoseHpFromAttack 90
+CounterAttack 100
+AttackReduceArmor 110
+AttackApplyBuff 120

@@ -77,7 +77,7 @@ public class MonsterSpawner : Monster
 
     void BuffMonster(Monster m, ref float mana) {
         if (Rand.rndEvent(0.07f)) {
-            m.bubbles++;
+            m.ApplyBuff<Bubble>();
             mana -= 1.3f;
             return;
         }
@@ -87,13 +87,12 @@ public class MonsterSpawner : Monster
             return;
         }
         if (Rand.rndEvent(0.1f)) {
-            m.armor += 1;
+            m.ApplyBuff<Armor>(1);
             mana -= 1;
             return;
         }
         if (Rand.rndEvent(0.1f)) {
-            m.counterattackOn = true;
-            m.counterattack += 1;
+            m.ApplyBuff<CounterAttack>(1);
             mana -= 1;
             return;
         }
@@ -108,13 +107,13 @@ public class MonsterSpawner : Monster
     }
 
     void DebuffMonster(Monster m, ref float mana) {
-        if (Rand.rndEvent(0.1f / (1 + m.away))) {
-            m.away += 1;
-            mana += 1f / (1 + m.away);
+        if (Rand.rndEvent(0.1f / (1 + m.buffPower<Away>()))) {
+            m.ApplyBuff<Away>(1);
+            mana += 1f / (1 + m.buffPower<Away>());
             return;
         }
-        if (Rand.rndEvent(0.1f) && m.hp - 1 > -m.armor) {
-            m.armor -= 1;
+        if (Rand.rndEvent(0.1f) && m.hp - 1 > -m.buffPower<Armor>()) {
+            m.ApplyBuff<Armor>(-1);
             mana += 1;
             return;
         }

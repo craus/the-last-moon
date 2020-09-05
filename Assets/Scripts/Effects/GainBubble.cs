@@ -6,7 +6,7 @@ public class GainBubble : CreatureEffect
 {
     public override void Run() {
         if (Creature != null) {
-            Creature.bubbles++;
+            Creature.ApplyBuff<Bubble>();
         }
     }
 }

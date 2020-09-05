@@ -11,12 +11,12 @@ public class CreatureText : MonoBehaviour
 
     public static string StatusString(Creature creature) {
         return "{regeneration}{protection}{armor}{counterattack}{bubbles}{stunned}{slow}".i(new Dictionary<string, object>() {
-            { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
+            { "protection", ProtectionString(creature.buffPower<Protection>()) },
             { "stunned", StunString(creature.stunned) },
             { "slow", SlowString(creature.slow) },
-            { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
-            { "counterattack", creature.counterattackOn ? "C{0}".i(creature.counterattack) : "" },
-            { "bubbles", creature.bubbles > 0 ? "()".repeat(creature.bubbles) : "" },
+            { "armor", creature.buffPower<Armor>() > 0 ? "A{0}".i(creature.buffPower<Armor>()) : creature.buffPower<Armor>() < 0 ? "V{0}".i(-creature.buffPower<Armor>()) : "" },
+            { "counterattack", creature.buff<CounterAttack>() != null ? "C{0}".i(creature.buffPower<CounterAttack>()) : "" },
+            { "bubbles", creature.buffPower<Bubble>() > 0 ? "()".repeat(creature.buffPower<Bubble>()) : "" },
             { "regeneration", RegenerationString(creature.regeneration) },
         });
     }
@@ -48,18 +48,18 @@ public class CreatureText : MonoBehaviour
             { "experienceForLevel", "{0}".i(creature.NextLevelCost) },
             { "level", "{0}".i(creature.level) },
             { "skillPoints", "{0}".i(creature.skillPoints) },
-            { "away", "<".repeat(creature.away) },
-            { "damage", creature.damage + creature.attack },
-            { "attack", AttackString(creature.attack) },
+            { "away", "<".repeat(creature.buffPower<Away>()) },
+            { "damage", creature.damage + creature.buffPower<Attack>() },
+            { "attack", AttackString(creature.buffPower<Attack>()) },
             { "hp", creature.hp },
             { "maxHp", creature.maxHp },
-            { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
+            { "protection", ProtectionString(creature.buffPower<Protection>()) },
             { "hpStatus", creature.Alive ? "{0}/{1}".i(creature.hp, creature.maxHp) : "DEAD" },
             { "stunned", StunString(creature.stunned) },
             { "slow", SlowString(creature.slow) },
-            { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
-            { "counterattack", creature.counterattackOn ? "C{0}".i(creature.counterattack) : "" },
-            { "bubble", "()".repeat(creature.bubbles) },
+            { "armor", creature.buffPower<Armor>() > 0 ? "A{0}".i(creature.buffPower<Armor>()) : creature.buffPower<Armor>() < 0 ? "V{0}".i(-creature.buffPower<Armor>()) : "" },
+            { "counterattack", creature.buff<CounterAttack>() != null ? "C{0}".i(creature.buffPower<CounterAttack>()) : "" },
+            { "bubble", "()".repeat(creature.buffPower<Bubble>()) },
             { "regeneration", RegenerationString(creature.regeneration) },
             { "status", StatusString(creature) },
         });

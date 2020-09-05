@@ -8,4 +8,7 @@ public abstract class CreatureEffect : Common.Effect
     [SerializeField] private CreatureProvider creatureProvider;
 
     public Creature Creature => creatureProvider != null ? creatureProvider.Value : creature;
+
+    public virtual void Run(Creature creature) {
+    }
 }

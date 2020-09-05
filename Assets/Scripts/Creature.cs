@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -15,17 +16,58 @@ public class Creature : MonoBehaviour
     public int maxHp = 1;
     public bool maxedHp = true;
     public int stunned = 0;
-    public int armor = 0;
     public int regeneration = 0;
-    public int counterattack = 0;
     public bool counterattackOn = false;
-    public int protectionUntilEndOfCombat = 0;
-    public int bubbles = 0;
-    public int away = 0;
     public int slow = 0;
-    public int attack = 0;
     public bool Alive => hp > 0;
     public bool Dead => !Alive;
+
+    public Action<Creature, Creature, int> beforeAttack = (a, b, d) => { };
+    public Action<Creature, Creature, int> afterAttack = (a, b, d) => { };
+
+    public List<Buff> buffs = new List<Buff>();
+    public Transform buffsFolder;
+
+    public int buffPower<T>() {
+        return buffs.Where(b => b is T).Sum(b => b.power);
+    }
+
+    public Buff buff<T>() {
+        return buffs.FirstOrDefault(b => b is T);
+    }
+
+    public void ApplyBuff<T>(int power = 1) where T : Buff {
+        var buff = buffs.FirstOrDefault(b => b.GetType() == typeof(T));
+        if (buff == null) {
+            ApplyNewBuff<T>(power);
+        } else {
+            buff.power += power;
+            buff.ExpireCheck();
+        }
+    }
+
+    public Buff ApplyNewBuff<T>(int power = 1) where T : Buff {
+        var go = new GameObject(typeof(T).Name);
+        if (buffsFolder == null) {
+            var bfgo = new GameObject("Buffs");
+            bfgo.transform.SetParent(transform);
+            buffsFolder = bfgo.transform;
+        }
+        go.transform.SetParent(buffsFolder);
+        var buff = go.AddComponent<T>();
+        buff.power = power;
+        buff.owner = this;
+        buffs.Add(buff);
+        return buff;
+    }
+
+    //public int armor => buffPower<Armor>();
+    //public int protection => buffPower<Armor>();
+    //public int attack => buffPower<Armor>();
+    //public int away => buffPower<Armor>();
+    //public int counterAttack => buffPower<Armor>();
+
+    public bool Targetable => buffPower<Away>() == 0;
 
     public static int LevelCost(int level) {
         return level * 5;
@@ -47,51 +89,31 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public Action<Creature, Creature, int> beforeAttack = (a,b,d) => { };
-    public Action<Creature, Creature, int> afterAttack = (a, b, d) => { };
-
-    public List<Buff> buffs = new List<Buff>();
-
-    public bool Targetable => away == 0;
-
     private void OnValidate() {
         if (maxedHp && maxHp != hp) {
             maxHp = hp;
         }
     }
 
-    public void ApplyProtection(ref int damage, ref int protection) {
-        var value = Mathf.Min(damage, protection);
-        damage -= value;
-        protection -= value;
-    }
-
-    public void ApplyBubbles(ref int damage, ref int bubbles) {
-        if (damage > 0 && bubbles > 0) {
-            damage = 0;
-            bubbles--;
-        }
-    }
-
     public void Hit(Creature attacker, int damage = 1, AbilityEffect source = null, DamageType damageType = DamageType.Default) {
-        if (away > 0) {
-            return;
+        var attack = new Attack(attacker, this, damage, source, damageType);
+
+        IEnumerable<IAttackModifier> attackModifiers =
+            attacker.buffs.Where(b => b is IAttackModifier)
+            .Concat(buffs.Where(b => b is IAttackModifier))
+            .Cast<IAttackModifier>();
+
+        foreach (var am in attackModifiers.OrderBy(am => am.Priority)) {
+            am.ModifyAttack(attack);
+            if (attack.interrupted) {
+                break;
+            }
         }
-        if (damageType != DamageType.Thorns) {
-            damage += attacker.attack;
-        }
-        damage -= armor;
-        damage = Mathf.Clamp(damage, 0, int.MaxValue);
-        ApplyBubbles(ref damage, ref bubbles);
-        ApplyProtection(ref damage, ref protectionUntilEndOfCombat);
-        LoseHp(damage, source, attacker);
-        if (counterattackOn && damageType != DamageType.Thorns) {
-            attacker.Hit(this, counterattack, damageType: DamageType.Thorns);
-        }
+
         GameManager.instance.ExecutePlannedActions();
     }
 
-    public void LoseHp(int damage = 1, AbilityEffect source = null, Creature attacker = null) {
+    public void LoseHp(int damage, AbilityEffect source = null, Creature attacker = null) {
         if (damage > hp) {
             damage = hp;
         }
@@ -171,8 +193,8 @@ public class Creature : MonoBehaviour
         }
         if (stunned > 0) {
             stunned--;
-        } else if (away > 0) {
-            away--;
+        } else if (buffPower<Away>() > 0) {
+            buff<Away>().Spend();
         } else {
             TakeAction();
         }
@@ -188,6 +210,12 @@ public class Creature : MonoBehaviour
 
     public virtual void Start() {
         GlobalEvents.instance.onBattleEnd += OnBattleEnd;
+        OnSpawn();
+    }
+
+    public virtual void OnSpawn() {
+        GlobalEvents.instance.onSpawn(this);
+        ApplyBuff<LoseHpFromAttack>();
     }
 
     public void OnDestroy() {
@@ -197,10 +225,10 @@ public class Creature : MonoBehaviour
     }
 
     protected virtual void OnBattleEnd(Battle b) {
-        protectionUntilEndOfCombat = 0;
-        bubbles = 0;
-        away = 0;
-        attack = 0;
+        buff<ProtectionUntilEndOfCombat>()?.Expire();
+        buff<IncreasedAttack>()?.Expire();
+        buff<Bubble>()?.Expire();
+        buff<Away>()?.Expire();
     }
 
     public virtual string Text() {

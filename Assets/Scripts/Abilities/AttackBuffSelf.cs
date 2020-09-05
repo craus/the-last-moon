@@ -7,7 +7,7 @@ public class AttackBuffSelf : NonTargetEffect
     public int attack;
 
     public override void Use(Creature user) {
-        user.attack += attack;
+        user.ApplyBuff<IncreasedAttack>(attack);
     }
 
     public override string Text(Creature user) {

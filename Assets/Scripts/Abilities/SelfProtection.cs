@@ -7,7 +7,7 @@ public class SelfProtection : NonTargetEffect
     public int protection;
 
     public override void Use(Creature user) {
-        user.protectionUntilEndOfCombat += protection;
+        user.ApplyBuff<ProtectionUntilEndOfCombat>(protection);
     }
 
     public override string Text(Creature user) {
