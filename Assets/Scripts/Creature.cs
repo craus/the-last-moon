@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RSG;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -185,21 +186,23 @@ public class Creature : MonoBehaviour
         ability.Use(this, target);
     }
 
-    public virtual void MakeMove() {
+    public virtual IPromise MakeMove() {
         if (!Battle.On) {
-            return;
+            return Promise.Resolved();
         }
         if (Dead) {
-            return;
+            return Promise.Resolved();
         }
-        if (stunned > 0) {
-            stunned--;
-        } else if (buffPower<Away>() > 0) {
-            buff<Away>().Spend();
-        } else {
-            TakeAction();
-        }
-        AfterMove();
+        return TimeManager.Wait(0.25f).Then(() => {
+            if (stunned > 0) {
+                stunned--;
+            } else if (buffPower<Away>() > 0) {
+                buff<Away>().Spend();
+            } else {
+                TakeAction();
+            }
+            AfterMove();
+        });
     }
 
     public virtual void AfterMove() {

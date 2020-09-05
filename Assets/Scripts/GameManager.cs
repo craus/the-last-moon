@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RSG;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,16 @@ using UnityEngine;
 public class GameManager : Singletone<GameManager>
 {
     private Queue<Action> plannedActions = new Queue<Action>();
+
+    private IPromise currentProcess;
+
+    private void InitializeProcessQueue() {
+        currentProcess = Promise.Resolved();
+    }
+
+    public void PlanProcess(Func<IPromise> process) {
+        currentProcess = currentProcess.Then(process);
+    }
 
     public void ExecutePlannedActions() {
         for (int i = 0; i < 10000 && plannedActions.Count() > 0; i++) {
@@ -23,6 +34,8 @@ public class GameManager : Singletone<GameManager>
     public Game game;
 
     public void Awake() {
+        InitializeProcessQueue();
+
         game = FindObjectOfType<Game>();
     }
 

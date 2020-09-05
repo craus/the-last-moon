@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RSG;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +42,7 @@ public class Player : Creature
 
     public void MakeMove(Ability a, Creature target) {
         plannedAction = () => UseAbility(a, target);
-        MakeMove();
+        GameManager.instance.PlanProcess(MakeMove);
     }
 
     public override void AfterMove() {
@@ -50,7 +51,7 @@ public class Player : Creature
         if (stunned < 0) {
             stunned++;
         } else {
-            FindObjectsOfType<Monster>().ForEach(m => m.MakeMove());
+            FindObjectsOfType<Monster>().ForEach(m => GameManager.instance.PlanProcess(m.MakeMove));
         }
     }
 
