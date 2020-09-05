@@ -5,14 +5,28 @@ using UnityEngine;
 
 public class Buff : MonoBehaviour
 {
-    public Creature owner;
+    [SerializeField] private Creature m_owner;
+
+    public Creature owner {
+        get {
+            return m_owner;
+        }
+        set {
+            if (m_owner != null) {
+                m_owner.buffs.Remove(this);
+            }
+            m_owner = value;
+            if (m_owner != null) {
+                m_owner.buffs.Add(this);
+            }
+        }
+    }
 
     public int power = 1;
 
     public Buff ApplyNew(Creature target) {
         var buff = Instantiate(this, target.buffsFolder);
-        owner = target;
-        target.buffs.Add(buff);
+        buff.owner = target;
         return buff;
     }
 
@@ -41,13 +55,13 @@ public class Buff : MonoBehaviour
     }
 
     public void OnDestroy() {
-        owner.buffs.Remove(this);
+        owner = null;
     }
 
     public void UntilEndOfBattle() {
     }
 
     public virtual string Text() {
-        return "Buff";
+        return "";
     }
 }

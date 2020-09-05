@@ -26,7 +26,19 @@ public class Creature : MonoBehaviour
     public Action<Creature, Creature, int> afterAttack = (a, b, d) => { };
 
     public List<Buff> buffs = new List<Buff>();
-    public Transform buffsFolder;
+
+    [SerializeField] private Transform m_buffsFolder;
+
+    public Transform buffsFolder {
+        get {
+            if (m_buffsFolder == null) {
+                var bfgo = new GameObject("Buffs");
+                bfgo.transform.SetParent(transform);
+                m_buffsFolder = bfgo.transform;
+            }
+            return m_buffsFolder;
+        }
+    }
 
     public int buffPower<T>() {
         return buffs.Where(b => b is T).Sum(b => b.power);
@@ -48,16 +60,10 @@ public class Creature : MonoBehaviour
 
     public Buff ApplyNewBuff<T>(int power = 1) where T : Buff {
         var go = new GameObject(typeof(T).Name);
-        if (buffsFolder == null) {
-            var bfgo = new GameObject("Buffs");
-            bfgo.transform.SetParent(transform);
-            buffsFolder = bfgo.transform;
-        }
         go.transform.SetParent(buffsFolder);
         var buff = go.AddComponent<T>();
         buff.power = power;
         buff.owner = this;
-        buffs.Add(buff);
         return buff;
     }
 
@@ -233,5 +239,9 @@ public class Creature : MonoBehaviour
 
     public virtual string Text() {
         return name;
+    }
+
+    public override string ToString() {
+        return Text();
     }
 }

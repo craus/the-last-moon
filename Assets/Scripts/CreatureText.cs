@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -10,7 +11,7 @@ public class CreatureText : MonoBehaviour
     public string format = "{0}/{1}";
 
     public static string StatusString(Creature creature) {
-        return "{regeneration}{protection}{armor}{counterattack}{bubbles}{stunned}{slow}".i(new Dictionary<string, object>() {
+        return "{regeneration}{protection}{armor}{counterattack}{bubbles}{stunned}{slow}{buffs}".i(new Dictionary<string, object>() {
             { "protection", ProtectionString(creature.buffPower<Protection>()) },
             { "stunned", StunString(creature.stunned) },
             { "slow", SlowString(creature.slow) },
@@ -18,6 +19,7 @@ public class CreatureText : MonoBehaviour
             { "counterattack", creature.buff<CounterAttack>() != null ? "C{0}".i(creature.buffPower<CounterAttack>()) : "" },
             { "bubbles", creature.buffPower<Bubble>() > 0 ? "()".repeat(creature.buffPower<Bubble>()) : "" },
             { "regeneration", RegenerationString(creature.regeneration) },
+            { "buffs", creature.buffs.Select(b => b.Text()).Join() },
         });
     }
 

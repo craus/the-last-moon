@@ -8,14 +8,20 @@ using UnityEngine;
 /// </summary>
 public class PreventNextDamageDealtTo : Buff, IAttackModifier
 {
-    public Creature target;
+    public CreatureProvider target;
 
     public int Priority => 60;
 
     public void ModifyAttack(Attack attack) {
-        if (attack.attacker == owner && attack.victim == target) {
+        DebugManager.LogFormat("PreventNextDamageDealtTo.ModifyAttack");
+        if (attack.attacker == owner && attack.victim == target.Value) {
+            DebugManager.LogFormat("attack.attacker == owner && attack.victim == target.Value");
             attack.damage = 0;
             Spend();
         }
+    }
+
+    public override string Text() {
+        return "!";
     }
 }
