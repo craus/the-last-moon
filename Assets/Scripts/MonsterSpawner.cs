@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using RSG;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -52,9 +53,15 @@ public class MonsterSpawner : Monster
         GameLog.Message($"Battle started - Day {Game.instance.day}");
         GameLog.LogMonsters();
 
-        GlobalEvents.instance.onBattleStart.Invoke(Battle.instance);
+        GameManager.instance.PlanProcess(StartBattle);
 
-        GameLog.LogBattleRound();
+    }
+
+    public IPromise StartBattle() {
+        return TimeManager.Wait(0.25f).Then(() => {
+            GlobalEvents.instance.onBattleStart.Invoke(Battle.instance);
+            GameLog.LogBattleRound();
+        });
     }
 
     Monster NewMonster() {
