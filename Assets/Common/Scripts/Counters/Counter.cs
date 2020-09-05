@@ -21,6 +21,10 @@ public class Counter : IntValueProvider {
 		}
 	}
 
+	public void SetValue(int value) {
+		this.value = value;
+	}
+
 	public void Reset() {
 		value = 0;
 	}
