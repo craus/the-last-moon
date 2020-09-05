@@ -87,6 +87,7 @@ public class Creature : MonoBehaviour
         if (counterattackOn && damageType != DamageType.Thorns) {
             attacker.Hit(this, counterattack, damageType: DamageType.Thorns);
         }
+        GameManager.instance.ExecutePlannedActions();
     }
 
     public void LoseHp(int damage = 1, AbilityEffect source = null, Creature attacker = null) {
@@ -132,7 +133,7 @@ public class Creature : MonoBehaviour
 
     public void DeathCheck(AbilityEffect source = null) {
         if (hp <= 0) {
-            Die(source);
+            GameManager.instance.PlanAction(() => Die(source));
         }
     }
 

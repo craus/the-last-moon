@@ -1,10 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class GameManager : Singletone<GameManager>
 {
+    private Queue<Action> plannedActions = new Queue<Action>();
+
+    public void ExecutePlannedActions() {
+        for (int i = 0; i < 10000 && plannedActions.Count() > 0; i++) {
+            plannedActions.Peek().Invoke();
+            plannedActions.Dequeue();
+        }
+    }
+
+    public void PlanAction(Action a) {
+        plannedActions.Enqueue(a);
+    }
+
     public Game gameSample;
     public Game game;
 

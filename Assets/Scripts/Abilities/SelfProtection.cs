@@ -15,6 +15,6 @@ public class SelfProtection : NonTargetEffect
     }
 
     public override string Description(Creature user) {
-        return $"Prevents next {protection} damage taken.";
+        return $"Prevents next {protection} damage taken this battle.";
     }
 }
