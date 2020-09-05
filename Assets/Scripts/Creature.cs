@@ -40,11 +40,11 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public int buffPower<T>() {
+    public int buffPower<T>() where T : Buff {
         return buffs.Where(b => b is T).Sum(b => b.power);
     }
 
-    public Buff buff<T>() {
+    public Buff buff<T>() where T : Buff {
         return buffs.FirstOrDefault(b => b is T);
     }
 
