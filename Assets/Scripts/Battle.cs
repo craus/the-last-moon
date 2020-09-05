@@ -19,11 +19,6 @@ public class Battle : Singletone<Battle>
 
     public bool AllMonstersDead => FindObjectsOfType<Monster>().All(m => m.Dead);
 
-    public void Start() {
-        GlobalEvents.instance.onBattleStart(this);
-        GameLog.Message($"Battle started - Day {Game.instance.day}");
-    }
-
     public void NextRound() {
         if (!on) {
             return;

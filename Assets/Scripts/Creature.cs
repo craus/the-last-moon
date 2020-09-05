@@ -104,7 +104,7 @@ public class Creature : MonoBehaviour
         var attack = new Attack(attacker, this, damage, source, damageType);
 
         IEnumerable<IAttackModifier> attackModifiers =
-            attacker.buffs.Where(b => b is IAttackModifier)
+            (attacker?.buffs?.Where(b => b is IAttackModifier) ?? CollectionExtensions.Empty<Buff>())
             .Concat(buffs.Where(b => b is IAttackModifier))
             .Cast<IAttackModifier>();
 
@@ -223,7 +223,6 @@ public class Creature : MonoBehaviour
 
     public virtual void OnSpawn() {
         GlobalEvents.instance.onSpawn(this);
-        ApplyBuff<LoseHpFromAttack>();
     }
 
     public void OnDestroy() {

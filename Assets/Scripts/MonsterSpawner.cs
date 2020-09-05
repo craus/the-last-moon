@@ -49,7 +49,11 @@ public class MonsterSpawner : Monster
             SpawnMonster(monsterMana[i]);
         }
 
+        GameLog.Message($"Battle started - Day {Game.instance.day}");
         GameLog.LogMonsters();
+
+        GlobalEvents.instance.onBattleStart.Invoke(Battle.instance);
+
         GameLog.LogBattleRound();
     }
 

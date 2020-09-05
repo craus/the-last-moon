@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityEffect : MonoBehaviour
+public class AbilityEffect : Common.Effect
 {
     public virtual bool Available => !BattleOnly || Battle.On;
     public virtual bool RequireTarget => true;
@@ -10,6 +10,9 @@ public class AbilityEffect : MonoBehaviour
     public virtual bool BattleOnly => true;
 
     public virtual void Use(Creature user, Creature target) {
+    }
+
+    public override void Run() {
     }
 
     public string manualDescription;

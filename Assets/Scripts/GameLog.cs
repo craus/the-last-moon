@@ -24,6 +24,7 @@ public class GameLog : Singletone<GameLog>
     }
 
     public static void LogMonsters() {
+        DebugManager.LogFormat("Monsters: {0}", FindObjectsOfType<Monster>());
         GameLog.Message(
             "Monsters: {0}".i(
                 FindObjectsOfType<Monster>()

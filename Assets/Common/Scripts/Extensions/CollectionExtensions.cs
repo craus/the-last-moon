@@ -15,6 +15,10 @@ public static class CollectionExtensions
         yield return element;
     }
 
+    public static IEnumerable<T> Empty<T>() {
+        yield break;
+    }
+
     public static int IndexOfMin<T>(this IList<T> list, Func<T, float> criteria)
     {
         int answer = 0;
