@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+[ExecuteInEditMode]
 public class Buff : MonoBehaviour
 {
     [SerializeField] private Creature m_owner;
@@ -63,5 +68,16 @@ public class Buff : MonoBehaviour
 
     public virtual string Text() {
         return "";
+    }
+
+    public void Update() {
+        if (Extensions.InEditMode()) {
+#if UNITY_EDITOR
+            if (name != GetType().Name) {
+                name = GetType().Name;
+                EditorUtility.SetDirty(gameObject);
+            }
+#endif
+        }
     }
 }

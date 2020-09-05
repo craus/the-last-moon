@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Protection : Buff, IAttackModifier
 {
-    public int Priority => 80;
+    public virtual int Priority => 80;
 
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner) {

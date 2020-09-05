@@ -16,7 +16,6 @@ public class Creature : MonoBehaviour
     public int maxHp = 1;
     public bool maxedHp = true;
     public int stunned = 0;
-    public int regeneration = 0;
     public bool counterattackOn = false;
     public int slow = 0;
     public bool Alive => hp > 0;
@@ -132,10 +131,6 @@ public class Creature : MonoBehaviour
         GlobalEvents.instance.onLoseHp(this, damage, source);
     }
 
-    public void Poison(int poison = 1) {
-        regeneration -= poison;
-    }
-
     public void Heal(int heal = 1) {
         var oldhp = hp;
         hp += heal;
@@ -208,7 +203,14 @@ public class Creature : MonoBehaviour
     }
 
     public virtual void AfterMove() {
-        Heal(regeneration);
+
+        IEnumerable<IEndTurnModifier> endTurnModifiers =
+            buffs.Where(b => b is IEndTurnModifier)
+            .Cast<IEndTurnModifier>();
+
+        foreach (var etm in endTurnModifiers.OrderBy(etm => etm.Priority)) {
+            etm.OnTurnEnd();
+        }
     }
 
     public virtual void TakeAction() {
@@ -230,11 +232,19 @@ public class Creature : MonoBehaviour
         }
     }
 
-    protected virtual void OnBattleEnd(Battle b) {
+    protected virtual void OnBattleEnd(Battle battle) {
         buff<ProtectionUntilEndOfCombat>()?.Expire();
         buff<IncreasedAttack>()?.Expire();
         buff<Bubble>()?.Expire();
         buff<Away>()?.Expire();
+
+        IEnumerable<IEndCombatModifier> endTurnModifiers =
+            buffs.Where(b => b is IEndCombatModifier)
+            .Cast<IEndCombatModifier>();
+
+        foreach (var etm in endTurnModifiers.OrderBy(etm => etm.Priority)) {
+            etm.OnCombatEnd();
+        }
     }
 
     public virtual string Text() {

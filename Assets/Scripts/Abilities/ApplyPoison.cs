@@ -7,7 +7,7 @@ public class ApplyPoison : AbilityEffect
     public int poison;
 
     public override void Use(Creature user, Creature target) {
-        target.Poison(poison);
+        target.ApplyBuff<Regeneration>(-poison);
     }
 
     public override string Text(Creature user) {

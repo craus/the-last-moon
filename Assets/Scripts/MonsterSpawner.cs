@@ -81,8 +81,8 @@ public class MonsterSpawner : Monster
             mana -= 1.3f;
             return;
         }
-        if (Rand.rndEvent(0.1f) && m.hp - 1 > m.regeneration) {
-            m.regeneration += 1;
+        if (Rand.rndEvent(0.1f) && m.hp - 1 > m.buffPower<Regeneration>()) {
+            m.ApplyBuff<Regeneration>(1);
             mana -= 1;
             return;
         }

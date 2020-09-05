@@ -18,7 +18,7 @@ public class CreatureText : MonoBehaviour
             { "armor", creature.buffPower<Armor>() > 0 ? "A{0}".i(creature.buffPower<Armor>()) : creature.buffPower<Armor>() < 0 ? "V{0}".i(-creature.buffPower<Armor>()) : "" },
             { "counterattack", creature.buff<CounterAttack>() != null ? "C{0}".i(creature.buffPower<CounterAttack>()) : "" },
             { "bubbles", creature.buffPower<Bubble>() > 0 ? "()".repeat(creature.buffPower<Bubble>()) : "" },
-            { "regeneration", RegenerationString(creature.regeneration) },
+            { "regeneration", RegenerationString(creature.buffPower<Regeneration>()) },
             { "buffs", creature.buffs.Select(b => b.Text()).Join() },
         });
     }
@@ -62,7 +62,7 @@ public class CreatureText : MonoBehaviour
             { "armor", creature.buffPower<Armor>() > 0 ? "A{0}".i(creature.buffPower<Armor>()) : creature.buffPower<Armor>() < 0 ? "V{0}".i(-creature.buffPower<Armor>()) : "" },
             { "counterattack", creature.buff<CounterAttack>() != null ? "C{0}".i(creature.buffPower<CounterAttack>()) : "" },
             { "bubble", "()".repeat(creature.buffPower<Bubble>()) },
-            { "regeneration", RegenerationString(creature.regeneration) },
+            { "regeneration", RegenerationString(creature.buffPower<Regeneration>()) },
             { "status", StatusString(creature) },
         });
     }

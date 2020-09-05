@@ -8,13 +8,8 @@ using UnityEngine;
 /// <summary>
 /// Modifies creature attack
 /// </summary>
-public interface IAttackModifier
+public interface IAttackModifier : IModifier
 {
-    /// <summary>
-    /// The greater priority is, the later modifier would be applied
-    /// </summary>
-    int Priority { get; }
-
     /// <summary>
     /// Call when creature is to attack.
     /// </summary>
