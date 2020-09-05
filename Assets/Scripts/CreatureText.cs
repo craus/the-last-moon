@@ -10,7 +10,7 @@ public class CreatureText : MonoBehaviour
     public string format = "{0}/{1}";
 
     public static string StatusString(Creature creature) {
-        return "{regeneration}{protection}{armor}{counterattack}{bubbles}{stunned}".i(new Dictionary<string, object>() {
+        return "{regeneration}{protection}{armor}{counterattack}{bubbles}{stunned}{slow}".i(new Dictionary<string, object>() {
             { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
             { "stunned", StunString(creature.stunned) },
             { "slow", SlowString(creature.slow) },
