@@ -75,6 +75,10 @@ public static class Rand
 		return (double)(UnityEngine.Random.Range((float)min, (float)max));
 	}
 
+	public static float Rnd(float min, float max) {
+		return UnityEngine.Random.Range(min, max);
+	}
+
 	public static float GaussianRnd() {
 		float sum = 0;
 		for (int i = 0; i < 12; i++) {
@@ -94,5 +98,19 @@ public static class Rand
 
 	public static T rndExcept<T>(this List<T> list, params T[] except) where T : class {
 		return list.Except(except).ToList().rnd();
+	}
+
+	public static float[] rndSplit(float total, int parts) {
+		var borders = new List<float>();
+		borders.Add(0);
+		for (int i = 0; i < parts - 1; i++) {
+			borders.Add(Rnd(0, total));
+		}
+		borders.Add(total);
+		var partition = new float[parts];
+		for (int i = 0; i < parts; i++) {
+			partition[i] = borders[i + 1] - borders[i];
+		}
+		return partition;
 	}
 }

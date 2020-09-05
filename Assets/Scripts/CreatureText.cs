@@ -13,6 +13,7 @@ public class CreatureText : MonoBehaviour
         return "{regeneration}{protection}{armor}{counterattack}{bubbles}{stunned}".i(new Dictionary<string, object>() {
             { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
             { "stunned", StunString(creature.stunned) },
+            { "slow", SlowString(creature.slow) },
             { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
             { "counterattack", creature.counterattackOn ? "C{0}".i(creature.counterattack) : "" },
             { "bubbles", creature.bubbles > 0 ? "()".repeat(creature.bubbles) : "" },
@@ -22,6 +23,10 @@ public class CreatureText : MonoBehaviour
 
     public static string StunString(int s, string c = "*") {
         return s < 0 ? StunString(-s, "+") : s < 4 ? c.repeat(s) : c + "{0}".i(s);
+    }
+
+    public static string SlowString(int s, string c = "_") {
+        return c.repeat(s);
     }
 
     public static string RegenerationString(int v) {
@@ -51,6 +56,7 @@ public class CreatureText : MonoBehaviour
             { "protection", ProtectionString(creature.protectionUntilEndOfCombat) },
             { "hpStatus", creature.Alive ? "{0}/{1}".i(creature.hp, creature.maxHp) : "DEAD" },
             { "stunned", StunString(creature.stunned) },
+            { "slow", SlowString(creature.slow) },
             { "armor", creature.armor > 0 ? "A{0}".i(creature.armor) : creature.armor < 0 ? "V{0}".i(-creature.armor) : "" },
             { "counterattack", creature.counterattackOn ? "C{0}".i(creature.counterattack) : "" },
             { "bubble", "()".repeat(creature.bubbles) },

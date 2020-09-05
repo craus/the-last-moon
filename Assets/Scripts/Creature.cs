@@ -22,6 +22,7 @@ public class Creature : MonoBehaviour
     public int protectionUntilEndOfCombat = 0;
     public int bubbles = 0;
     public int away = 0;
+    public int slow = 0;
     public int attack = 0;
     public bool Alive => hp > 0;
     public bool Dead => !Alive;
@@ -153,6 +154,7 @@ public class Creature : MonoBehaviour
     public void Attack(Creature target, int damage) {
         beforeAttack(this, target, damage);
         target.Hit(this, damage);
+        stunned += slow;
         afterAttack(this, target, damage);
     }
 

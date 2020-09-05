@@ -28,20 +28,28 @@ public class MonsterSpawner : Monster
         }
     }
 
-    public void SpendMana() {
-        for (int i = 0; i < 100 && mana > 0; i++) {
-            SpawnMonster();
+    public bool TooManyMonsters(int x) {
+        return Rand.rndEvent(new double[] { 0, 0.15f, 0.5f, 0.8f, 0.9f, 0.95f, 0.98f, 1, 1 }[x]);
+    }
+
+    public int MonstersCount() {
+        var result = 1;
+        for (int i = 0; i < 100 && !TooManyMonsters(result); i++) {
+            result++;
         }
-        GameLog.Message(
-            "Monsters: {0}".i(
-                FindObjectsOfType<Monster>()
-                    .Where(m => !(m is MonsterSpawner))
-                    .ExtToString(
-                        elementToString: m => m.Text(),
-                        format: "{0}"
-                    )
-            )
-        );
+        return result;
+    }
+
+    public void SpendMana() {
+        int cnt = MonstersCount();
+
+        float[] monsterMana = Rand.rndSplit(mana, cnt);
+
+        for (int i = 0; i < cnt; i++) {
+            SpawnMonster(monsterMana[i]);
+        }
+
+        GameLog.LogMonsters();
         GameLog.LogBattleRound();
     }
 
@@ -50,18 +58,24 @@ public class MonsterSpawner : Monster
         return m;
     }
 
-    void SpawnMonster() {
-        --mana;
+    void SpawnMonster(float mana) {
+        mana -= 2;
+        var delta = Mathf.Sqrt(mana + 3);
+        var manaForBuffs = Rand.Rnd(
+            Mathf.Clamp(mana - delta, 0, float.PositiveInfinity),
+            Mathf.Clamp(mana + delta, 0, float.PositiveInfinity)
+        );
+        var manaForDebuffs = mana - manaForBuffs;
         var m = NewMonster();
-        for (int i = 0; i < 100 && mana > 0; i++) {
-            if (Rand.rndEvent(0.05f)) {
-                break;
-            }
-            BuffMonster(m);
+        for (int i = 0; i < 100 && manaForBuffs > 0; i++) {
+            BuffMonster(m, ref manaForBuffs);
+        }
+        for (int i = 0; i < 100 && manaForDebuffs < 0; i++) {
+            DebuffMonster(m, ref manaForDebuffs);
         }
     }
 
-    void BuffMonster(Monster m) {
+    void BuffMonster(Monster m, ref float mana) {
         if (Rand.rndEvent(0.07f)) {
             m.bubbles++;
             mana -= 1.3f;
@@ -70,11 +84,6 @@ public class MonsterSpawner : Monster
         if (Rand.rndEvent(0.1f) && m.hp - 1 > m.regeneration) {
             m.regeneration += 1;
             mana -= 1;
-            return;
-        }
-        if (Rand.rndEvent(0.1f / (1+m.away))) {
-            m.away += 1;
-            mana += 1f / (1+m.away);
             return;
         }
         if (Rand.rndEvent(0.1f)) {
@@ -88,11 +97,6 @@ public class MonsterSpawner : Monster
             mana -= 1;
             return;
         }
-        if (Rand.rndEvent(0.1f) && m.hp - 1 > -m.armor) {
-            m.armor -= 1;
-            mana += 1;
-            return;
-        }
         if (Rand.rndEvent(0.7f)) {
             m.hp += 1;
             m.maxHp += 1;
@@ -101,5 +105,24 @@ public class MonsterSpawner : Monster
         }
         m.damage += 1;
         mana -= 1;
+    }
+
+    void DebuffMonster(Monster m, ref float mana) {
+        if (Rand.rndEvent(0.1f / (1 + m.away))) {
+            m.away += 1;
+            mana += 1f / (1 + m.away);
+            return;
+        }
+        if (Rand.rndEvent(0.1f) && m.hp - 1 > -m.armor) {
+            m.armor -= 1;
+            mana += 1;
+            return;
+        }
+        if (Rand.rndEvent(0.5f)) {
+            m.slow++;
+            mana += 1;
+        }
+        m.stunned += 1;
+        mana += 1;
     }
 }

@@ -23,6 +23,19 @@ public class GameLog : Singletone<GameLog>
         text.text += message + "\n";
     }
 
+    public static void LogMonsters() {
+        GameLog.Message(
+            "Monsters: {0}".i(
+                FindObjectsOfType<Monster>()
+                    .Where(m => !(m is MonsterSpawner))
+                    .ExtToString(
+                        elementToString: m => m.Text(),
+                        format: "{0}"
+                    )
+            )
+        );
+    }
+
     public static void LogBattleRound() {
         Message($"Battle round {Battle.instance.moveNumber}");
     }
