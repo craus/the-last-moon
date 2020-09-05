@@ -555,12 +555,12 @@ PrefabInstance:
     - target: {fileID: 819530962332962861, guid: 17926061893674a43a25b43106fcff55,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 100
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 819530962332962861, guid: 17926061893674a43a25b43106fcff55,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 819530962332962861, guid: 17926061893674a43a25b43106fcff55,
         type: 3}
@@ -571,6 +571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1649698196518868339, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: onShow.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2162447079081486913, guid: 17926061893674a43a25b43106fcff55,
         type: 3}
@@ -706,6 +711,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4910549633012537622, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041807070216425509, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5327671488039976159, guid: 17926061893674a43a25b43106fcff55,
         type: 3}
@@ -891,6 +906,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9081942502911754835, guid: 17926061893674a43a25b43106fcff55,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17926061893674a43a25b43106fcff55, type: 3}
