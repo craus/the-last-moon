@@ -8,7 +8,14 @@ public class Armor : Buff, IAttackModifier
 
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner) {
+            var old = attack.damage;
             attack.damage = Mathf.Clamp(attack.damage - power, 0, int.MaxValue);
+            var delta = attack.damage - old;
+            if (delta < 0) {
+                GameLog.Message($"Armor reduces damage by {-delta}");
+            } else {
+                GameLog.Message($"Vulnerability increases damage by {delta}");
+            }
         }
     }
 }

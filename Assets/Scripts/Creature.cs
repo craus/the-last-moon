@@ -103,6 +103,7 @@ public class Creature : MonoBehaviour
 
     public void Hit(Creature attacker, int damage = 1, AbilityEffect source = null, DamageType damageType = DamageType.Default) {
         var attack = new Attack(attacker, this, damage, source, damageType);
+        GameLog.Message($"{attacker.Text()} attacks {Text()} by {damage} damage{(source != null ? $" with {source.Text(attacker)}" : "")}");
 
         IEnumerable<IAttackModifier> attackModifiers =
             (attacker?.buffs?.Where(b => b is IAttackModifier) ?? CollectionExtensions.Empty<Buff>())
@@ -214,6 +215,8 @@ public class Creature : MonoBehaviour
         foreach (var etm in endTurnModifiers.OrderBy(etm => etm.Priority)) {
             etm.OnTurnEnd();
         }
+
+        GameManager.instance.ExecutePlannedActions();
     }
 
     public virtual void TakeAction() {

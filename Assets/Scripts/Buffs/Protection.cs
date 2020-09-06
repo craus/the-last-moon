@@ -11,6 +11,7 @@ public class Protection : Buff, IAttackModifier
             var protectedDamage = Mathf.Min(attack.damage, power);
             attack.damage -= protectedDamage;
             Spend(protectedDamage);
+            GameLog.Message($"{owner} loses {protectedDamage} protection");
         }
     }
 }

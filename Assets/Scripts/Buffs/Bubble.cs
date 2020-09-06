@@ -9,6 +9,7 @@ public class Bubble : Buff, IAttackModifier
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner) {
             attack.damage = 0;
+            GameLog.Message($"{owner.Text()} loses 1 bubble");
             Spend();
         }
     }
