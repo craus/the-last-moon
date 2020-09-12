@@ -56,6 +56,7 @@ public class Buff : MonoBehaviour
     }
 
     public void Expire() {
+        owner = null;
         Destroy(gameObject);
     }
 
