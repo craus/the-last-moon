@@ -19,6 +19,10 @@ public static class CollectionExtensions
         yield break;
     }
 
+    public static IEnumerable<T> Unique<T>(this IEnumerable<T> collection) {
+        return new HashSet<T>(collection).ToList();
+    }
+
     public static int IndexOfMin<T>(this IList<T> list, Func<T, float> criteria)
     {
         int answer = 0;

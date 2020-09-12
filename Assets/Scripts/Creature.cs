@@ -108,7 +108,8 @@ public class Creature : MonoBehaviour
         IEnumerable<IAttackModifier> attackModifiers =
             (attacker?.buffs?.Where(b => b is IAttackModifier) ?? CollectionExtensions.Empty<Buff>())
             .Concat(buffs.Where(b => b is IAttackModifier))
-            .Cast<IAttackModifier>();
+            .Cast<IAttackModifier>()
+            .Unique();
 
         foreach (var am in attackModifiers.OrderBy(am => am.Priority)) {
             am.ModifyAttack(attack);
