@@ -17,6 +17,7 @@ public class GenericAbility : Ability
 
     [TextArea]
     [SerializeField]
+    [ReadOnly]
     private string descriptionPreview = "";
 
     public string manualText = "";
