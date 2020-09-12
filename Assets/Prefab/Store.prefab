@@ -1803,8 +1803,7 @@ MonoBehaviour:
   store: {fileID: 5663394210681750366}
   goodsFolder: {fileID: 340712306050496238}
   itemsInStore: 5
-  alwaysInclude:
-  - {fileID: 3789389515282863716}
+  alwaysInclude: []
 --- !u!114 &498785520060437129
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8549,7 +8548,7 @@ PrefabInstance:
       objectReference: {fileID: 1519629339729025516}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 16
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -8561,7 +8560,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Whenever you are hit, gain +1 regeneration until end of combat.
 
-        <color=#ffa000ff>($16)</color>
+        <color=#ffa000ff>($24)</color>
 
 '
       objectReference: {fileID: 0}
@@ -8643,7 +8642,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#f00>blood</color> armor<color=#a01a24ff>($16)</color>
+      value: ^ <color=#f00>blood</color> armor<color=#a01a24ff>($24)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -19977,6 +19976,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 12277712817047288}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -19989,7 +19992,7 @@ PrefabInstance:
 
         If kills enemy, gain 1 max hp.
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($13)</color>
 
 '
       objectReference: {fileID: 0}
@@ -20046,7 +20049,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -20071,12 +20074,12 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 1F<color=#a01a24ff>($7)</color>
+      value: ^ 1F<color=#a01a24ff>($13)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_fontSize
-      value: 25.5
+      value: 22.1
       objectReference: {fileID: 0}
     - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
