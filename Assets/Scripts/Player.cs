@@ -48,8 +48,8 @@ public class Player : Creature
     public override void AfterMove() {
         base.AfterMove();
         Battle.instance.NextRound();
-        if (stunned < 0) {
-            stunned++;
+        if (buffPower<Stunned>() < 0) {
+            ApplyBuff<Stunned>(1);
         } else {
             FindObjectsOfType<Monster>().ForEach(m => GameManager.instance.PlanProcess(m.MakeMove));
         }

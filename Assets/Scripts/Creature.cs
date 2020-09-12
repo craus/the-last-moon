@@ -16,7 +16,6 @@ public class Creature : MonoBehaviour
     public int hp = 1;
     public int maxHp = 1;
     public bool maxedHp = true;
-    public int stunned = 0;
     public bool counterattackOn = false;
     public int slow = 0;
     public bool Alive => hp > 0;
@@ -146,14 +145,6 @@ public class Creature : MonoBehaviour
         DeathCheck();
     }
 
-    public void Stun(int stun = 1) {
-        stunned += stun;
-    }
-
-    public void Afterburner(int power = 1) {
-        stunned -= power;
-    }
-
     public void HpCheck() {
         hp = Mathf.Clamp(hp, 0, maxHp);
     }
@@ -180,7 +171,7 @@ public class Creature : MonoBehaviour
     public void Attack(Creature target, int damage) {
         beforeAttack(this, target, damage);
         target.Hit(this, damage);
-        stunned += slow;
+        ApplyBuff<Stunned>(slow);
         afterAttack(this, target, damage);
     }
 
@@ -196,8 +187,8 @@ public class Creature : MonoBehaviour
             return Promise.Resolved();
         }
         return TimeManager.Wait(0.25f).Then(() => {
-            if (stunned > 0) {
-                stunned--;
+            if (buffPower<Stunned>() > 0) {
+                buff<Stunned>().Spend();
             } else if (buffPower<Away>() > 0) {
                 buff<Away>().Spend();
             } else {

@@ -7,7 +7,7 @@ public class Afterburner : NonTargetEffect
     public int power;
 
     public override void Use(Creature user) {
-        user.Afterburner(power);
+        user.ApplyBuff<Stunned>(-power);
     }
 
     public override string Text(Creature user) {

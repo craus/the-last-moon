@@ -132,7 +132,7 @@ public class MonsterSpawner : Monster
             m.slow++;
             mana += 1;
         }
-        m.stunned += 1;
+        m.ApplyBuff<Stunned>(1);
         mana += 1;
     }
 }

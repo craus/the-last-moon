@@ -16,7 +16,7 @@ public class FireRing : AbilityEffect
         int power = 1;
         counter.Decrement();
         target.Hit(user, power);
-        user.Afterburner(1);
+        user.ApplyBuff<Stunned>(-1);
     }
 
     public override string Text(Creature user) {
