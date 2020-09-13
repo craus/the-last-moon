@@ -67,6 +67,10 @@ public class Buff : MonoBehaviour
     public void UntilEndOfBattle() {
     }
 
+    public virtual string Description() {
+        return "";
+    }
+
     public virtual string Text() {
         return "";
     }

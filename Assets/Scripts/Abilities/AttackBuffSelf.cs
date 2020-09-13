@@ -11,7 +11,7 @@ public class AttackBuffSelf : NonTargetEffect
     }
 
     public override string Text(Creature user) {
-        return CreatureText.AttackString(attack);
+        return CreatureText.AttackString("a", attack);
     }
 
     public override string Description(Creature user) {

@@ -13,4 +13,8 @@ public class BuffSelf : NonTargetEffect
     public override string Text(Creature user) {
         return buff.Text();
     }
+
+    public override string Description(Creature user) {
+        return buff.Description();
+    }
 }

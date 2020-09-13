@@ -35,8 +35,8 @@ public class CreatureText : MonoBehaviour
         return v < 0 ? "<color=#00a000ff>P{0}</color>".i(-v) : v > 0 ? "<color=#40b0b0ff>R{0}</color>".i(v) : "";
     }
 
-    public static string AttackString(int v) {
-        return v != 0 ? "<color=#ff8080ff>a{0}{1}</color>".i(v > 0 ? "+" : "", v) : "";
+    public static string AttackString(string s, int v) {
+        return v != 0 ? $"<color=#ff8080ff>{s}{(v > 0 ? "+" : "")}{v}</color>" : "";
     }
 
     public static string ProtectionString(int v) {
@@ -52,7 +52,7 @@ public class CreatureText : MonoBehaviour
             { "skillPoints", "{0}".i(creature.skillPoints) },
             { "away", "<".repeat(creature.buffPower<Away>()) },
             { "damage", creature.damage + creature.buffPower<IncreasedAttack>() },
-            { "attack", AttackString(creature.buffPower<IncreasedAttack>()) },
+            { "attack", AttackString("a", creature.buffPower<IncreasedAttack>()) },
             { "hp", creature.hp },
             { "maxHp", creature.maxHp },
             { "protection", ProtectionString(creature.buffPower<Protection>()) },
