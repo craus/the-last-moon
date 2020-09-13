@@ -2490,6 +2490,54 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   battleOnly: 0
+--- !u!114 &4201571118406941777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728100722577861590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ba97ff3c681d704c9a569e986332592, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualDescription: 
+  manualText: 
+  buff: {fileID: 3601745740568207624}
+--- !u!114 &4275778142035297677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728100722577861590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 544e6bc0f2a411147ac00d9ba16ffb10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualDescription: 
+  manualText: 
+  effects:
+  - {fileID: 8240620647911023447}
+  - {fileID: 8240620647911023447}
+  - {fileID: 4201571118406941777}
+  currentIndex: 0
+--- !u!114 &8240620647911023447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728100722577861590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68a587b719a05c14c87d6b019ad23ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualDescription: Does nothing
+  manualText: '-'
 --- !u!1 &7817827411770581835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2769,21 +2817,6 @@ MonoBehaviour:
   creature: {fileID: 0}
   creatureProvider: {fileID: 6096547612242467629}
   amount: 1
---- !u!114 &4201571118406941777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728100722577861590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ba97ff3c681d704c9a569e986332592, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manualDescription: 
-  manualText: 
-  buff: {fileID: 3601745740568207624}
 --- !u!1 &8153623341013605911
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,15 +3579,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!224 &929919207639558014 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 1657178446567230922}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929919207639558015 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 1657178446567230922}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &929919207639558014 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 1657178446567230922}
   m_PrefabAsset: {fileID: 0}
@@ -3938,15 +3971,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!224 &8071175723917085705 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 7645515801548318397}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8071175723917085704 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 7645515801548318397}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8071175723917085705 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 7645515801548318397}
   m_PrefabAsset: {fileID: 0}
@@ -4232,15 +4265,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
---- !u!1 &8370203503981208012 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
-    type: 3}
-  m_PrefabInstance: {fileID: 7939890323985943417}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8370203503981208013 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+    type: 3}
+  m_PrefabInstance: {fileID: 7939890323985943417}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8370203503981208012 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
     type: 3}
   m_PrefabInstance: {fileID: 7939890323985943417}
   m_PrefabAsset: {fileID: 0}
@@ -4259,12 +4292,12 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -4279,7 +4312,12 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_text
-      value: <color=#ff8080ff>na+1</color>
+      value: <b>-</b>/-/<color=#ff8080ff>na+1</color>
+      objectReference: {fileID: 0}
+    - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 26.75
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -4419,13 +4457,20 @@ PrefabInstance:
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: descriptionPreview
-      value: Increase next damage dealt by 1 until end of battle
+      value: '<b>Phase 1: Does nothing</b>
+
+
+        Phase 2: Does nothing
+
+
+        Phase
+        3: Increase next damage dealt by 1 until end of battle'
       objectReference: {fileID: 0}
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: effects.Array.data[0]
       value: 
-      objectReference: {fileID: 4201571118406941777}
+      objectReference: {fileID: 4275778142035297677}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &7728100722577861590 stripped

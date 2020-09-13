@@ -8,20 +8,21 @@ public class CyclicEffect : AbilityEffect
     public override bool RequireTarget => current.RequireTarget;
 
     public List<AbilityEffect> effects;
-    public AbilityEffect current;
+    public int currentIndex;
+    public AbilityEffect current => effects[currentIndex];
 
     public override void Use(Creature user, Creature target) {
         current.Use(user, target);
-        current = effects.CyclicNext(current);
+        currentIndex = (currentIndex + 1) % effects.Count;
     }
 
     public override string Text(Creature user) {
-        return effects.Select(e2 => (current == e2 ? "<b>{0}</b>" : "{0}").i(e2.Text(user))).Join("/");
+        return effects.Select((e2, i) => (currentIndex == i ? "<b>{0}</b>" : "{0}").i(e2.Text(user))).Join("/");
     }
 
     public override string Description(Creature user) {
         return effects
-            .Select((e2, index) => (current == e2 ? "<b>{0}</b>" : "{0}").i($"Phase {index+1}: {e2.Description(user)}"))
+            .Select((e2, index) => (currentIndex == index ? "<b>{0}</b>" : "{0}").i($"Phase {index+1}: {e2.Description(user)}"))
             .Join("\n\n");
     }
 
@@ -37,7 +38,7 @@ public class CyclicEffect : AbilityEffect
     }
 
     private void Reset() {
-        current = effects[0];
+        currentIndex = 0;
     }
 
     private void OnBattleStart(Battle battle) {

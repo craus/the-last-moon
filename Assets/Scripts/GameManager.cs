@@ -41,7 +41,7 @@ public class GameManager : Singletone<GameManager>
     public Game game;
 
     public void Awake() {
-        UnityEngine.Random.InitState(42);
+        //UnityEngine.Random.InitState(42);
         InitializeProcessQueue();
 
         game = FindObjectOfType<Game>();
