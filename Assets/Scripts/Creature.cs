@@ -136,6 +136,9 @@ public class Creature : MonoBehaviour
     }
 
     public void Heal(int heal = 1) {
+        if (!Alive) {
+            return;
+        }
         var oldhp = hp;
         hp += heal;
         HpCheck();

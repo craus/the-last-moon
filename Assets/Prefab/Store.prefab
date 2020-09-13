@@ -1714,7 +1714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manualDescription: 
   manualText: 
-  heal: 1
+  heal: 2
 --- !u!114 &8549262334217445009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manualDescription: 
   manualText: 
-  heal: 7
+  heal: 8
 --- !u!114 &4861332733715941439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2207,7 +2207,7 @@ MonoBehaviour:
   manualDescription: 
   manualText: 
   usages: 2
-  destroyOnUsagesEnd: 0
+  destroyOnUsagesEnd: 1
 --- !u!114 &6332387084465354182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7309,7 +7309,7 @@ PrefabInstance:
       objectReference: {fileID: 5183819631270830157}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7323,7 +7323,7 @@ PrefabInstance:
 
         Deal 2 damage
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($6)</color>
 
 '
       objectReference: {fileID: 0}
@@ -7405,7 +7405,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 22<color=#a01a24ff>($7)</color>
+      value: ^ 22<color=#a01a24ff>($6)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -14117,7 +14117,7 @@ PrefabInstance:
       objectReference: {fileID: 1608311625851695349}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -14134,7 +14134,7 @@ PrefabInstance:
         1 usages per battle (1
         this battle)
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($4)</color>
 
 '
       objectReference: {fileID: 0}
@@ -14216,7 +14216,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 22 (1/1R)<color=#a01a24ff>($7)</color>
+      value: ^ 22 (1/1R)<color=#a01a24ff>($4)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -16302,7 +16302,7 @@ PrefabInstance:
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: descriptionPreview
-      value: 'Heal yourself by 1
+      value: 'Heal yourself by 2
 
         1 usages
 
@@ -16388,7 +16388,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ h1 (1)_<color=#a01a24ff>($1)</color>
+      value: ^ h2 (1)_<color=#a01a24ff>($1)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -17141,7 +17141,7 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_text
-      value: <color=#a01a24ff>($3)</color>h7
+      value: <color=#a01a24ff>($3)</color>h8
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -17309,7 +17309,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: '<color=#ffa000ff>($3)</color>
 
-        Heal yourself by 7'
+        Heal yourself by 8'
       objectReference: {fileID: 0}
     - target: {fileID: 5755431578134616118, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -20606,7 +20606,7 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_text
-      value: h1 (1)_
+      value: h2 (1)_
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -20796,7 +20796,7 @@ PrefabInstance:
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: descriptionPreview
-      value: 'Heal yourself by 1
+      value: 'Heal yourself by 2
 
         1 usages
 

@@ -31,6 +31,15 @@ public class Player : Creature
                 return;
             }
         }
+        var usagesPerBattle = a.GetComponent<UsagesPerBattle>();
+        if (usagesPerBattle != null) {
+            var oldAbility = GetComponentsInChildren<Ability>().FirstOrDefault(a2 => a2.name == a.name);
+            if (oldAbility != null) {
+                oldAbility.GetComponent<UsagesPerBattle>().usagesPerBattle += usagesPerBattle.usagesPerBattle;
+                Destroy(a.gameObject);
+                return;
+            }
+        }
         a.transform.SetParent(abilitiesFolder);
         a.transform.localScale = Vector3.one;
         a.gameObject.SetActive(true);
@@ -47,11 +56,11 @@ public class Player : Creature
 
     public override void AfterMove() {
         base.AfterMove();
-        Battle.instance.NextRound();
         if (buffPower<Stunned>() < 0) {
             ApplyBuff<Stunned>(1);
         } else {
             FindObjectsOfType<Monster>().ForEach(m => GameManager.instance.PlanProcess(m.MakeMove));
+            Battle.instance.NextRound();
         }
     }
 
