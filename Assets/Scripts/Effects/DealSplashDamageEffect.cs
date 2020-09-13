@@ -13,8 +13,6 @@ public class DealSplashDamageEffect : CreatureEffect
     }
 
     public override void Run() {
-        DebugManager.LogFormat("DealSplashDamageEffect.Run");
-        DebugManager.LogFormat("Monsters: {0}", FindObjectsOfType<Monster>());
         FindObjectsOfType<Monster>().ForEach(m => m.Hit(Creature, damage));
     }
 }
