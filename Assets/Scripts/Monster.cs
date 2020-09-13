@@ -14,7 +14,7 @@ public class Monster : Creature
     public override void Die(AbilityEffect source) {
         base.Die(source);
         if (Battle.instance.AllMonstersDead) {
-            Battle.instance.Finish();
+            GameManager.instance.PlanAction(Battle.instance.Finish);
         }
         Player.instance.Experience += 1;
     }

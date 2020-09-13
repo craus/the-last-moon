@@ -30,9 +30,7 @@ public class Game : Singletone<Game>
     }
 
     public void NewStore() {
-        if (store != null) {
-            Destroy(store.gameObject);
-        }
+        DestroyStore();
         store = Instantiate(storeSample, storeSlot);
     }
 
@@ -78,6 +76,7 @@ public class Game : Singletone<Game>
     }
 
     public void EndGame() {
+        DestroyStore();
         Statistics.RegisterRun(new GameRun(day));
     }
 
@@ -91,6 +90,9 @@ public class Game : Singletone<Game>
 
     int daysWithNoStores = 0;
     public void OnBattleEnd(Battle battle) {
+        if (!Player.instance.Alive) {
+            return;
+        }
         if (Rand.rndEvent(0.16f * daysWithNoStores)) {
             NewStore();
             daysWithNoStores = 0;

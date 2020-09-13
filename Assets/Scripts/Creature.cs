@@ -28,6 +28,8 @@ public class Creature : MonoBehaviour
 
     [SerializeField] private Transform m_buffsFolder;
 
+    public event Action<AbilityEffect> onDeath = (s) => { };
+
     public Transform buffsFolder {
         get {
             if (m_buffsFolder == null) {
@@ -160,6 +162,7 @@ public class Creature : MonoBehaviour
     }
 
     public virtual void Die(AbilityEffect source = null) {
+        onDeath.Invoke(source);
         GlobalEvents.instance.onDeath(this, source);
         Destroy(gameObject);
     }

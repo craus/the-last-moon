@@ -10,8 +10,8 @@ public class Protection : Buff, IAttackModifier
         if (attack.victim == owner) {
             var protectedDamage = Mathf.Min(attack.damage, power);
             attack.damage -= protectedDamage;
-            Spend(protectedDamage);
             GameLog.Message($"{owner} loses {protectedDamage} protection");
+            Spend(protectedDamage);
         }
     }
 }

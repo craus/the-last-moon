@@ -12,7 +12,7 @@ public class Buff : MonoBehaviour
 {
     [SerializeField] private Creature m_owner;
 
-    public Creature owner {
+    public virtual Creature owner {
         get {
             return m_owner;
         }
