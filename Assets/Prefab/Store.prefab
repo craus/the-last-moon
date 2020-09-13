@@ -2487,7 +2487,7 @@ PrefabInstance:
       objectReference: {fileID: 3841089730805100775}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 10
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -2499,7 +2499,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Deal 4 damage
 
-        <color=#ffa000ff>($10)</color>
+        <color=#ffa000ff>($14)</color>
 
 '
       objectReference: {fileID: 0}
@@ -2573,7 +2573,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 4<color=#a01a24ff>($10)</color>
+      value: ^ 4<color=#a01a24ff>($14)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -2729,6 +2729,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 1806514033137134928}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -2741,7 +2745,7 @@ PrefabInstance:
 
         If kills enemy, gain 1 gold.
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($9)</color>
 
 '
       objectReference: {fileID: 0}
@@ -2823,7 +2827,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 1g<color=#a01a24ff>($7)</color>
+      value: ^ 1g<color=#a01a24ff>($9)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -2979,6 +2983,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 8460221395853516377}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -2989,7 +2997,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Heal 1 after each combat.
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($10)</color>
 
 '
       objectReference: {fileID: 0}
@@ -3043,7 +3051,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -3068,12 +3076,12 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ h1AC<color=#a01a24ff>($7)</color>
+      value: ^ h1AC<color=#a01a24ff>($10)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_fontSize
-      value: 18.75
+      value: 16.85
       objectReference: {fileID: 0}
     - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -6801,6 +6809,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 6524061877375082546}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -6816,7 +6828,7 @@ PrefabInstance:
         Gain
         1 charge on enemy death.
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($6)</color>
 
 '
       objectReference: {fileID: 0}
@@ -6895,7 +6907,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#ff8000ff>0</color><color=#a01a24ff>($7)</color>
+      value: ^ <color=#ff8000ff>0</color><color=#a01a24ff>($6)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7051,6 +7063,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089730251912468}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -7061,7 +7077,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Apply 1 poison
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($8)</color>
 
 '
       objectReference: {fileID: 0}
@@ -7135,7 +7151,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#00a000ff>P1</color><color=#a01a24ff>($7)</color>
+      value: ^ <color=#00a000ff>P1</color><color=#a01a24ff>($8)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7293,7 +7309,7 @@ PrefabInstance:
       objectReference: {fileID: 5183819631270830157}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7307,7 +7323,7 @@ PrefabInstance:
 
         Deal 2 damage
 
-        <color=#ffa000ff>($8)</color>
+        <color=#ffa000ff>($7)</color>
 
 '
       objectReference: {fileID: 0}
@@ -7389,7 +7405,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 22<color=#a01a24ff>($8)</color>
+      value: ^ 22<color=#a01a24ff>($7)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7791,7 +7807,7 @@ PrefabInstance:
       objectReference: {fileID: 4002469080455461089}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -7805,7 +7821,7 @@ PrefabInstance:
 
         Lose 1 damage after each use.
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($6)</color>
 
 '
       objectReference: {fileID: 0}
@@ -7887,7 +7903,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 9--<color=#a01a24ff>($7)</color>
+      value: ^ 9--<color=#a01a24ff>($6)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -8300,6 +8316,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089729970563930}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -8313,7 +8333,7 @@ PrefabInstance:
         1 usages per battle
         (1 this battle)
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($9)</color>
 
 '
       objectReference: {fileID: 0}
@@ -8390,7 +8410,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#808080ff>p3</color> (1/1R)<color=#a01a24ff>($7)</color>
+      value: ^ <color=#808080ff>p3</color> (1/1R)<color=#a01a24ff>($9)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -8800,7 +8820,7 @@ PrefabInstance:
       objectReference: {fileID: 6067194104485830277}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -8812,7 +8832,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Increase all damage dealt by 1 until end of battle
 
-        <color=#ffa000ff>($8)</color>
+        <color=#ffa000ff>($11)</color>
 
 '
       objectReference: {fileID: 0}
@@ -8862,7 +8882,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -8887,12 +8907,12 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#ff8080ff>a+1</color><color=#a01a24ff>($8)</color>
+      value: ^ <color=#ff8080ff>a+1</color><color=#a01a24ff>($11)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_fontSize
-      value: 22.3
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -9319,6 +9339,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089730833560430}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -9331,7 +9355,7 @@ PrefabInstance:
 
         Stun for 1 turns
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($8)</color>
 
 '
       objectReference: {fileID: 0}
@@ -9407,7 +9431,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 2*<color=#a01a24ff>($7)</color>
+      value: ^ 2*<color=#a01a24ff>($8)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -9854,6 +9878,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 991869988347063619}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -9868,7 +9896,7 @@ PrefabInstance:
 
         Out of battle only.
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($4)</color>
 
 '
       objectReference: {fileID: 0}
@@ -9947,7 +9975,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ h3 (3)_<color=#a01a24ff>($7)</color>
+      value: ^ h3 (3)_<color=#a01a24ff>($4)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -10105,7 +10133,7 @@ PrefabInstance:
       objectReference: {fileID: 6285895321335134844}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 16
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -10117,9 +10145,14 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Deals 1 damage to each enemy on battle start.
 
-        <color=#ffa000ff>($16)</color>
+        <color=#ffa000ff>($13)</color>
 
 '
+      objectReference: {fileID: 0}
+    - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
+        type: 3}
+      propertyPath: manualDescription
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3234701598765338067, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -10199,7 +10232,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#f00>fire</color> helm<color=#a01a24ff>($16)</color>
+      value: ^ <color=#f00>fire</color> helm<color=#a01a24ff>($13)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -11697,7 +11730,7 @@ PrefabInstance:
       objectReference: {fileID: 6105981315963222582}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -11711,7 +11744,7 @@ PrefabInstance:
 
         2 usages
 
-        <color=#ffa000ff>($6)</color>
+        <color=#ffa000ff>($5)</color>
 
 '
       objectReference: {fileID: 0}
@@ -11793,7 +11826,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 7 (2)<color=#a01a24ff>($6)</color>
+      value: ^ 7 (2)<color=#a01a24ff>($5)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -12242,7 +12275,7 @@ PrefabInstance:
       objectReference: {fileID: 2060082927305500345}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -12254,7 +12287,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Deal 3 damage to all creatures in battle
 
-        <color=#ffa000ff>($6)</color>
+        <color=#ffa000ff>($3)</color>
 
 '
       objectReference: {fileID: 0}
@@ -12336,7 +12369,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <color=#ff0000ff>S</color>3<color=#a01a24ff>($6)</color>
+      value: ^ <color=#ff0000ff>S</color>3<color=#a01a24ff>($3)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -12772,7 +12805,7 @@ PrefabInstance:
       objectReference: {fileID: 3841089730235002598}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -12790,7 +12823,7 @@ PrefabInstance:
         Stun
         for 1 turns
 
-        <color=#ffa000ff>($5)</color>
+        <color=#ffa000ff>($2)</color>
 
 '
       objectReference: {fileID: 0}
@@ -12870,7 +12903,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 1/1*<color=#a01a24ff>($5)</color>
+      value: ^ 1/1*<color=#a01a24ff>($2)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -13545,7 +13578,7 @@ PrefabInstance:
       objectReference: {fileID: 7195005474332473516}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -13557,7 +13590,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Gain 1 bubble on battle start
 
-        <color=#ffa000ff>($9)</color>
+        <color=#ffa000ff>($11)</color>
 
 '
       objectReference: {fileID: 0}
@@ -13606,7 +13639,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -13631,12 +13664,12 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ BS ()<color=#a01a24ff>($9)</color>
+      value: ^ BS ()<color=#a01a24ff>($11)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_fontSize
-      value: 19.6
+      value: 17.8
       objectReference: {fileID: 0}
     - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -14341,7 +14374,7 @@ PrefabInstance:
       objectReference: {fileID: 4354400414255012992}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -14356,7 +14389,7 @@ PrefabInstance:
 
         Phase 2: Deal 1 damage
 
-        <color=#ffa000ff>($5)</color>
+        <color=#ffa000ff>($2)</color>
 
 '
       objectReference: {fileID: 0}
@@ -14433,7 +14466,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 2/1<color=#a01a24ff>($5)</color>
+      value: ^ 2/1<color=#a01a24ff>($2)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -15452,7 +15485,7 @@ PrefabInstance:
       objectReference: {fileID: 7989561154938554341}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 8
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -15469,7 +15502,7 @@ PrefabInstance:
         Gain
         1 charge on enemy death.
 
-        <color=#ffa000ff>($8)</color>
+        <color=#ffa000ff>($11)</color>
 
 '
       objectReference: {fileID: 0}
@@ -15523,7 +15556,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -15548,12 +15581,12 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 1f (<color=#ff0000ff>0</color>)<color=#a01a24ff>($8)</color>
+      value: ^ 1f (<color=#ff0000ff>0</color>)<color=#a01a24ff>($11)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_fontSize
-      value: 19.25
+      value: 17.55
       objectReference: {fileID: 0}
     - target: {fileID: 4055688638177704044, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -16518,6 +16551,10 @@ PrefabInstance:
       propertyPath: ability
       value: 
       objectReference: {fileID: 3841089731384097897}
+    - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
+      propertyPath: amount
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: name
@@ -16528,7 +16565,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Deal 2 damage to all enemies in battle
 
-        <color=#ffa000ff>($7)</color>
+        <color=#ffa000ff>($4)</color>
 
 '
       objectReference: {fileID: 0}
@@ -16602,7 +16639,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ S2<color=#a01a24ff>($7)</color>
+      value: ^ S2<color=#a01a24ff>($4)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -17306,7 +17343,7 @@ PrefabInstance:
       objectReference: {fileID: 3841089729584535041}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 12
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -17318,7 +17355,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: 'Deal 5 damage
 
-        <color=#ffa000ff>($12)</color>
+        <color=#ffa000ff>($18)</color>
 
 '
       objectReference: {fileID: 0}
@@ -17392,7 +17429,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ 5<color=#a01a24ff>($12)</color>
+      value: ^ 5<color=#a01a24ff>($18)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -18095,7 +18132,7 @@ PrefabInstance:
       objectReference: {fileID: 3841089730802953659}
     - target: {fileID: 542319433, guid: 8c2bf527e81e0304eb3a08114e0ab536, type: 3}
       propertyPath: amount
-      value: 14
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 1426377906311278748, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -18110,7 +18147,7 @@ PrefabInstance:
 
         Phase 2: Deal 6 damage
 
-        <color=#ffa000ff>($14)</color>
+        <color=#ffa000ff>($17)</color>
 
 '
       objectReference: {fileID: 0}
@@ -18188,7 +18225,7 @@ PrefabInstance:
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
       propertyPath: m_text
-      value: ^ <b>4</b>/6<color=#a01a24ff>($14)</color>
+      value: ^ <b>4</b>/6<color=#a01a24ff>($17)</color>
       objectReference: {fileID: 0}
     - target: {fileID: 4055688637854151689, guid: 8c2bf527e81e0304eb3a08114e0ab536,
         type: 3}
@@ -18671,7 +18708,7 @@ PrefabInstance:
     - target: {fileID: 1880472282286870971, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -18766,12 +18803,12 @@ PrefabInstance:
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 17473.605
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -25
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -18791,7 +18828,7 @@ PrefabInstance:
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -18801,7 +18838,7 @@ PrefabInstance:
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -18836,7 +18873,7 @@ PrefabInstance:
     - target: {fileID: 1880472282698738357, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
