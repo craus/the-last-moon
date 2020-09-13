@@ -2120,7 +2120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manualDescription: 
   manualText: 
-  heal: 100500
+  heal: 7
 --- !u!114 &4861332733715941439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17141,17 +17141,17 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_text
-      value: "<color=#a01a24ff>($3)</color>h\u221E"
+      value: <color=#a01a24ff>($3)</color>h7
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_fontSize
-      value: 30.7
+      value: 32.3
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_textInfo.materialCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -17309,7 +17309,7 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: '<color=#ffa000ff>($3)</color>
 
-        Full heal'
+        Heal yourself by 7'
       objectReference: {fileID: 0}
     - target: {fileID: 5755431578134616118, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
