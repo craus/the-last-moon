@@ -2520,11 +2520,11 @@ MonoBehaviour:
   manualDescription: 
   manualText: 
   effects:
-  - {fileID: 8240620647911023447}
-  - {fileID: 8240620647911023447}
+  - {fileID: 1588551214757840555}
+  - {fileID: 1588551214757840555}
   - {fileID: 4201571118406941777}
   currentIndex: 0
---- !u!114 &8240620647911023447
+--- !u!114 &1588551214757840555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2533,11 +2533,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7728100722577861590}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68a587b719a05c14c87d6b019ad23ac0, type: 3}
+  m_Script: {fileID: 11500000, guid: 2eea3572c9b7a0b4fa4245d1647ef393, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manualDescription: Does nothing
-  manualText: '-'
+  manualDescription: 
+  manualText: 
 --- !u!1 &7817827411770581835
 GameObject:
   m_ObjectHideFlags: 0
