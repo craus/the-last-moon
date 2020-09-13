@@ -19,6 +19,13 @@ public class GameManager : Singletone<GameManager>
         currentProcess = currentProcess.Then(process);
     }
 
+    public void PlanInstantProcess(Action process) {
+        currentProcess = currentProcess.Then(() => {
+            process();
+            return Promise.Resolved();
+        });
+    }
+
     public void ExecutePlannedActions() {
         for (int i = 0; i < 10000 && plannedActions.Count() > 0; i++) {
             plannedActions.Peek().Invoke();
@@ -34,6 +41,7 @@ public class GameManager : Singletone<GameManager>
     public Game game;
 
     public void Awake() {
+        UnityEngine.Random.InitState(42);
         InitializeProcessQueue();
 
         game = FindObjectOfType<Game>();

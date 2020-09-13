@@ -10,6 +10,6 @@ public class NextBattleButtonSlot : MonoBehaviour
     public Button button;
 
     public void Update() {
-        button.gameObject.SetActive(!Battle.On && Player.instance.Alive);
+        button.gameObject.SetActive(!Game.instance.battleOn && Player.instance.Alive);
     }
 }

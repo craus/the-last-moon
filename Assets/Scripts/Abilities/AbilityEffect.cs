@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AbilityEffect : Common.Effect
 {
-    public virtual bool Available => !BattleOnly || Battle.On;
+    public virtual bool Available => !BattleOnly || Game.instance.battleOn;
     public virtual bool RequireTarget => true;
     public virtual bool AllowUsage(Creature user) => true;
     public virtual bool BattleOnly => true;

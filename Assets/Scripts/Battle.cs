@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Battle : Singletone<Battle>
+public class Battle : MonoBehaviour
 {
-    public static bool On => instance != null && instance.on;
-
     public int moveNumber;
     public bool on = true;
 
@@ -21,7 +19,7 @@ public class Battle : Singletone<Battle>
         startBattleImage.SetActive(true);
         return TimeManager.Wait(0.1f).Then(() => {
             startBattleImage.SetActive(false);
-            GlobalEvents.instance.onBattleStart.Invoke(Battle.instance);
+            GlobalEvents.instance.onBattleStart.Invoke(this);
             GameLog.LogBattleRound();
         });
     }
@@ -31,6 +29,7 @@ public class Battle : Singletone<Battle>
         Destroy(gameObject);
         on = false;
         AbilitiesController.instance.currentAbility = null;
+        Game.instance.battle = null;
     }
 
     public bool AllMonstersDead => FindObjectsOfType<Monster>().All(m => m.Dead);

@@ -13,9 +13,10 @@ public class Game : Singletone<Game>
     public Transform storeSlot;
     public Store store;
     public Player player;
+    public Battle battle;
+    public bool battleOn => battle != null && battle.on;
 
     public void DestroyBattle() {
-        var battle = FindObjectOfType<Battle>();
         if (battle != null) {
             Destroy(battle.gameObject);
         }
@@ -24,7 +25,7 @@ public class Game : Singletone<Game>
     public void NewBattle() {
         DestroyStore();
         day++;
-        var battle = Instantiate(battleSample, transform);
+        battle = Instantiate(battleSample, transform);
         var spawner = battle.GetComponentInChildren<MonsterSpawner>();
         spawner.mana += Game.instance.day * spawner.manaPerGameDay;
     }
@@ -41,31 +42,35 @@ public class Game : Singletone<Game>
     }
 
     public void RestartBattle() {
-        if (Battle.instance != null) {
-            Battle.instance.Finish();
+        if (battle != null) {
+            battle.Finish();
         }
         NewBattle();
     }
 
     public void Click(Creature creature) {
         if (AbilitiesController.instance.currentAbility != null) {
-            PlayerUseAbility(AbilitiesController.instance.currentAbility, creature);
+            GameManager.instance.PlanInstantProcess(() => {
+                PlayerUseAbility(AbilitiesController.instance.currentAbility, creature);
+            });
         }
     }
 
     public void ClickAbility(Ability ability) {
-        if (Battle.instance == null && ability.BattleOnly) {
+        if (Game.instance.battle == null && ability.BattleOnly) {
             return;
         }
         if (!ability.RequireTarget) {
-            PlayerUseAbility(ability);
+            GameManager.instance.PlanInstantProcess(() => {
+                PlayerUseAbility(ability);
+            });
         } else {
             AbilitiesController.instance.currentAbility = ability;
         }
     }
 
     public void PlayerUseAbility(Ability a, Creature t = null) {
-        if (Battle.instance != null) {
+        if (Game.instance.battle != null) {
             player.MakeMove(a, t);
         } else {
             player.UseAbility(a, t);

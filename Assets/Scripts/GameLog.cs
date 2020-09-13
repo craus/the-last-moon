@@ -41,6 +41,6 @@ public class GameLog : Singletone<GameLog>
     }
 
     public static void LogBattleRound() {
-        Message($"Battle round {Battle.instance.moveNumber}");
+        Message($"Battle round {Game.instance.battle.moveNumber}");
     }
 }

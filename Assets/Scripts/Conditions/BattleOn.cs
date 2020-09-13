@@ -5,5 +5,5 @@ using System.Linq;
 
 public class BattleOn : BoolValueProvider
 {
-    public override bool Value => Battle.On;
+    public override bool Value => Game.instance.battleOn;
 }

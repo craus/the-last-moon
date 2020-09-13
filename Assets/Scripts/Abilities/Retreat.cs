@@ -7,7 +7,7 @@ public class Retreat : AbilityEffect
     public override bool RequireTarget => false;
 
     public override void Use(Creature user, Creature target) {
-        Battle.instance.Finish();
+        Game.instance.battle.Finish();
     }
 
     public override string Text(Creature user) {

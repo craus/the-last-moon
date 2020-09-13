@@ -11,4 +11,10 @@ public class Away : Buff, IAttackModifier
             attack.interrupted = true;
         }
     }
+
+    public void ModifyMove() {
+        var oldOwner = owner;
+        Spend();
+        GameLog.Message(power > 0 ? $"{oldOwner} is getting closer to battle" : $"{oldOwner} enters the battle");
+    }
 }

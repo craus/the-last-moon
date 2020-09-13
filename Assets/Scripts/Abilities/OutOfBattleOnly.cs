@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OutOfBattleOnly : NonTargetEffect
 {
-    public override bool AllowUsage(Creature user) => !Battle.On;
+    public override bool AllowUsage(Creature user) => !Game.instance.battleOn;
 
     public override string Text(Creature user) {
         return "_";

@@ -47,8 +47,8 @@ public class Creature : MonoBehaviour
         return buffs.Where(b => b is T).Sum(b => b.power);
     }
 
-    public Buff buff<T>() where T : Buff {
-        return buffs.FirstOrDefault(b => b is T);
+    public T buff<T>() where T : Buff {
+        return buffs.FirstOrDefault(b => b is T) as T;
     }
 
     public void ApplyBuff<T>(int power = 1) where T : Buff {
@@ -187,8 +187,8 @@ public class Creature : MonoBehaviour
         ability.Use(this, target);
     }
 
-    public virtual IPromise MakeMove() {
-        if (!Battle.On) {
+    public virtual IPromise MakeMove(Action move) {
+        if (!Game.instance.battleOn) {
             return Promise.Resolved();
         }
         if (Dead) {
@@ -199,20 +199,20 @@ public class Creature : MonoBehaviour
         }
         return TimeManager.Wait(0.1f).Then(() => {
             if (buffPower<Stunned>() > 0) {
-                buff<Stunned>().Spend();
+                buff<Stunned>().ModifyMove();
             } else if (buffPower<Away>() > 0) {
-                buff<Away>().Spend();
+                buff<Away>().ModifyMove();
             } else {
-                TakeAction();
+                move();
             }
             if (moveImage != null) {
                 moveImage.SetActive(false);
             }
-            AfterMove();
+            return AfterMove();
         });
     }
 
-    public virtual void AfterMove() {
+    public virtual IPromise AfterMove() {
 
         IEnumerable<IEndTurnModifier> endTurnModifiers =
             buffs.Where(b => b is IEndTurnModifier)
@@ -223,9 +223,8 @@ public class Creature : MonoBehaviour
         }
 
         GameManager.instance.ExecutePlannedActions();
-    }
 
-    public virtual void TakeAction() {
+        return Promise.Resolved();
     }
 
     public virtual void Start() {

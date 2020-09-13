@@ -11,8 +11,6 @@ public class Player : Creature
 
     public Transform abilitiesFolder;
 
-    Action plannedAction;
-
     public void Awake() {
         instance = this;
     }
@@ -50,27 +48,29 @@ public class Player : Creature
     }
 
     public void MakeMove(Ability a, Creature target) {
-        plannedAction = () => UseAbility(a, target);
-        GameManager.instance.PlanProcess(MakeMove);
+        GameManager.instance.PlanProcess(() => MakeMove(() => UseAbility(a, target)));
     }
 
-    public override void AfterMove() {
-        base.AfterMove();
-        if (buffPower<Stunned>() < 0) {
-            ApplyBuff<Stunned>(1);
-        } else {
-            FindObjectsOfType<Monster>().ForEach(m => GameManager.instance.PlanProcess(m.MakeMove));
-            Battle.instance.NextRound();
-        }
-    }
-
-    public override void TakeAction() {
-        plannedAction();
+    public override IPromise AfterMove() {
+        return base.AfterMove().Then(() => {
+            if (buffPower<Stunned>() < 0) {
+                ApplyBuff<Stunned>(1);
+                return Promise.Resolved();
+            } else {
+                var monsters = FindObjectsOfType<Monster>();
+                var monstersMove = Promise.Sequence(monsters.Select<Monster, Func<IPromise>>(m => m.MakeMonsterMove));
+                return monstersMove.Then(() => {
+                    if (Game.instance.battle != null) {
+                        Game.instance.battle.NextRound();
+                    }
+                });
+            }
+        });
     }
 
     protected override void OnBattleEnd(Battle b) {
         base.OnBattleEnd(b);
-        if (Battle.instance.AllMonstersDead) {
+        if (Game.instance.battle.AllMonstersDead) {
             gold += 2;
         }
     }

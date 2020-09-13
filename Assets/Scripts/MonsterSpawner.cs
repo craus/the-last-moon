@@ -53,7 +53,7 @@ public class MonsterSpawner : Monster
         GameLog.Message($"Battle started - Day {Game.instance.day}");
         GameLog.LogMonsters();
 
-        Battle.instance.PlanStartBattle();
+        Game.instance.battle.PlanStartBattle();
 
 
     }
@@ -65,9 +65,9 @@ public class MonsterSpawner : Monster
 
     void SpawnMonster(float mana) {
         mana -= 2;
-        var delta = Mathf.Sqrt(mana + 3);
+        var delta = Mathf.Sqrt(mana + 4);
         var manaForBuffs = Rand.Rnd(
-            Mathf.Clamp(mana - delta, 0, float.PositiveInfinity),
+            Mathf.Clamp(mana, 0, float.PositiveInfinity),
             Mathf.Clamp(mana + delta, 0, float.PositiveInfinity)
         );
         var manaForDebuffs = mana - manaForBuffs;

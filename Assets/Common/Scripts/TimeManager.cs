@@ -22,7 +22,7 @@ public class TimeManager : Singletone<TimeManager>
         var seconds = Time() - lastUpdateTime;
         if (DebugManager.instance.slowAnimations)
         {
-            seconds /= 10;
+            seconds /= 40;
         }
         promiseTimer.Update(seconds);
         lastUpdateTime = Time();
