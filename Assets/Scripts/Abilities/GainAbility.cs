@@ -27,6 +27,9 @@ public class GainAbility : NonTargetEffect
     }
 
     public override string Description(Creature user) {
+        if (ability == null) {
+            return $"Buy";
+        }
         return $"{ability.Description(user)}";
     }
 

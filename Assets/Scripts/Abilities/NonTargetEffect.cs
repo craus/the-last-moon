@@ -7,6 +7,7 @@ public abstract class NonTargetEffect : AbilityEffect
     public override bool RequireTarget => false;
 
     public sealed override void Use(Creature user, Creature target) {
+        base.Use(user, target);
         Use(user);
     }
 

@@ -11,6 +11,7 @@ public class SpendGold : NonTargetEffect
     public int amount;
 
     public override void Use(Creature user) {
+        base.Use(user);
         user.gold -= amount;
         user.gold = Mathf.Clamp(user.gold, 0, int.MaxValue);
     }

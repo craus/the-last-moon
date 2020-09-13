@@ -512,11 +512,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2134857490278204972, guid: d8fee5cfecf8fa047b8e768eed9734ff,
-        type: 3}
-      propertyPath: format
-      value: '{away}YOU: {hpStatus}{status}'
-      objectReference: {fileID: 0}
     - target: {fileID: 3760643653852959473, guid: d8fee5cfecf8fa047b8e768eed9734ff,
         type: 3}
       propertyPath: m_AnchorMin.y

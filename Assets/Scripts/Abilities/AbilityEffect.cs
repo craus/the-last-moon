@@ -1,15 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class AbilityEffect : Common.Effect
 {
+    public event Action onUse = () => { };
+
     public virtual bool Available => !BattleOnly || Game.instance.battleOn;
     public virtual bool RequireTarget => true;
     public virtual bool AllowUsage(Creature user) => true;
     public virtual bool BattleOnly => true;
 
     public virtual void Use(Creature user, Creature target) {
+        onUse.Invoke();
     }
 
     public override void Run() {
