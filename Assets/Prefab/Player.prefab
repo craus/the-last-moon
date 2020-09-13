@@ -100,9 +100,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1750497238450239898}
-  - component: {fileID: 3601745740568207624}
+  - component: {fileID: 3356564348695759833}
   m_Layer: 5
-  m_Name: IncreasedNextAttack
+  m_Name: IncreasedNextAttackFrom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -127,7 +127,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &3601745740568207624
+--- !u!114 &3356564348695759833
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,11 +136,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 36585939457089628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cada6468ac216a54c99881fefaafcef8, type: 3}
+  m_Script: {fileID: 11500000, guid: af2197a15660f8340815c51ec3e87a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_owner: {fileID: 0}
   power: 1
+  source: {fileID: 6082176540532920170}
 --- !u!1 &552172732936212552
 GameObject:
   m_ObjectHideFlags: 0
@@ -2490,6 +2491,20 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   battleOnly: 0
+--- !u!114 &1588551214757840555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7728100722577861590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2eea3572c9b7a0b4fa4245d1647ef393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualDescription: 
+  manualText: 
 --- !u!114 &4201571118406941777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2504,7 +2519,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manualDescription: 
   manualText: 
-  buff: {fileID: 3601745740568207624}
+  buff: {fileID: 3356564348695759833}
 --- !u!114 &4275778142035297677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2524,20 +2539,6 @@ MonoBehaviour:
   - {fileID: 1588551214757840555}
   - {fileID: 4201571118406941777}
   currentIndex: 0
---- !u!114 &1588551214757840555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7728100722577861590}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2eea3572c9b7a0b4fa4245d1647ef393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manualDescription: 
-  manualText: 
 --- !u!1 &7817827411770581835
 GameObject:
   m_ObjectHideFlags: 0
@@ -2759,7 +2760,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   creature: {fileID: 8153623341013605909}
   text: {fileID: 1524459565432950690}
-  format: '{away}YOU: {hpStatus}{status}{attack}'
+  format: '{away}YOU: {hpStatus}{status}'
 --- !u!114 &235709314676222252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4292,7 +4293,7 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -4312,12 +4313,12 @@ PrefabInstance:
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_text
-      value: <b>-</b>/-/<color=#ff8080ff>na+1</color>
+      value: <b>-</b>/-/<color=#ff8080ff>1na+1</color>
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282375186129, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
       propertyPath: m_fontSize
-      value: 26.75
+      value: 23.05
       objectReference: {fileID: 0}
     - target: {fileID: 1880472282698738356, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}
@@ -4464,7 +4465,8 @@ PrefabInstance:
 
 
         Phase
-        3: Increase next damage dealt by 1 until end of battle'
+        3: Increase next damage dealt by Basic Strike (DealDamage) this battle by
+        1'
       objectReference: {fileID: 0}
     - target: {fileID: 3574723278867309124, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
         type: 3}

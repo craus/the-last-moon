@@ -243,12 +243,6 @@ public class Creature : MonoBehaviour
     }
 
     protected virtual void OnBattleEnd(Battle battle) {
-        buff<ProtectionUntilEndOfCombat>()?.Expire();
-        buff<IncreasedAttack>()?.Expire();
-        buff<IncreasedNextAttack>()?.Expire();
-        buff<Bubble>()?.Expire();
-        buff<Away>()?.Expire();
-
         IEnumerable<IEndCombatModifier> endTurnModifiers =
             buffs.Where(b => b is IEndCombatModifier)
             .Cast<IEndCombatModifier>();

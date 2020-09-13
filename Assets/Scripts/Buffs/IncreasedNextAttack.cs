@@ -2,24 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IncreasedNextAttack : Buff, IAttackModifier
+public class IncreasedNextAttack : IncreasedAttack
 {
-    public int Priority => 40;
-
-    public void ModifyAttack(Attack attack) {
-        if (attack.attacker == owner) {
-            if (attack.damageType != DamageType.Thorns) {
-                var old = attack.damage;
-                attack.damage = Mathf.Clamp(attack.damage + power, 0, int.MaxValue);
-                var delta = attack.damage - old;
-                GameLog.Message($"Attack damage modified by {delta}");
-                Expire();
-            }
-        }
+    protected override void IncreaseAttack(Attack attack) {
+        base.IncreaseAttack(attack);
+        Expire();
     }
 
     public override string Description() {
-        return $"Increase next damage dealt by {power} until end of battle";
+        return $"Increase next damage dealt this battle by {power}";
     }
 
     public override string Text() {

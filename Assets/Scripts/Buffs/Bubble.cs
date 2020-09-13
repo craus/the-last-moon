@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bubble : Buff, IAttackModifier
+public class Bubble : Buff, IAttackModifier, IEndCombatModifier
 {
     public int Priority => 70;
 
@@ -14,5 +14,9 @@ public class Bubble : Buff, IAttackModifier
             GameLog.Message($"{owner.Text()} loses 1 bubble");
             Spend();
         }
+    }
+
+    public void OnCombatEnd() {
+        Expire();
     }
 }

@@ -25,4 +25,8 @@ public class AbilityEffect : Common.Effect
     public virtual string Description(Creature user) {
         return manualDescription;
     }
+
+    public override string ToString() {
+        return GetComponentInParent<GenericAbility>().name;
+    }
 }

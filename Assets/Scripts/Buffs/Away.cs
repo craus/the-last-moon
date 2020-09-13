@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Away : Buff, IAttackModifier
+public class Away : Buff, IAttackModifier, IEndCombatModifier
 {
     public int Priority => 30;
 
@@ -16,5 +16,9 @@ public class Away : Buff, IAttackModifier
         var oldOwner = owner;
         Spend();
         GameLog.Message(power > 0 ? $"{oldOwner} is getting closer to battle" : $"{oldOwner} enters the battle");
+    }
+
+    public void OnCombatEnd() {
+        Expire();
     }
 }
