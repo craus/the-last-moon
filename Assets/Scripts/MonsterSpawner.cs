@@ -53,15 +53,9 @@ public class MonsterSpawner : Monster
         GameLog.Message($"Battle started - Day {Game.instance.day}");
         GameLog.LogMonsters();
 
-        GameManager.instance.PlanProcess(StartBattle);
+        Battle.instance.PlanStartBattle();
 
-    }
 
-    public IPromise StartBattle() {
-        return TimeManager.Wait(0.25f).Then(() => {
-            GlobalEvents.instance.onBattleStart.Invoke(Battle.instance);
-            GameLog.LogBattleRound();
-        });
     }
 
     Monster NewMonster() {

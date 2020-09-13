@@ -28,6 +28,8 @@ public class Creature : MonoBehaviour
 
     [SerializeField] private Transform m_buffsFolder;
 
+    public GameObject moveImage;
+
     public event Action<AbilityEffect> onDeath = (s) => { };
 
     public Transform buffsFolder {
@@ -192,13 +194,19 @@ public class Creature : MonoBehaviour
         if (Dead) {
             return Promise.Resolved();
         }
-        return TimeManager.Wait(0.25f).Then(() => {
+        if (moveImage != null) {
+            moveImage.SetActive(true);
+        }
+        return TimeManager.Wait(0.1f).Then(() => {
             if (buffPower<Stunned>() > 0) {
                 buff<Stunned>().Spend();
             } else if (buffPower<Away>() > 0) {
                 buff<Away>().Spend();
             } else {
                 TakeAction();
+            }
+            if (moveImage != null) {
+                moveImage.SetActive(false);
             }
             AfterMove();
         });
