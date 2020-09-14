@@ -1,4 +1,5 @@
 ﻿using RSG;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +7,8 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
+    public event Action onWin = () => { };
+
     public int moveNumber;
     public bool on = true;
 
@@ -22,6 +25,11 @@ public class Battle : MonoBehaviour
             GlobalEvents.instance.onBattleStart.Invoke(this);
             GameLog.LogBattleRound();
         });
+    }
+
+    public void Win() {
+        Finish();
+        onWin();
     }
 
     public void Finish() {

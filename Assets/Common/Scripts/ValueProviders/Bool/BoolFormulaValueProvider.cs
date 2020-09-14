@@ -31,7 +31,7 @@ public class BoolFormulaValueProvider : BoolValueProvider {
 		if (formula.Contains('&')) {
 			return formula.Split('&').All(part => Calculate(part));
 		}
-		if (formula.Contains('-')) {
+		if (formula.Contains('-') || formula.Contains('!')) {
 			return !Calculate(formula.Substring(1));
 		}
 		return arguments[int.Parse(formula)].Value;

@@ -15,6 +15,7 @@ public class Game : Singletone<Game>
     public Player player;
     public Battle battle;
     public bool battleOn => battle != null && battle.on;
+    public bool storeOn => store != null;
 
     public void DestroyBattle() {
         if (battle != null) {
@@ -38,6 +39,7 @@ public class Game : Singletone<Game>
     public void DestroyStore() {
         if (store != null) {
             Destroy(store.gameObject);
+            store = null;
         }
     }
 
