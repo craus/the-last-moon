@@ -8,7 +8,8 @@ using System.Runtime.Serialization;
 /// </summary>
 /// <typeparam name="K"></typeparam>
 /// <typeparam name="V"></typeparam>
-public class Map<K, V> : Dictionary<K, V>
+[Serializable]
+public class Map<K, V> : Dictionary<K, V>, ISerializationCallbackReceiver
 {
     public Func<V, bool> removeDefaultValues = v => false;
     private Func<V> defaultValueProvider = null;
@@ -51,5 +52,35 @@ public class Map<K, V> : Dictionary<K, V>
             result += key.ToString() + ": " + value;
         }
         return result;
+    }
+
+    [SerializeField]
+    private List<K> keys = new List<K>();
+
+    [SerializeField]
+    private List<V> values = new List<V>();
+
+    // save the dictionary to lists
+    public void OnBeforeSerialize()
+    {
+        keys.Clear();
+        values.Clear();
+        foreach (KeyValuePair<K, V> pair in this)
+        {
+            keys.Add(pair.Key);
+            values.Add(pair.Value);
+        }
+    }
+
+    // load dictionary from lists
+    public void OnAfterDeserialize()
+    {
+        this.Clear();
+
+        if (keys.Count != values.Count)
+            throw new System.Exception(string.Format("there are {0} keys and {1} values after deserialization. Make sure that both key and value types are serializable."));
+
+        for (int i = 0; i < keys.Count; i++)
+            this.Add(keys[i], values[i]);
     }
 }

@@ -35,4 +35,32 @@ public static class CollectionExtensions
         }
         return answer;
     }
+
+    // https://stackoverflow.com/questions/13054281/listt-foreach-with-index
+    public static void ForEach<T>(this IEnumerable<T> sequence, Action<int, T> action)
+    {
+        // argument null checking omitted
+        int i = 0;
+        foreach (T item in sequence)
+        {
+            action(i, item);
+            i++;
+        }
+    }
+
+    public static bool IsIncreasingSequence(this IEnumerable<int> sequence)
+    {
+        var initiated = false;
+        int current = 0; // assigned value never used
+        foreach (var element in sequence)
+        {
+            if (initiated && element <= current)
+            {
+                return false;
+            }
+            current = element;
+            initiated = true;
+        }
+        return true;
+    }
 }

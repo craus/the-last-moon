@@ -10,11 +10,22 @@ namespace Common
         [SerializeField] private float duration;
 
         [SerializeField] [ReadOnly] private float lastFalseTime;
+        [SerializeField] [ReadOnly] private bool inited = false;
 
-        public override bool Value => lastFalseTime < TimeManager.Time() - duration;
+        public override bool Value {
+            get
+            {
+                if (!inited)
+                {
+                    Update();
+                }
+                return lastFalseTime < TimeManager.Time() - duration;
+            }
+        }
 
         protected override void Update()
         {
+            inited = true;
             if (!condition.Value)
             {
                 lastFalseTime = TimeManager.Time();

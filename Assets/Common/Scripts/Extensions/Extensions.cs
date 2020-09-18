@@ -184,6 +184,19 @@ public static class Extensions
         return list.Cyclic(list.IndexOf(element) + delta);
     }
 
+    public static T Next<T>(this List<T> list, T element, int delta = 1)
+    {
+        if (list.IndexOf(element) == -1)
+        {
+            return default(T);
+        }
+        var index = list.IndexOf(element) + delta;
+        if (index < 0 || index > list.Count - 1) {
+            return default(T);
+        }
+        return list[index];
+    }
+
     public static string Path(this GameObject obj)
     {
         string path = "/" + obj.name;
@@ -203,6 +216,16 @@ public static class Extensions
     public static Vector2 xz(this Vector3 v)
     {
         return new Vector2(v.x, v.z);
+    }
+
+    public static void SetPositionAndRotation(this Transform t, Transform u)
+    {
+        t.SetPositionAndRotation(u.position, u.rotation);
+    }
+
+    public static Quaternion RotationTo(this Quaternion t, Quaternion u)
+    {
+        return Quaternion.Inverse(t) * u;
     }
 
     public static int ExtMin<T>(this IEnumerable<T> collection, Func<T, int> criteria)
@@ -230,6 +253,35 @@ public static class Extensions
             return float.PositiveInfinity;
         }
         return collection.Min(criteria);
+    }
+
+    public static T MinBy<T>(this IEnumerable<T> collection, Func<T, T, bool> less)
+    {
+        bool taken = false;
+        T result = default;
+        foreach (T el in collection)
+        {
+            if (!taken || less(el, result))
+            {
+                result = el;
+                taken = true;
+            }
+        }
+        return result;
+    }
+
+    public static bool LessByMany<T>(T x, T y, params Func<T, float>[] criteria) {
+        foreach (var c in criteria)
+        {
+            if (c(x) < c(y)) return true;
+            if (c(x) > c(y)) return false;
+        }
+        return false;
+    }
+
+    public static T MinByMany<T>(this IEnumerable<T> collection, params Func<T, float>[] criteria)
+    {
+        return collection.MinBy((x, y) => LessByMany(x, y, criteria));
     }
 
     public static T MinBy<T>(this IEnumerable<T> collection, Func<T, float> criteria)
@@ -667,6 +719,8 @@ public static class Extensions
         return (slider.value - slider.minValue) / (slider.maxValue - slider.minValue);
     }
 
+#if UNITY_EDITOR
+
     [MenuItem("Utilities/Mesh Renderer/Make phantom (does not work)")]
     public static void MakePhantom()
     {
@@ -674,16 +728,16 @@ public static class Extensions
         {
             if (o is GameObject)
             {
-                MakePhantom((o as GameObject).GetComponent<MeshRenderer>());
+                MakePhantom((o as GameObject).GetComponent<Renderer>());
             }
-            if (o is MeshRenderer)
+            if (o is Renderer)
             {
-                MakePhantom(o as MeshRenderer);
+                MakePhantom(o as Renderer);
             }
         });
     }
 
-    public static void MakePhantom(MeshRenderer r)
+    public static void MakePhantom(Renderer r)
     {
         if (r == null)
         {
@@ -697,7 +751,8 @@ public static class Extensions
     public static Material MakePhantom(Material m) {
         var result = new Material(m);
         StandardShaderUtils.ChangeRenderMode(result, StandardShaderUtils.BlendMode.Fade);
-        m.color = m.color.Change(a: 0.35f);
+        result.color = result.color.Change(a: 0.15f);
         return result;
     }
+#endif
 }

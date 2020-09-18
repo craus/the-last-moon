@@ -34,7 +34,7 @@ public class BoolFormulaValueProvider : BoolValueProvider {
 		if (formula.Contains('-') || formula.Contains('!')) {
 			return !Calculate(formula.Substring(1));
 		}
-		return arguments[int.Parse(formula)].Value;
+		return arguments[int.Parse(formula)]?.Value ?? false;
 	}
 
 	public override bool Value {

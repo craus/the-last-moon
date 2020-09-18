@@ -21,7 +21,9 @@ public class SkinnedVertices : MonoBehaviour
     void Start()
     {
         SkinnedMeshRenderer skin = GetComponent(typeof(SkinnedMeshRenderer)) as SkinnedMeshRenderer;
-        mesh = skin.sharedMesh;
+
+        var mesh = new Mesh();
+        skin.BakeMesh(mesh);
 
         Debug.LogFormat("{0} vertices, {1} weights, {2} bones",
             mesh.vertexCount, mesh.boneWeights.Length, skin.bones.Length);
@@ -44,7 +46,9 @@ public class SkinnedVertices : MonoBehaviour
 
     public static List<SkinnedMeshBone> VertexBones(SkinnedMeshRenderer skin, int index)
     {
-        Vector3 position = skin.sharedMesh.vertices[index];
+        var mesh = new Mesh();
+        skin.BakeMesh(mesh);
+        Vector3 position = mesh.vertices[index];
         position = skin.transform.TransformPoint(position);
 
         BoneWeight weights = skin.sharedMesh.boneWeights[index];
@@ -77,28 +81,28 @@ public class SkinnedVertices : MonoBehaviour
         return position;
     }
 
-    public static Vector3 VertexNormal(SkinnedMeshRenderer skin, List<SkinnedMeshBone> bones, int index)
+    public static Vector3 VertexNormal(Mesh mesh, List<SkinnedMeshBone> bones, int index)
     {
         Vector3 normal = Vector3.zero;
         foreach (SkinnedMeshBone bone in bones)
-            normal += bone.bone.TransformDirection(skin.sharedMesh.normals[index]) * bone.weight;
+            normal += bone.bone.TransformDirection(mesh.normals[index]) * bone.weight;
 
         return normal;
     }
 
-    public static Vector3 VertexTangent(SkinnedMeshRenderer skin, List<SkinnedMeshBone> bones, int index)
+    public static Vector3 VertexTangent(Mesh mesh, List<SkinnedMeshBone> bones, int index)
     {
         Vector3 tangent = Vector3.zero;
         foreach (SkinnedMeshBone bone in bones)
-            tangent += bone.bone.TransformDirection(skin.sharedMesh.tangents[index]) * bone.weight;
+            tangent += bone.bone.TransformDirection(mesh.tangents[index]) * bone.weight;
 
         return tangent;
     }
 
-    public static void SetTransform(Transform t, SkinnedMeshRenderer skin, List<SkinnedMeshBone> bones, int index)
+    public static void SetTransform(Transform t, Mesh mesh, List<SkinnedMeshBone> bones, int index)
     {
         t.position = VertexPosition(bones, index);
-        t.LookAt(VertexTangent(skin, bones, index), VertexNormal(skin, bones, index));
+        t.LookAt(VertexTangent(mesh, bones, index), VertexNormal(mesh, bones, index));
     }
 
     void DrawVertex(int index)

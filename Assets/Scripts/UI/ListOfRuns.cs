@@ -11,7 +11,7 @@ public class ListOfRuns : MonoBehaviour
 
     public void UpdateList() {
         transform.Children().ForEach(c => Destroy(c.gameObject));
-        //Statistics.Load().currentProfile.runs.min( .ForEach(CreateGameRunScript);
+        //Statistics.Load().currentProfile.runs.min
     }
 
     private void CreateGameRunScript(GameRun run) {

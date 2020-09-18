@@ -19,7 +19,7 @@ namespace Common
 
         private void Update()
         {
-            if (condition.Value && (!onValueChangedOnly || !oldValue))
+            if ((!onValueChangedOnly || !oldValue) && condition.Value)
             {
                 Run();
             }

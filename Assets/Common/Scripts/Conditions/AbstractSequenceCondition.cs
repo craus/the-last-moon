@@ -8,6 +8,7 @@ namespace Common
     {
         [SerializeField] protected List<T> sequence;
         [SerializeField] [ReadOnly] protected List<T> completed;
+        public T Current => completed.Count == sequence.Count ? default : sequence[completed.Count];
 
         [Space]
 
@@ -27,7 +28,7 @@ namespace Common
             DebugManager.DebugValue(name, Value);
         }
 
-        public void Reset()
+        public void SequenceReset()
         {
             completed.Clear();
         }
