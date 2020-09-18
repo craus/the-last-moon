@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +21,32 @@ public static class Statistics
         FileManager.SaveToFile(s, SAVE_FILE_NAME);
     }
 
-    public static void RegisterRun(GameRun run) {
+    public static void RegisterFinishedRun(GameRun run) {
         Save(Load().Tap(s => s.playerProfiles[0].runs.Add(run)));
+    }
+
+    public static void RegisterDeath() {
+        UpdateCurrentRun(r => r.status = GameRun.Status.Dead);
+    }
+
+    public static void RegisterCurrentDay(int day) {
+        UpdateCurrentRun(r => r.day = day);
+    }
+
+    public static void RegisterNewRun() {
+        UpdateCurrentProfile(p => {
+            var run = new GameRun();
+            p.runs.Add(run);
+            p.currentRun?.Abandon();
+            p.currentRun = run;
+        });
+    }
+
+    private static void UpdateCurrentProfile(Action<PlayerProfile> update) {
+        Save(Load().Tap(s => update(s.currentProfile)));
+    }
+
+    private static void UpdateCurrentRun(Action<GameRun> update) {
+        UpdateCurrentProfile(p => update(p.currentRun));
     }
 }

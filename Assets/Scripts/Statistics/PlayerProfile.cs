@@ -9,4 +9,6 @@ public class PlayerProfile
     public string name = "Shlakoblock";
 
     public List<GameRun> runs = new List<GameRun>();
+
+    public GameRun currentRun;
 }

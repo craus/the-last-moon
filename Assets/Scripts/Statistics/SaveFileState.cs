@@ -6,5 +6,13 @@ using UnityEngine;
 [Serializable]
 public class SaveFileState
 {
-    public List<PlayerProfile> playerProfiles = new List<PlayerProfile>() { new PlayerProfile() };
+    public List<PlayerProfile> playerProfiles;
+
+    public PlayerProfile currentProfile;
+
+    public SaveFileState() {
+        playerProfiles = new List<PlayerProfile>();
+        currentProfile = new PlayerProfile();
+        playerProfiles.Add(currentProfile);
+    }
 }

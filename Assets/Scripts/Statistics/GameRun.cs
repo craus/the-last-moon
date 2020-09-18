@@ -6,13 +6,31 @@ using UnityEngine;
 [Serializable]
 public class GameRun
 {
-    public int deathDay;
+    public enum Status
+    {
+        Undefined = 0,
+        Default = 10, 
+        Alive = 20,
+        Dead = 30,
+        Interrupted = 40
+    }
 
-    public GameRun(int day) {
-        deathDay = day;
+    public int day;
+    public Status status;
+
+    public GameRun(int day = 0, Status status = Status.Alive) {
+        this.day = day;
+        this.status = status;
+    }
+
+    public void Abandon() {
+        if (status != Status.Alive) {
+            return;
+        }
+        status = Status.Interrupted;
     }
 
     public string Text() {
-        return $"Killed on day {deathDay}";
+        return $"{status} on day {day}";
     }
 }

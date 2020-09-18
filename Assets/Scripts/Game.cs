@@ -23,9 +23,14 @@ public class Game : Singletone<Game>
         }
     }
 
+    public void NextDay() {
+        day++;
+        Statistics.RegisterCurrentDay(day);
+    }
+
     public void NewBattle() {
         DestroyStore();
-        day++;
+        NextDay();
         battle = Instantiate(battleSample, transform);
         var spawner = battle.GetComponentInChildren<MonsterSpawner>();
         spawner.mana += Game.instance.day * spawner.manaPerGameDay;
@@ -84,10 +89,11 @@ public class Game : Singletone<Game>
 
     public void EndGame() {
         DestroyStore();
-        Statistics.RegisterRun(new GameRun(day));
+        Statistics.RegisterDeath();
     }
 
     public void Start() {
+        Statistics.RegisterNewRun();
         GlobalEvents.instance.onGameStart.Invoke(this);
         NewStore();
         GameLog.Message("Game started");
