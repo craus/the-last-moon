@@ -552,7 +552,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   condition: {fileID: 617837343}
   targets:
-  - {fileID: 0}
+  - {fileID: 1835984984}
 --- !u!1 &796657498
 GameObject:
   m_ObjectHideFlags: 0
