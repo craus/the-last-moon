@@ -31,6 +31,7 @@ public class Creature : MonoBehaviour
     public GameObject moveImage;
 
     public event Action<AbilityEffect> onDeath = (s) => { };
+    public event Action onLevelUp = () => { };
 
     public Transform buffsFolder {
         get {
@@ -84,6 +85,13 @@ public class Creature : MonoBehaviour
 
     public int NextLevelCost => LevelCost(level + 1);
 
+    public void LevelUp() {
+        experience -= NextLevelCost;
+        level++;
+        skillPoints++;
+        onLevelUp();
+    }
+
     public int Experience {
         get {
             return experience;
@@ -91,9 +99,7 @@ public class Creature : MonoBehaviour
         set {
             experience = value;
             for (int i = 0; i < 100 & experience >= NextLevelCost; i++) {
-                experience -= NextLevelCost;
-                level++;
-                skillPoints++;
+                LevelUp();
             }
         }
     }
