@@ -12,6 +12,8 @@ public class PlayerProfile
 
     public GameRun currentRun;
 
+    public SavedGame savedGame;
+
     public void UpdateVersion() {
     }
 }

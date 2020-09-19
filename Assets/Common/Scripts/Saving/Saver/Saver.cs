@@ -9,7 +9,16 @@ public class Saver : MonoBehaviour
 {
     public string key;
 
-    public void Save() {
-        GetComponentsInChildren<ISaver>().ForEach(saver => saver.OnSave());
+    //public 
+
+    public Map<string, object> Save() {
+        //GetComponentsInChildren<ISaver>().ForEach(saver => saver.OnSave());
+        return null;
+    }
+
+    public Saver Load(Map<string, object> data) {
+        var result = Instantiate(this);
+        //GetComponentsInChildren<ISaver>().ForEach(saver => saver.OnLoad());
+        return result;
     }
 }

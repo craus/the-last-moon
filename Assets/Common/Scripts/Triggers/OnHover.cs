@@ -8,7 +8,6 @@ namespace Common
     public class OnHover : Trigger, IPointerEnterHandler
     {
         public void OnPointerEnter(PointerEventData eventData) {
-            DebugManager.LogFormat("OnPointerEnter");
             Run();
         }
     }

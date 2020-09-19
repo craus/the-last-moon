@@ -1,13 +1,13 @@
-﻿using System.Collections;
-using System;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.IO;
-using UnityEngine;
-using System.Runtime.Serialization;
+﻿//using System.Collections;
+//using System;
+//using System.Runtime.Serialization.Formatters.Binary;
+//using System.IO;
+//using UnityEngine;
+//using System.Runtime.Serialization;
 
-public interface ISaver
-{
-    void OnSave();
+//public interface ISaver
+//{
+//    Map<string, object> Save();
 
-    void OnLoad();
-}
+//    void Load(Map<string, object> save);
+//}

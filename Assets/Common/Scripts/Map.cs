@@ -42,6 +42,9 @@ public class Map<K, V> : Dictionary<K, V>, ISerializationCallbackReceiver
         this.defaultValueProvider = defaultValueProvider;
     }
 
+    public Map() {
+    }
+
     public override string ToString() {
         string result = "";
         foreach (K key in Keys) {

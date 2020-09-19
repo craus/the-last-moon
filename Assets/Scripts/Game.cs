@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Game : Singletone<Game>
@@ -114,7 +115,21 @@ public class Game : Singletone<Game>
         }
     }
 
-    public void OnSave() {
-        player.abilitiesFolder.GetComponentsInDirectChildren<Saver>().ForEach(s => s.Save());
+    public SavedGame Save() {
+        var result = new SavedGame {
+            day = day,
+            playerItems = player.abilitiesFolder.GetComponentsInDirectChildren<Saver>().Select(s => new SavedItem().Tap(si => {
+                si.key = s.key;
+            })).ToList()
+        };
+        return result;
+    }
+
+    public void Load(SavedGame savedGame) {
+        var items = savedGame.playerItems;
+        items.ForEach(item => {
+            var itemObject = Library.instance.GetByKey(item.key).Load(null);
+            itemObject.transform.SetParent(player.abilitiesFolder);
+        });
     }
 }

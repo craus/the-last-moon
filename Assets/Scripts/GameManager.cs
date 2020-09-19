@@ -60,6 +60,32 @@ public class GameManager : Singletone<GameManager>
             game.RestartBattle();
             return;
         }
+        if (Input.GetKeyDown(KeyCode.F2)) {
+            QuickSave();
+        }
+        if (Input.GetKeyDown(KeyCode.F5)) {
+            QuickLoad();
+        }
+    }
+
+    public void QuickSave() {
+        Statistics.UpdateCurrentProfile(p => p.savedGame = game.Save());
+        GameLog.Message("Game saved");
+    }
+
+    public void QuickLoad() {
+        if (Statistics.CurrentProfile.savedGame == null) {
+            GameLog.Message("No saved game");
+            return;
+        }
+        DestroyGame();
+        LoadGame();
+    }
+
+    public void LoadGame() {
+        game = Instantiate(gameSample);
+        game.Load(Statistics.CurrentProfile.savedGame);
+        GameLog.Message("Game loaded");
     }
 
     public void DestroyGame() {
