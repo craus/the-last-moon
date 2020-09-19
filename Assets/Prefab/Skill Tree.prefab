@@ -479,6 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuePreview: {fileID: 0}
+  enableValuePreview: 0
 --- !u!114 &5991702697632527820
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -796,6 +797,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyLater: 0
   delay: 10
 --- !u!1 &5621702872941603945
 GameObject:
