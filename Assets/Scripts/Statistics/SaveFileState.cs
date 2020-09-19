@@ -15,4 +15,11 @@ public class SaveFileState
         currentProfile = new PlayerProfile();
         playerProfiles.Add(currentProfile);
     }
+
+    public void UpdateVersion() {
+        playerProfiles.ForEach(p => p.UpdateVersion());
+        if (currentProfile == null) {
+            currentProfile = playerProfiles[0];
+        }
+    }
 }

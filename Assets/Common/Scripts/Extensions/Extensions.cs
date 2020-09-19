@@ -30,6 +30,19 @@ public static class Extensions
         return obj;
     }
 
+    public static List<T> SortedBy<T, TKey>(this List<T> list, Func<T, TKey> criteria) {
+        List<T> result = new List<T>(list);
+
+        return result.OrderBy(criteria).ToList();
+    }
+
+    public static List<T> Sorted<T>(this List<T> list, Func<T, T, bool> less) {
+        List<T> result = new List<T>(list);
+
+        result.Sort(new LessComparer<T>(less));
+        return result;
+    }
+
     public static List<T> Sorted<T>(this List<T> list)
     {
         List<T> result = new List<T>(list);
@@ -327,16 +340,6 @@ public static class Extensions
         material.color = c;
     }
 
-    public static List<T> GetComponentsInDirectChildren<T>(this Component component)
-    {
-        List<T> result = new List<T>();
-        foreach (Transform t in component.transform)
-        {
-            result = result.Concat(t.GetComponents<T>().ToList()).ToList();
-        }
-        return result;
-    }
-
     public static Vector3 WithZ(this Vector2 v, float z)
     {
         return new Vector3(
@@ -381,6 +384,15 @@ public static class Extensions
             return null;
         }
         return listToClone.Select(item => item).ToList();
+    }
+
+    public static string Path(this Transform transform, Transform fromParent = null) {
+        string path = transform.name;
+        while (transform.parent != null && transform.parent != fromParent) {
+            transform = transform.parent;
+            path = transform.name + "/" + path;
+        }
+        return path;
     }
 
     public static string Path(this Transform transform)

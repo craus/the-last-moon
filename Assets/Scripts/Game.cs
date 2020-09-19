@@ -113,4 +113,8 @@ public class Game : Singletone<Game>
             daysWithNoStores++;
         }
     }
+
+    public void OnSave() {
+        player.abilitiesFolder.GetComponentsInDirectChildren<Saver>().ForEach(s => s.Save());
+    }
 }

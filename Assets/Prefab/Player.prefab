@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuePreview: {r: 0, g: 0, b: 0, a: 0}
+  enableValuePreview: 0
   freeSkillPoints: {r: 1, g: 0, b: 0, a: 1}
   noFreeSkillPoints: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &6202218185909642009
@@ -1735,6 +1736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuePreview: {fileID: 0}
+  enableValuePreview: 0
 --- !u!114 &9069541383057111536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2242,6 +2244,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   valuePreview: {fileID: 0}
+  enableValuePreview: 0
 --- !u!114 &7556650957868792361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2920,7 +2923,8 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: Deal 1 damage
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 458334086399435538, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &929919207639558015 stripped
 GameObject:
@@ -3288,7 +3292,8 @@ PrefabInstance:
       propertyPath: effects.Array.data[0]
       value: 
       objectReference: {fileID: 4734444141951220626}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 458334086399435538, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!224 &5493671933839429481 stripped
 RectTransform:
@@ -3702,7 +3707,8 @@ PrefabInstance:
       propertyPath: effects.Array.data[0]
       value: 
       objectReference: {fileID: 4275778142035297677}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 458334086399435538, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!1 &7728100722577861590 stripped
 GameObject:

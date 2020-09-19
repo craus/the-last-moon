@@ -491,6 +491,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1880472282698738356}
   - component: {fileID: 3574723278867309124}
+  - component: {fileID: 458334086399435538}
   m_Layer: 5
   m_Name: Ability
   m_TagString: Untagged
@@ -535,6 +536,18 @@ MonoBehaviour:
   manualDescription: 
   descriptionPreview: End turn
   manualText: 
+--- !u!114 &458334086399435538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1880472282698738357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b36984282a99e384795419ed7c47342b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5015615775416998565
 GameObject:
   m_ObjectHideFlags: 0

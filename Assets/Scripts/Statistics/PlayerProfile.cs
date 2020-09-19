@@ -11,4 +11,7 @@ public class PlayerProfile
     public List<GameRun> runs = new List<GameRun>();
 
     public GameRun currentRun;
+
+    public void UpdateVersion() {
+    }
 }

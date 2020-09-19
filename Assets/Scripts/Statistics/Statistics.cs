@@ -7,6 +7,13 @@ public static class Statistics
 {
     public const string SAVE_FILE_NAME = "moon.sav";
 
+    public static PlayerProfile CurrentProfile => Load().currentProfile;
+    public static IEnumerable<GameRun> Runs => CurrentProfile.runs;
+
+    private static void UpdateVersion(SaveFileState save) {
+
+    }
+
     public static SaveFileState Load() {
         var result = FileManager.LoadFromFile<SaveFileState>(SAVE_FILE_NAME);
         if (result == null) {
@@ -14,6 +21,7 @@ public static class Statistics
             result = new SaveFileState();
             Save(result);
         }
+        result.UpdateVersion();
         return result;
     }
 
