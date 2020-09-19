@@ -38,13 +38,9 @@ public static class Statistics
         UpdateCurrentRun(r => r.status = GameRun.Status.Dead);
     }
 
-    public static void RegisterCurrentDay(int day) {
-        UpdateCurrentRun(r => r.day = day);
-    }
-
-    public static void RegisterNewRun() {
+    public static void RegisterNewRun(SavedGame savedGame) {
         UpdateCurrentProfile(p => {
-            var run = new GameRun();
+            var run = new GameRun(savedGame);
             p.runs.Add(run);
             p.currentRun?.Abandon();
             p.currentRun = run;

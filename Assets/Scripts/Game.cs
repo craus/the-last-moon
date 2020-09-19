@@ -26,7 +26,7 @@ public class Game : Singletone<Game>
 
     public void NextDay() {
         day++;
-        Statistics.RegisterCurrentDay(day);
+        Statistics.UpdateCurrentRun(r => r.savedGame = Save());
     }
 
     public void NewBattle() {
@@ -94,7 +94,7 @@ public class Game : Singletone<Game>
     }
 
     public void Start() {
-        Statistics.RegisterNewRun();
+        Statistics.RegisterNewRun(Save());
         GlobalEvents.instance.onGameStart.Invoke(this);
         NewStore();
         GameLog.Message("Game started");

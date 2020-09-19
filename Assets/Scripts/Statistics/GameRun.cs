@@ -15,12 +15,14 @@ public class GameRun
         Interrupted = 40
     }
 
-    public int day;
     public Status status;
+    public SavedGame savedGame;
 
-    public GameRun(int day = 0, Status status = Status.Alive) {
-        this.day = day;
+    public int Day => savedGame.day;
+
+    public GameRun(SavedGame savedGame, Status status = Status.Alive) {
         this.status = status;
+        this.savedGame = savedGame;
     }
 
     public void Abandon() {
@@ -31,6 +33,6 @@ public class GameRun
     }
 
     public string Text() {
-        return $"{status} on day {day}";
+        return $"{status} on day {Day}";
     }
 }
