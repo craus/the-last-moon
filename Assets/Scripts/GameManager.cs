@@ -52,19 +52,21 @@ public class GameManager : Singletone<GameManager>
     }
 
     public void CheckButtons() {
-        if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift)) {
-            RestartGame();
-            return;
-        }
-        if (Input.GetKeyDown(KeyCode.R)) {
-            game.RestartBattle();
-            return;
-        }
-        if (Input.GetKeyDown(KeyCode.F2)) {
-            QuickSave();
-        }
-        if (Input.GetKeyDown(KeyCode.F5)) {
-            QuickLoad();
+        if (Cheats.on) {
+            if (Input.GetKeyDown(KeyCode.R) && Input.GetKey(KeyCode.LeftShift)) {
+                RestartGame();
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.R)) {
+                game.RestartBattle();
+                return;
+            }
+            if (Input.GetKeyDown(KeyCode.F2)) {
+                QuickSave();
+            }
+            if (Input.GetKeyDown(KeyCode.F3)) {
+                QuickLoad();
+            }
         }
     }
 
