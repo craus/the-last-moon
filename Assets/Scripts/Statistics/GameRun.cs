@@ -20,6 +20,10 @@ public class GameRun
 
     public int Day => savedGame.day;
 
+    public int rank;
+
+    public int Score => Day;
+
     public GameRun(SavedGame savedGame, Status status = Status.Alive) {
         this.status = status;
         this.savedGame = savedGame;

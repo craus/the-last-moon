@@ -9,6 +9,7 @@ public class GameRunScript : MonoBehaviour
 
     public TMPro.TextMeshProUGUI description;
     public TMPro.TextMeshProUGUI items;
+    public TMPro.TextMeshProUGUI rank;
 
     public void Start() {
         description.text = gameRun.Text();
@@ -16,5 +17,6 @@ public class GameRunScript : MonoBehaviour
             format: "{0}",
             elementToString: si => Library.instance.GetByKey(si.key).GetComponent<GenericAbility>().Text(null)
         );
+        rank.text = $"#{gameRun.rank}";
     }
 }

@@ -11,6 +11,7 @@ public class ListOfRuns : MonoBehaviour
 
     public void UpdateList() {
         transform.Children().ForEach(c => Destroy(c.gameObject));
+        Statistics.UpdateCurrentProfile(p => p.UpdateRunRanks());
         Statistics.Runs.OrderBy(r => (r.status == GameRun.Status.Alive ? 0 : 1, -r.Day)).ForEach(CreateGameRunScript);
     }
 
