@@ -51,4 +51,17 @@ public static class FileManager
             if (fs != null) fs.Close();
         }
     }
+
+    public static void RemoveFile(string filename) {
+        filename = Application.persistentDataPath + "/" + filename;
+        Debug.Log("Removing file: " + filename);
+        try {
+            var bf = GetFormatter();
+            File.Delete(filename);
+        } catch (Exception e) {
+            Debug.LogException(e);
+            Debug.Log(e.StackTrace);
+        } finally {
+        }
+    }
 }

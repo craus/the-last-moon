@@ -102,4 +102,9 @@ public class GameManager : Singletone<GameManager>
         DestroyGame();
         NewGame();
     }
+
+    public void WipeSave() {
+        Statistics.WipeSave();
+        RestartGame();
+    }
 }

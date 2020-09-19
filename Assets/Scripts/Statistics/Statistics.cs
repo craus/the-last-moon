@@ -10,6 +10,11 @@ public static class Statistics
     public static PlayerProfile CurrentProfile => Load().currentProfile;
     public static IEnumerable<GameRun> Runs => CurrentProfile.runs;
 
+    public static void WipeSave() {
+        FileManager.RemoveFile(SAVE_FILE_NAME);
+        Save(new SaveFileState());
+    }
+
     public static SaveFileState Load() {
         var result = FileManager.LoadFromFile<SaveFileState>(SAVE_FILE_NAME);
         if (result == null) {
