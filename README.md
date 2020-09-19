@@ -9,7 +9,11 @@ no build ready yet
 
 Features of current version:
 
+
 You buy items.
+
 You fight.
+
 You die.
+
 Your run is shown in records table.
