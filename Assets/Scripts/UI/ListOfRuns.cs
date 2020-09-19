@@ -12,12 +12,14 @@ public class ListOfRuns : MonoBehaviour
     public void UpdateList() {
         transform.Children().ForEach(c => Destroy(c.gameObject));
         Statistics.UpdateCurrentProfile(p => p.UpdateRunRanks());
-        Statistics.Runs.OrderBy(r => (-r.Day)).ForEach(CreateGameRunScript);
+        var profile = Statistics.CurrentProfile;
+        profile.runs.OrderBy(r => (-r.Day)).ForEach(r => CreateGameRunScript(r, profile));
 
     }
 
-    private void CreateGameRunScript(GameRun run) {
+    private void CreateGameRunScript(GameRun run, PlayerProfile profile) {
         var runScript = Instantiate(gameRunScriptSample, transform);
         runScript.gameRun = run;
+        runScript.playerProfile = profile;
     }
 }
