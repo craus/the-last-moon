@@ -41,6 +41,10 @@ public class GameLog : Singletone<GameLog>
     }
 
     public static void LogBattleRound() {
+        if (Game.instance.battle == null) {
+            Message($"Battle finished instantly");
+            return;
+        }
         Message($"Battle round {Game.instance.battle.moveNumber}");
     }
 }

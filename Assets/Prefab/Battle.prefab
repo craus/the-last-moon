@@ -434,6 +434,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  destroyLater: 1
   delay: 10
 --- !u!114 &6541728564069347690
 MonoBehaviour:
@@ -603,7 +604,8 @@ MonoBehaviour:
   sample: {fileID: 6505685705459312533, guid: 5d27578a2193ab14e9f40b122d50340f, type: 3}
   parent: {fileID: 4967579293751010126}
   mana: 1
-  manaPerGameDay: 0.45
+  manaPerGameDay: 0
+  manaMultiplierPerGameDay: 1.12
   manaPerTurn: 2.4
   manaPerTurn2: 0.0005
 --- !u!114 &6709783814224596020

@@ -71,7 +71,9 @@ public class Player : Creature
     protected override void OnBattleEnd(Battle b) {
         base.OnBattleEnd(b);
         if (Game.instance.battle.AllMonstersDead) {
-            gold += 2;
+            var reward = Game.instance.goldForBattleWin.rndRound();
+            gold += reward;
+            GameLog.Message($"Gained {reward} gold");
         }
     }
 }

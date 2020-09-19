@@ -18,6 +18,16 @@ public class Game : Singletone<Game>
     public bool battleOn => battle != null && battle.on;
     public bool storeOn => store != null;
 
+    public float spawnerBaseMana = 1;
+    public float spawnerManaPerDay = 0;//0.45f;
+    public float spawnerManaMultiplierPerDay = 1.12f;
+    public float goldMultiplierPerDay = 1.12f;
+    public float spawnerBaseManaPerTurn = 2.15f;
+    public float spawnerManaPerTurn2 = 0.0015f;
+    public float baseGoldForBattleWin = 2f;
+
+    public float goldForBattleWin => baseGoldForBattleWin * Mathf.Pow(goldMultiplierPerDay, day);
+
     public void DestroyBattle() {
         if (battle != null) {
             Destroy(battle.gameObject);
@@ -34,7 +44,10 @@ public class Game : Singletone<Game>
         NextDay();
         battle = Instantiate(battleSample, transform);
         var spawner = battle.GetComponentInChildren<MonsterSpawner>();
-        spawner.mana += Game.instance.day * spawner.manaPerGameDay;
+        spawner.mana = spawnerBaseMana;
+        spawner.manaPerTurn = spawnerBaseManaPerTurn;
+        spawner.mana += day * spawnerManaPerDay;
+        spawner.mana *= Mathf.Pow(spawnerManaMultiplierPerDay, day);
     }
 
     public void NewStore() {

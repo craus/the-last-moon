@@ -9,5 +9,4 @@
   
 лог плохо работает при большом объёме (3к+ сообщений)
 
-
-DebugManager.LogFormat("Monsters: {0}", FindObjectsOfType<Monster>()); неправильно - только 0-й монстр будет выведен
+надо поменять местами надписи на Medical Treatment (цену и действие)

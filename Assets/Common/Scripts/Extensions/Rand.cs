@@ -36,6 +36,10 @@ public static class Rand
 		return d0(cnt, edges) + cnt;
 	}
 
+	public static int rndRound(this float x) {
+		return rndEvent(x % 1) ? (int)Mathf.Ceil(x) : (int)Mathf.Floor(x);
+	}
+
 	public static T rnd<T>(T[,] matrix) {
 		return matrix[UnityEngine.Random.Range(0, matrix.GetLength(0)), UnityEngine.Random.Range(0, matrix.GetLength(1))];
 	}

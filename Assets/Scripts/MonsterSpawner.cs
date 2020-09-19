@@ -9,9 +9,7 @@ public class MonsterSpawner : Monster
     public Monster sample;
     public Transform parent;
     public float mana;
-    public float manaPerGameDay = 0.5f;
-    public float manaPerTurn = 2.15f;
-    public float manaPerTurn2 = 0.0015f;
+    public float manaPerTurn;
 
     public override void Start() {
         base.Start();
@@ -22,7 +20,7 @@ public class MonsterSpawner : Monster
         DebugManager.LogFormat("MonsterSpawner TakeAction");
 
         mana += manaPerTurn;
-        manaPerTurn += manaPerTurn2;
+        manaPerTurn += Game.instance.spawnerManaPerTurn2;
 
         if (Rand.rndEvents(0.2f, (int)mana) >= 1) {
             SpendMana();
@@ -54,8 +52,6 @@ public class MonsterSpawner : Monster
         GameLog.LogMonsters();
 
         Game.instance.battle.PlanStartBattle();
-
-
     }
 
     Monster NewMonster() {
