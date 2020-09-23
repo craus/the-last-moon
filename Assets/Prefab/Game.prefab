@@ -306,6 +306,13 @@ MonoBehaviour:
   store: {fileID: 0}
   player: {fileID: 5327965992039721882}
   battle: {fileID: 0}
+  spawnerBaseMana: 1
+  spawnerManaPerDay: 0
+  spawnerManaMultiplierPerDay: 1.12
+  goldMultiplierPerDay: 1.12
+  spawnerBaseManaPerTurn: 2.15
+  spawnerManaPerTurn2: 0.0015
+  baseGoldForBattleWin: 2
 --- !u!114 &7831613085363938877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +325,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36984282a99e384795419ed7c47342b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 
 --- !u!1 &1372786587591783583
 GameObject:
   m_ObjectHideFlags: 0
@@ -1514,6 +1522,21 @@ PrefabInstance:
     - target: {fileID: 3388400758340211591, guid: 23b4085edbe33e54c8adbe3afa37a85f,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707467048988143893, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707467048988143893, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3707467048988143893, guid: 23b4085edbe33e54c8adbe3afa37a85f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7426582955035003742, guid: 23b4085edbe33e54c8adbe3afa37a85f,

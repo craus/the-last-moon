@@ -68,6 +68,9 @@ public class CreatureText : MonoBehaviour
     }
 
     public void Update() {
-        text.text = FormatCreature(format, creature);
+        var t = FormatCreature(format, creature);
+        if (text.text != t) {
+            text.text = t;
+        }
     }
 }

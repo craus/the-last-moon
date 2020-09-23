@@ -120,7 +120,7 @@ public class Game : Singletone<Game>
         if (!Player.instance.Alive) {
             return;
         }
-        if (Rand.rndEvent(0.16f * daysWithNoStores)) {
+        if (Rand.rndEvent(0.2f * daysWithNoStores)) {
             NewStore();
             daysWithNoStores = 0;
         } else {
