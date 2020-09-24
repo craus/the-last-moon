@@ -312,7 +312,7 @@ MonoBehaviour:
   goldMultiplierPerDay: 1.12
   spawnerBaseManaPerTurn: 2.15
   spawnerManaPerTurn2: 0.0015
-  baseGoldForBattleWin: 2
+  baseGoldForBattleWin: 1
 --- !u!114 &7831613085363938877
 MonoBehaviour:
   m_ObjectHideFlags: 0
