@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -11,7 +12,10 @@ public abstract class Ability : MonoBehaviour
 
     public new string name;
 
+    public event Action onUse;
+
     public virtual void Use(Creature user, Creature target) {
+        onUse.Invoke();
     }
 
     public virtual string Text(Creature user) {
