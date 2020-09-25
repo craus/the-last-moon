@@ -2136,7 +2136,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  destroyLater: 1
+  destroyLater: 0
   delay: 10
 --- !u!1 &8301987220725157876
 GameObject:
@@ -2406,7 +2406,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  destroyLater: 1
+  destroyLater: 0
   delay: 10
 --- !u!1001 &103129701141971891
 PrefabInstance:
@@ -12129,6 +12129,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 78.7
       objectReference: {fileID: 0}
+    - target: {fileID: 8908915817065970251, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!224 &8880640009064305434 stripped
@@ -13172,6 +13177,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908915817065970251, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
