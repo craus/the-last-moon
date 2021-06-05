@@ -52,6 +52,9 @@ public static class Statistics
     }
 
     public static void UpdateCurrentRun(Action<GameRun> update) {
-        UpdateCurrentProfile(p => update(p.currentRun));
+        UpdateCurrentProfile(p => {
+            update(p.currentRun);
+            p.currentRun.lastTime = DateTime.Now;
+        });
     }
 }

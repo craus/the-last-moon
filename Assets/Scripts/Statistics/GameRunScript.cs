@@ -12,6 +12,7 @@ public class GameRunScript : MonoBehaviour
     public TMPro.TextMeshProUGUI description;
     public TMPro.TextMeshProUGUI items;
     public TMPro.TextMeshProUGUI rank;
+    public TMPro.TextMeshProUGUI lastTime;
 
     public Image back;
     public Image highlightedBack;
@@ -25,6 +26,7 @@ public class GameRunScript : MonoBehaviour
             elementToString: si => Library.instance.GetByKey(si.key).GetComponent<GenericAbility>().Text(null)
         );
         rank.text = $"#{gameRun.rank}";
+        lastTime.text = $"{(gameRun.lastTime != DateTime.MinValue ? gameRun.lastTime.ToString() : "...")}";
         back.enabled = !Current;
         highlightedBack.enabled = Current;
     }

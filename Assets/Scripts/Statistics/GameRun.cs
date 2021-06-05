@@ -18,6 +18,8 @@ public class GameRun
     public Status status;
     public SavedGame savedGame;
 
+    public DateTime lastTime;
+
     public int Day => savedGame.day;
 
     public int rank;
