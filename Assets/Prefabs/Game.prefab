@@ -173,7 +173,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: dc66a2002c5ab9c44af1328cb0d6503a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.795
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1049,7 +1049,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.8301887, g: 0.8301887, b: 0.8301887, a: 1}
+    m_HighlightedColor: {r: 0.8490566, g: 0.23629406, b: 0.23629406, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}

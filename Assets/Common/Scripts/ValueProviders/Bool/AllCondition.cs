@@ -4,5 +4,5 @@ using UnityEngine;
 using System.Linq;
 
 public class AllCondition : AggregateCondition {
-    public override bool Value => Arguments.All(b => b);
+    protected override bool BoolValue => Arguments.All(b => b);
 }

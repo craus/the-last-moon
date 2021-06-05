@@ -10,5 +10,9 @@ namespace Common
         public void OnPointerExit(PointerEventData eventData) {
             Run();
         }
+
+        public void OnDisable() {
+            Run();
+        }
     }
 }

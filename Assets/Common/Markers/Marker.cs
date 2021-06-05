@@ -13,6 +13,10 @@ namespace Common
         {
             return this.mark == mark;
         }
+
+        public void Awake() {
+            mark.target = this;
+        }
     }
 
     public static class MarkerExtensions
