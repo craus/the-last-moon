@@ -10,7 +10,9 @@ public class AttackApplyBuff : Buff, IAttackModifier
 
     public void ModifyAttack(Attack attack) {
         if (attack.attacker == owner) {
-            buff.Apply(attack.victim);
+            attack.Does(() => {
+                buff.Apply(attack.victim);
+            });
         }
     }
 }

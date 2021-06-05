@@ -44,6 +44,8 @@ public class Buff : MonoBehaviour
         }
     }
 
+    public void Spend() => Spend(1);
+
     public void Spend(int delta = 1) {
         var oldPower = power;
         power = Mathf.Clamp(power - delta, 0, int.MaxValue);
@@ -59,7 +61,9 @@ public class Buff : MonoBehaviour
     protected virtual void ModifyAttackDamage(Attack attack, int delta) {
         var old = attack.damage;
         attack.damage += delta;
-        LogAttackDamageModification(delta, old, attack);
+        attack.Does(() => {
+            LogAttackDamageModification(delta, old, attack);
+        });
     }
 
     protected virtual void LogAttackDamageModification(int delta, int old, Attack attack) {

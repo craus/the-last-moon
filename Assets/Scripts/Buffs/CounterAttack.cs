@@ -9,7 +9,9 @@ public class CounterAttack : Buff, IAttackModifier
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner) {
             if (attack.damageType != DamageType.Thorns) {
-                attack.attacker.Hit(owner, power, damageType: DamageType.Thorns);
+                attack.Does(() => {
+                    attack.attacker.Hit(owner, power, damageType: DamageType.Thorns);
+                });
             }
         }
     }

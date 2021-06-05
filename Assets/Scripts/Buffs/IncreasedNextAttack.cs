@@ -6,7 +6,7 @@ public class IncreasedNextAttack : IncreasedAttack
 {
     protected override void IncreaseAttack(Attack attack) {
         base.IncreaseAttack(attack);
-        Expire();
+        attack.Does(Expire);
     }
 
     public override string Description() {

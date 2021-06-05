@@ -122,18 +122,8 @@ public class Creature : MonoBehaviour
             $"{(ability != null && source != null ? $" with {ability.name} ({source.Description(attacker)})" : "")}" +
             $"{(ability == null && source != null ? $" with {source.Text(attacker)}" : "")}");
 
-        IEnumerable<IAttackModifier> attackModifiers =
-            (attacker?.buffs?.Where(b => b is IAttackModifier) ?? CollectionExtensions.Empty<Buff>())
-            .Concat(buffs.Where(b => b is IAttackModifier))
-            .Cast<IAttackModifier>()
-            .Unique();
-
-        foreach (var am in attackModifiers.OrderBy(am => am.Priority)) {
-            am.ModifyAttack(attack);
-            if (attack.interrupted) {
-                break;
-            }
-        }
+        attack.ApplyBuffs();
+        attack.Execute();
 
         GameManager.instance.ExecutePlannedActions();
     }

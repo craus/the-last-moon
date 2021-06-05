@@ -15,10 +15,11 @@ public class PreventNextDamageDealtTo : Buff, IAttackModifier
     public void ModifyAttack(Attack attack) {
         DebugManager.LogFormat("PreventNextDamageDealtTo.ModifyAttack");
         if (attack.attacker == owner && attack.victim == target.Value) {
-            DebugManager.LogFormat("attack.attacker == owner && attack.victim == target.Value");
             attack.damage = 0;
-            Spend();
-            GameLog.Message($"Prevented attack damage from {attack.attacker.Text()} to {attack.victim.Text()}");
+            attack.Does(() => {
+                Spend();
+                GameLog.Message($"Prevented attack damage from {attack.attacker.Text()} to {attack.victim.Text()}");
+            });
         }
     }
 

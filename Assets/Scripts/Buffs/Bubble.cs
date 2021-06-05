@@ -11,7 +11,7 @@ public class Bubble : Buff, IAttackModifier, IEndCombatModifier
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner && attack.damage > thresholdDamage) {
             attack.damage = 0;
-            Spend();
+            attack.Does(Spend);
         }
     }
 

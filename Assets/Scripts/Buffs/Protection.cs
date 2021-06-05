@@ -10,7 +10,10 @@ public class Protection : Buff, IAttackModifier
         if (attack.victim == owner) {
             var protectedDamage = Mathf.Min(attack.damage, power);
             ModifyAttackDamage(attack, -protectedDamage);
-            Spend(protectedDamage);
+
+            attack.Does(() => {
+                Spend(protectedDamage);
+            });
         }
     }
 }
