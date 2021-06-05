@@ -38,7 +38,7 @@ namespace Common
 
         public static Marker FindMark(this Component component, Mark mark)
         {
-            return component.GetComponentsInChildren<Marker>().Where(marker => marker.mark == mark).FirstOrDefault();
+            return component.GetComponentsInChildren<Marker>().FirstOrDefault(marker => marker.mark == mark);
         }
     }
 }

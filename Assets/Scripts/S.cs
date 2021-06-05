@@ -8,4 +8,6 @@ public static class S
     public const string key = "key";
     public const string day = "day";
     public const string data = "data";
+
+    public static string damageYourselfBy => "Damage yourself by {0}.";
 }
