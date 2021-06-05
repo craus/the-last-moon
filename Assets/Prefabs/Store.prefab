@@ -1889,7 +1889,8 @@ MonoBehaviour:
   store: {fileID: 5663394210681750366}
   goodsFolder: {fileID: 340712306050496238}
   itemsInStore: 5
-  alwaysInclude: []
+  alwaysInclude:
+  - {fileID: 2766014039106098101}
 --- !u!114 &5351985558808318920
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class IncreasedAttack : Buff, IAttackModifier, IEndCombatModifier
         attack.damage = Mathf.Clamp(attack.damage + power, 0, int.MaxValue);
         var delta = attack.damage - old;
 
-        GameLog.Message($"Attack damage modified by {delta}");
+        GameLog.Message($"Attack damage modified by {delta} ({old} -> {attack.damage})");
     }
 
     public void OnCombatEnd() {

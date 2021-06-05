@@ -871,6 +871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valuePreview: 0
   enableValuePreview: 0
+  reversed: 0
 --- !u!114 &8850102169069756740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2554,7 +2555,7 @@ MonoBehaviour:
   slow: 0
   buffs:
   - {fileID: 5726654862589572894}
-  m_buffsFolder: {fileID: 0}
+  m_buffsFolder: {fileID: 6361638149122076633}
   moveImage: {fileID: 2163323869846900958}
   abilitiesFolder: {fileID: 8153623341690177901}
 --- !u!1 &8153623341690177902
@@ -3944,6 +3945,11 @@ PrefabInstance:
       propertyPath: effects.Array.data[0]
       value: 
       objectReference: {fileID: 4275778142035297677}
+    - target: {fileID: 8908915817065970251, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 458334086399435538, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
