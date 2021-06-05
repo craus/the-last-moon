@@ -10,4 +10,20 @@ public static class S
     public const string data = "data";
 
     public static string damageYourselfBy => "Damage yourself by {0}.";
+
+    public static List<string> monsterNames = new List<string> {
+        "Skeleton",
+        "Spider",
+        "Goblin",
+        "Snake",
+        "Banshee",
+        "Drozdov",
+        "Bill Gates",
+        "Evil Clown",
+        "Ghost",
+        "Hater",
+        "Golem",
+        "Cultist",
+        "Medusa"
+    };
 }

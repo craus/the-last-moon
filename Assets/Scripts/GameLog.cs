@@ -25,7 +25,7 @@ public class GameLog : Singletone<GameLog>
 
     public static void LogMonsters() {
         DebugManager.LogFormat("Monsters: {0}", FindObjectsOfType<Monster>().ExtToString(
-            elementToString: m => m.Text(),
+            elementToString: m => m.gameObject.name,
             format: "{0}"
         ));
         GameLog.Message(
@@ -33,7 +33,7 @@ public class GameLog : Singletone<GameLog>
                 FindObjectsOfType<Monster>()
                     .Where(m => !(m is MonsterSpawner))
                     .ExtToString(
-                        elementToString: m => m.Text(),
+                        elementToString: m => m.gameObject.name,
                         format: "{0}"
                     )
             )

@@ -56,6 +56,7 @@ public class MonsterSpawner : Monster
 
     Monster NewMonster() {
         var m = Instantiate(sample, parent);
+        m.name = S.monsterNames.rnd();
         return m;
     }
 

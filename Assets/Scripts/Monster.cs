@@ -25,6 +25,7 @@ public class Monster : Creature
     }
 
     public override string Text() {
-        return CreatureText.FormatCreature(FORMAT, this);
+        return name;
+        //return CreatureText.FormatCreature(FORMAT, this);
     }
 }
