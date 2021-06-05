@@ -25,4 +25,8 @@ public class PreventNextDamageDealtTo : Buff, IAttackModifier
     public override string Text() {
         return "!";
     }
+
+    public override string Description() {
+        return $"All damage this creature would deal to {target} will be prevented {power} times";
+    }
 }

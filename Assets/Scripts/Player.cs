@@ -7,12 +7,21 @@ using UnityEngine;
 
 public class Player : Creature
 {
-    public static Player instance;
+    private static Player _instance;
+
+    public static Player instance {
+        get {
+            if (_instance == null) {
+                _instance = FindObjectOfType<Player>();
+            }
+            return _instance;
+        }
+    }
 
     public Transform abilitiesFolder;
 
     public void Awake() {
-        instance = this;
+        _instance = this;
     }
 
     public override void Die(AbilityEffect source) {

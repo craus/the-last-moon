@@ -5,15 +5,16 @@ using System.Linq;
 using System;
 using RSG;
 using UnityEngine.Events;
+using Common;
 
-public class Undestroyable : MonoBehaviour
+public class Undestroyable : Effect
 {
 	public UnityEvent effect;
 	public bool destroyLater = true;
 
 	public float delay = 10;
 
-	public void Run() {
+	public override void Run() {
 		transform.SetParent(null);
 		effect.Invoke();
 		if (destroyLater) {

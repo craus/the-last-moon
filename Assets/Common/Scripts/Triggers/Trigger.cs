@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 namespace Common
 {
-    public class Trigger : MonoBehaviour
+    public class Trigger : Effect
     {
         [SerializeField] private bool once;
 
@@ -13,7 +13,7 @@ namespace Common
         [ReadOnly] [SerializeField] private bool triggered;
 
         [ContextMenu("Run")]
-        public void Run()
+        public override void Run()
         {
             if (!once || !triggered)
             {
