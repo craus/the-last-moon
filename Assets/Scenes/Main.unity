@@ -613,6 +613,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &371090615 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2196640457727028172, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1070075316519944610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &371090622
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371090615}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf9d79c1cd5b21a4981429200d1149dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &498608775
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,6 +6519,11 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3124973071944730442, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_Transition
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3760643653852959473, guid: d8fee5cfecf8fa047b8e768eed9734ff,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -6628,6 +6658,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251705794264560567, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251705794264560567, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8251705794264560567, guid: d8fee5cfecf8fa047b8e768eed9734ff,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8fee5cfecf8fa047b8e768eed9734ff, type: 3}

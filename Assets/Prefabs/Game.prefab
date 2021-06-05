@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 1198162370}
   - component: {fileID: 1198162372}
   - component: {fileID: 1198162371}
+  - component: {fileID: 1198162373}
   m_Layer: 0
   m_Name: Hovered Music
   m_TagString: Untagged
@@ -376,6 +377,19 @@ MonoBehaviour:
   enableValuePreview: 0
   reversed: 0
   on: 0
+--- !u!114 &1198162373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1198162369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84e8d9fa3e98a114d898bf57c850eaa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mark: {fileID: 11400000, guid: f0ab8c4f4b7c22e4da0992fbce68a4ce, type: 2}
 --- !u!1 &1682148533
 GameObject:
   m_ObjectHideFlags: 0
@@ -964,6 +978,7 @@ GameObject:
   - component: {fileID: 3124973071944730442}
   - component: {fileID: 371090617}
   - component: {fileID: 371090618}
+  - component: {fileID: 371090622}
   m_Layer: 5
   m_Name: Next Battle Button
   m_TagString: Untagged
@@ -1046,7 +1061,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.8490566, g: 0.23629406, b: 0.23629406, a: 1}
@@ -1138,6 +1153,25 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   triggered: 0
+--- !u!95 &371090622
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196640457727028172}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bf9d79c1cd5b21a4981429200d1149dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4895147168157330795
 GameObject:
   m_ObjectHideFlags: 0
