@@ -69,8 +69,10 @@ public class Buff : MonoBehaviour
 
     public virtual bool IncludeToCreatureDescription => true;
 
+    public virtual string Name => GetType().Name;
+
     public virtual string Description() {
-        return $"{this.GetType().Name}: {power}";
+        return $"{Name}: {power}";
     }
 
     public virtual string ShortDescription() {

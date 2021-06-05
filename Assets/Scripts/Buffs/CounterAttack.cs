@@ -30,4 +30,6 @@ public class CounterAttack : Buff, IAttackModifier
     public void OnOwnerDeath(AbilityEffect source) {
         Expire();
     }
+
+    public override string Name => "Counterattack";
 }
