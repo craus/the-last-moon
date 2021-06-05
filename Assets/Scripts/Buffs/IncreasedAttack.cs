@@ -25,4 +25,8 @@ public class IncreasedAttack : Buff, IAttackModifier, IEndCombatModifier
     public void OnCombatEnd() {
         Expire();
     }
+
+    public override string Text() {
+        return CreatureText.AttackString("a", power);
+    }
 }
