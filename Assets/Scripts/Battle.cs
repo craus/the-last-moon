@@ -36,7 +36,7 @@ public class Battle : MonoBehaviour
         GlobalEvents.instance.onBattleEnd(this);
         Destroy(gameObject);
         on = false;
-        AbilitiesController.instance.currentAbility = null;
+        //AbilitiesController.instance.currentAbility = null;
         Game.instance.battle = null;
     }
 
