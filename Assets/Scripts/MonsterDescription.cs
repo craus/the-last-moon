@@ -10,6 +10,6 @@ public class MonsterDescription : MonoBehaviour
     public TMPro.TextMeshProUGUI text;
 
     public void Update() {
-        text.text = $"<b>{monster.name}</b>";
+        text.text = $"<b>{monster.name}</b>\n\n{monster.Description()}";
     }
 }
