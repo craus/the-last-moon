@@ -8,8 +8,8 @@ public class DealDamage : AbilityEffect
     public IntValueProvider damageProvider;
     public int Damage => damageProvider != null ? damageProvider.Value : damage;
 
-    public override void Use(Creature user, Creature target) {
-        target.Hit(user, Damage, this);
+    public override void Use(Creature user, Creature target, Ability ability) {
+        target.Hit(user, Damage, this, ability);
     }
 
     public override string Text(Creature user) {

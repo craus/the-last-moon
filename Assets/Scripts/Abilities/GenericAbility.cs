@@ -24,7 +24,7 @@ public class GenericAbility : Ability
 
     public override void Use(Creature user, Creature target) {
         base.Use(user, target);
-        effects.ForEach(e => e.Use(user, target));
+        effects.ForEach(e => e.Use(user, target, this));
     }
 
     public override string Text(Creature user) {

@@ -12,8 +12,12 @@ public class AbilityEffect : Common.Effect
     public virtual bool AllowUsage(Creature user) => true;
     public virtual bool BattleOnly => true;
 
-    public virtual void Use(Creature user, Creature target) {
+    public virtual void Use(Creature user, Creature target, Ability ability) {
         onUse.Invoke();
+        Use(user, target);
+    }
+
+    public virtual void Use(Creature user, Creature target) {
     }
 
     public override void Run() {
