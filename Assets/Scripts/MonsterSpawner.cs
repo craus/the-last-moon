@@ -120,7 +120,7 @@ public class MonsterSpawner : Monster
             return;
         }
         if (Rand.rndEvent(0.5f)) {
-            m.slow++;
+            m.ApplyBuff<Slow>(1);
             mana += 1;
         }
         m.ApplyBuff<Stunned>(1);

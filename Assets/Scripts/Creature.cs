@@ -17,7 +17,6 @@ public class Creature : MonoBehaviour
     public int maxHp = 1;
     public bool maxedHp = true;
     public bool counterattackOn = false;
-    public int slow = 0;
     public bool Alive => hp > 0;
     public bool Dead => !Alive;
 
@@ -194,7 +193,6 @@ public class Creature : MonoBehaviour
     public void Attack(Creature target, int damage) {
         beforeAttack(this, target, damage);
         target.Hit(this, damage);
-        ApplyBuff<Stunned>(slow);
         afterAttack(this, target, damage);
     }
 
@@ -273,5 +271,15 @@ public class Creature : MonoBehaviour
 
     public override string ToString() {
         return Text();
+    }
+
+    private string Var(string name, int value) => value == 0 ? "" : $"{name}: {value}\n";
+
+    public string Description() {
+        return
+            $"attack damage: {damage}\n" +
+            $"health: {hp}/{maxHp}\n" +
+            buffs.Where(b => b.IncludeToCreatureDescription).Select(b => b.ShortDescription()).Join("\n") +
+            $"";
     }
 }

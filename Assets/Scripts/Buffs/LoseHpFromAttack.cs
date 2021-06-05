@@ -18,4 +18,8 @@ public class LoseHpFromAttack : Buff, IAttackModifier
             owner.LoseHp(attack.damage, attack.source, attack.attacker);
         }
     }
+
+    public override string Description() {
+        return "Mortal";
+    }
 }

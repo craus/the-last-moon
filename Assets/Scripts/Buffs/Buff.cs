@@ -67,8 +67,14 @@ public class Buff : MonoBehaviour
     public void UntilEndOfBattle() {
     }
 
+    public virtual bool IncludeToCreatureDescription => true;
+
     public virtual string Description() {
-        return "";
+        return $"{this.GetType().Name}: {power}";
+    }
+
+    public virtual string ShortDescription() {
+        return Description();
     }
 
     public virtual string Text() {

@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b92eb59db114e489f227b45b760632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monster: {fileID: 6505685705459312533}
+  creature: {fileID: 6505685705459312533}
   text: {fileID: 4802235333253458117}
 --- !u!1 &1807915710591717945
 GameObject:

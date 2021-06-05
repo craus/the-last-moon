@@ -4,12 +4,12 @@ using System.Linq;
 using UnityEngine;
 
 [ExecuteInEditMode]
-public class MonsterDescription : MonoBehaviour
+public class CreatureDescription : MonoBehaviour
 {
-    public Monster monster;
+    public Creature creature;
     public TMPro.TextMeshProUGUI text;
 
     public void Update() {
-        text.text = $"<b>{monster.name}</b>\n\n{monster.Description()}";
+        text.text = $"<b>{creature.name}</b>\n\n{creature.Description()}";
     }
 }

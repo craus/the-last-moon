@@ -29,21 +29,6 @@ public class Monster : Creature
         //return CreatureText.FormatCreature(FORMAT, this);
     }
 
-    private string Var(string name, int value) => value == 0 ? "" : $"{name}: {value}\n";
 
-    public string Description() {
-        return 
-            $"attack damage: {damage}\n" +
-            $"health: {hp}/{maxHp}\n" +
-            $"{Var("away from battle", buffPower<Away>())}" +
-            $"{Var("regeneration", buffPower<Regeneration>())}" +
-            $"{Var("protection", buffPower<Protection>())}" +
-            $"{Var("stunned", buffPower<Stunned>())}" +
-            $"{Var("slow", slow)}" +
-            $"{Var("armor", buffPower<Armor>())}" +
-            $"{Var("counterattack", buffPower<CounterAttack>())}" +
-            $"{Var("bubbles", buffPower<Bubble>())}" +
-            $"{Var("regeneration", buffPower<Regeneration>())}" +
-            $"";
-    }
+
 }
