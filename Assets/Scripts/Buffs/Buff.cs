@@ -45,8 +45,25 @@ public class Buff : MonoBehaviour
     }
 
     public void Spend(int delta = 1) {
+        var oldPower = power;
         power = Mathf.Clamp(power - delta, 0, int.MaxValue);
+
+        LogSpend(delta, oldPower);
         ExpireCheck();
+    }
+
+    public virtual void LogSpend(int delta, int oldPower) {
+        GameLog.Message($"{owner.Text()} spends {delta} {Name} ({oldPower} -> {power})");
+    }
+
+    protected virtual void ModifyAttackDamage(Attack attack, int delta) {
+        var old = attack.damage;
+        attack.damage += delta;
+        LogAttackDamageModification(delta, old, attack);
+    }
+
+    protected virtual void LogAttackDamageModification(int delta, int old, Attack attack) {
+        GameLog.Message($"{Name} modifies attack damage by {delta} ({old} -> {attack.damage})");
     }
 
     public void ExpireCheck() {

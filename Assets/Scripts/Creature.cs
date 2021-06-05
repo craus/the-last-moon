@@ -277,8 +277,8 @@ public class Creature : MonoBehaviour
 
     public string Description() {
         return
-            $"attack damage: {damage}\n" +
-            $"health: {hp}/{maxHp}\n" +
+            $"Attack damage: {damage}\n" +
+            $"Health: {hp}/{maxHp}\n" +
             buffs.Where(b => b.IncludeToCreatureDescription).Select(b => b.ShortDescription()).Join("\n") +
             $"";
     }

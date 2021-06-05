@@ -5,8 +5,10 @@ using UnityEngine;
 public class Stunned : Buff
 {
     public void ModifyMove() {
-        var oldOwner = owner;
         Spend();
-        GameLog.Message(power > 0 ? $"{oldOwner} loses 1 stun" : $"{oldOwner} is no longer stunned");
+    }
+
+    public override void LogSpend(int delta, int oldPower) {
+        GameLog.Message(power > 0 ? $"{owner} loses 1 stun" : $"{owner} is no longer stunned");
     }
 }

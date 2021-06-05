@@ -12,9 +12,9 @@ public class Armor : Buff, IAttackModifier
             attack.damage = Mathf.Clamp(attack.damage - power, 0, int.MaxValue);
             var delta = attack.damage - old;
             if (delta < 0) {
-                GameLog.Message($"Armor reduces damage by {-delta}");
+                GameLog.Message($"Armor reduces damage by {-delta} ({old} -> {attack.damage})");
             } else {
-                GameLog.Message($"Vulnerability increases damage by {delta}");
+                GameLog.Message($"Vulnerability increases damage by {delta} ({old} -> {attack.damage})");
             }
         }
     }

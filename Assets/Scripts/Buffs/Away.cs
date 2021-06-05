@@ -13,9 +13,11 @@ public class Away : Buff, IAttackModifier, IEndCombatModifier
     }
 
     public void ModifyMove() {
-        var oldOwner = owner;
         Spend();
-        GameLog.Message(power > 0 ? $"{oldOwner} is getting closer to battle" : $"{oldOwner} enters the battle");
+    }
+
+    public override void LogSpend(int delta, int oldPower) {
+        GameLog.Message(power > 0 ? $"{owner} is getting closer to battle ({oldPower} -> {power})" : $"{owner} enters the battle");
     }
 
     public void OnCombatEnd() {
