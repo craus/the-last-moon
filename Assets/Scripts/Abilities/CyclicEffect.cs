@@ -11,8 +11,8 @@ public class CyclicEffect : AbilityEffect
     public int currentIndex;
     public AbilityEffect current => effects[currentIndex];
 
-    public override void Use(Creature user, Creature target) {
-        current.Use(user, target);
+    public override void Use(Creature user, Creature target, Ability ability) {
+        current.Use(user, target, ability);
         currentIndex = (currentIndex + 1) % effects.Count;
     }
 

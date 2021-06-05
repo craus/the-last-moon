@@ -17,7 +17,13 @@ public class AbilityEffect : Common.Effect
         Use(user, target);
     }
 
+    bool callUse = false;
     public virtual void Use(Creature user, Creature target) {
+        if (!callUse) {
+            callUse = true;
+            Use(user, target, null);
+            callUse = false;
+        }
     }
 
     public override void Run() {
