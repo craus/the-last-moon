@@ -10,7 +10,7 @@ public class OnAbilityEffectUse : Common.Trigger
     }
 
     private void onUse() {
-        DebugManager.LogFormat("onUse");
+        DebugManager.LogFormat($"onUse {effect}");
         Run();
     }
 
