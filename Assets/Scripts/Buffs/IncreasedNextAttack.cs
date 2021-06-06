@@ -10,7 +10,7 @@ public class IncreasedNextAttack : IncreasedAttack
     }
 
     public override string Description() {
-        return $"Increase next damage dealt this battle by {power}";
+        return $"Next damage dealt this battle is increased by {power}";
     }
 
     public override string Text() {

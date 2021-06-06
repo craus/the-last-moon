@@ -47,7 +47,7 @@ public class Attack
     public Attack ApplyBuffs() {
         IEnumerable<IAttackModifier> attackModifiers =
             (attacker?.buffs?.Where(b => b is IAttackModifier) ?? CollectionExtensions.Empty<Buff>())
-            .Concat(victim?.buffs?.Where(b => b is IAttackModifier))
+            .Concat(victim?.buffs?.Where(b => b is IAttackModifier) ?? CollectionExtensions.Empty<Buff>())
             .Cast<IAttackModifier>()
             .Unique();
 

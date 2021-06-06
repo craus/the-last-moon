@@ -8,7 +8,7 @@ public class DealDamage : AbilityEffect
     public int damage;
     public IntValueProvider damageProvider;
     public int Damage => damageProvider != null ? damageProvider.Value : damage;
-    public int DamageWithBuffs(Creature user) => user == null ? Damage : user.buffs.Aggregate(Damage, (d, b) => d + (b is IncreasedAttack ? b.power : 0));
+    public int DamageWithBuffs(Creature user) => user == null ? Damage : new Attack(user, null, Damage, this).ApplyBuffs().damage;
 
     public override void Use(Creature user, Creature target, Ability ability) {
         target.Hit(user, Damage, this, ability);
