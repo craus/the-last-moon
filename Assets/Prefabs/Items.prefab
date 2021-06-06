@@ -3950,6 +3950,11 @@ PrefabInstance:
       propertyPath: descriptionPreview
       value: Heal yourself by 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4172290567415455987, guid: 9e4821131128e2b4eba7c0d6d9f31b00,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 272b8b29637aca04b9b38f61a171544a, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4821131128e2b4eba7c0d6d9f31b00, type: 3}
 --- !u!224 &648911165038510024 stripped
