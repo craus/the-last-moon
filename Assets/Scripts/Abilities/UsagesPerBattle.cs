@@ -12,6 +12,7 @@ public class UsagesPerBattle : NonTargetEffect
 
     public override void Use(Creature user) {
         usages -= 1;
+        Debug.Log("Use");
     }
 
     public override string Text(Creature user) {

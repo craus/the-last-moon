@@ -19,6 +19,7 @@ public class Player : Creature
     }
 
     public Transform abilitiesFolder;
+    public Transform sellAbilitiesFolder;
 
     public void Awake() {
         _instance = this;
