@@ -16,7 +16,7 @@ public class IncreasedAttack : Buff, IAttackModifier, IEndCombatModifier
 
     protected virtual void IncreaseAttack(Attack attack) {
         var old = attack.damage;
-        attack.damage = Mathf.Clamp(attack.damage + power, 0, int.MaxValue);
+        attack.damage = Mathf.Clamp(attack.damage + Power, 0, int.MaxValue);
         var delta = attack.damage - old;
 
         attack.Does(() => {
@@ -29,6 +29,6 @@ public class IncreasedAttack : Buff, IAttackModifier, IEndCombatModifier
     }
 
     public override string Text() {
-        return CreatureText.AttackString("a", power);
+        return CreatureText.AttackString("a", Power);
     }
 }

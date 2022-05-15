@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AbilityEffect : Common.Effect
+public class AbilityEffect : Common.Effect, IAttackSource
 {
     public event Action onUse = () => { };
 

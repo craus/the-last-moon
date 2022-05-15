@@ -15,8 +15,9 @@ public class GameManager : Singletone<GameManager>
         currentProcess = Promise.Resolved();
     }
 
-    public void PlanProcess(Func<IPromise> process) {
+    public IPromise PlanProcess(Func<IPromise> process) {
         currentProcess = currentProcess.Then(process);
+        return currentProcess;
     }
 
     public void PlanInstantProcess(Action process) {

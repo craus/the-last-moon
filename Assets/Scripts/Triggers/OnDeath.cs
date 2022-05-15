@@ -10,7 +10,7 @@ public class OnDeath : Common.Trigger
         creature.onDeath += OnDeathHandler; 
     }
 
-    private void OnDeathHandler(AbilityEffect source) {
+    private void OnDeathHandler(IAttackSource source) {
         Run();
     }
 

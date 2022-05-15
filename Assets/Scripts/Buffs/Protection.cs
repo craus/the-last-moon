@@ -8,7 +8,7 @@ public class Protection : Buff, IAttackModifier
 
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner) {
-            var protectedDamage = Mathf.Min(attack.damage, power);
+            var protectedDamage = Mathf.Min(attack.damage, Power);
             ModifyAttackDamage(attack, -protectedDamage);
 
             attack.Does(() => {

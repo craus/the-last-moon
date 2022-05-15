@@ -23,11 +23,28 @@ public class Buff : MonoBehaviour
             m_owner = value;
             if (m_owner != null) {
                 m_owner.buffs.Add(this);
+                GameLog.Message($"{m_owner} gains {Description()}"); 
             }
         }
     }
 
-    public int power = 1;
+    [SerializeField] private int power = 1;
+
+    public int Power
+    {
+        get
+        {
+            return power;
+        }
+        set
+        {
+            var old = power;
+            power = value;
+            if (owner != null) {
+                GameLog.Message($"{m_owner} is now {Description()} ({old} -> {power})");
+            }
+        }
+    }
 
     public Buff ApplyNew(Creature target) {
         var buff = Instantiate(this, target.buffsFolder);
@@ -40,22 +57,22 @@ public class Buff : MonoBehaviour
         if (buff == null) {
             ApplyNew(target);
         } else {
-            buff.power += power;
+            buff.Power += Power;
         }
     }
 
     public void Spend() => Spend(1);
 
     public void Spend(int delta = 1) {
-        var oldPower = power;
-        power = Mathf.Clamp(power - delta, 0, int.MaxValue);
+        var oldPower = Power;
+        Power = Mathf.Clamp(Power - delta, 0, int.MaxValue);
 
         LogSpend(delta, oldPower);
         ExpireCheck();
     }
 
     public virtual void LogSpend(int delta, int oldPower) {
-        GameLog.Message($"{owner.Text()} spends {delta} {Name} ({oldPower} -> {power})");
+        GameLog.Message($"{owner.Text()} spends {delta} {Name} ({oldPower} -> {Power})");
     }
 
     protected virtual void ModifyAttackDamage(Attack attack, int delta) {
@@ -71,7 +88,7 @@ public class Buff : MonoBehaviour
     }
 
     public void ExpireCheck() {
-        if (power == 0) {
+        if (Power == 0) {
             Expire();
         }
     }
@@ -93,7 +110,7 @@ public class Buff : MonoBehaviour
     public virtual string Name => GetType().Name;
 
     public virtual string Description() {
-        return $"{Name}: {power}";
+        return $"{Name}: {Power}";
     }
 
     public virtual string ShortDescription() {

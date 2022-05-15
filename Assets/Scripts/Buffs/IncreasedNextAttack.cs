@@ -10,10 +10,10 @@ public class IncreasedNextAttack : IncreasedAttack
     }
 
     public override string Description() {
-        return $"Next damage dealt this battle is increased by {power}";
+        return $"Next damage dealt this battle is increased by {Power}";
     }
 
     public override string Text() {
-        return CreatureText.AttackString("na", power);
+        return CreatureText.AttackString("na", Power);
     }
 }

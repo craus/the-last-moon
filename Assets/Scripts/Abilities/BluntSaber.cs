@@ -14,7 +14,7 @@ public class BluntSaber : AbilityEffect
     public override void Use(Creature user, Creature target) {
         int power = Power(user);
         counter.Decrement();
-        target.Hit(user, power);
+        target.Hit(user, power, this);
     }
 
     public override string Text(Creature user) {

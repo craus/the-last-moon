@@ -10,7 +10,7 @@ public class OnMonsterDeathBy : Common.Trigger
         GlobalEvents.instance.onDeath += OnDeath; 
     }
 
-    private void OnDeath(Creature c, AbilityEffect source) {
+    private void OnDeath(Creature c, IAttackSource source) {
         if (c is Monster && source == this.source) {
             Run();
         }

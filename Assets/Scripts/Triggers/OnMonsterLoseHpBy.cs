@@ -13,7 +13,7 @@ public class OnMonsterLoseHpBy : MonoBehaviour
         GlobalEvents.instance.onLoseHp += onLoseHp;
     }
 
-    private void onLoseHp(Creature c, int damage, AbilityEffect source) {
+    private void onLoseHp(Creature c, int damage, IAttackSource source) {
         if (c is Monster && source == this.source) {
             Run(damage);
         }

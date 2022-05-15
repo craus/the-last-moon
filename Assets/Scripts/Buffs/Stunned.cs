@@ -9,6 +9,6 @@ public class Stunned : Buff
     }
 
     public override void LogSpend(int delta, int oldPower) {
-        GameLog.Message(power > 0 ? $"{owner} loses 1 stun" : $"{owner} is no longer stunned");
+        //GameLog.Message(Power > 0 ? $"{owner} loses 1 stun" : $"{owner} is no longer stunned");
     }
 }

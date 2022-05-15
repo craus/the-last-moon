@@ -13,10 +13,10 @@ public class IncreasedNextAttackFrom : IncreasedNextAttack
     }
 
     public override string Description() {
-        return $"Next damage dealt by {source} this battle is increased by {power}";
+        return $"Next damage dealt by {source} this battle is increased by {Power}";
     }
 
     public override string Text() {
-        return CreatureText.AttackString($"{source.Text(owner)}na", power);
+        return CreatureText.AttackString($"{source.Text(owner)}na", Power);
     }
 }

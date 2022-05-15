@@ -13,7 +13,7 @@ public class OnPlayerLoseHp : Common.Trigger
         GlobalEvents.instance.onLoseHp += onLoseHp;
     }
 
-    private void onLoseHp(Creature c, int damage, AbilityEffect source) {
+    private void onLoseHp(Creature c, int damage, IAttackSource source) {
         if (c is Player) {
             Run(damage);
             Run();

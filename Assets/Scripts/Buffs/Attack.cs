@@ -19,7 +19,7 @@ public class Attack
     public int damage;
     public DamageType damageType;
 
-    public AbilityEffect source;
+    public IAttackSource source;
 
     public bool interrupted = false;
 
@@ -34,7 +34,7 @@ public class Attack
         Creature attacker, 
         Creature victim, 
         int damage = 1, 
-        AbilityEffect source = null, 
+        IAttackSource source = null, 
         DamageType damageType = DamageType.Default
     ) {
         this.attacker = attacker;

@@ -28,10 +28,10 @@ public class PreventNextDamageDealtTo : Buff, IAttackModifier
     }
 
     public override void LogSpend(int delta, int oldPower) {
-        GameLog.Message($"Attack prevention spent ({oldPower} -> {power})");
+        GameLog.Message($"Attack prevention spent ({oldPower} -> {Power})");
     }
 
     public override string Description() {
-        return $"All damage this creature would deal to {target} will be prevented {power} times";
+        return $"All damage this creature would deal to {target} will be prevented {Power} times";
     }
 }

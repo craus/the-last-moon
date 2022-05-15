@@ -8,7 +8,7 @@ public class Monster : Creature
 {
     public const string FORMAT = "{away}{damage}/{hp}{status}";
 
-    public override void Die(AbilityEffect source) {
+    public override void Die(IAttackSource source) {
         base.Die(source);
         if (Game.instance.battle.AllMonstersDead) {
             GameManager.instance.PlanAction(Game.instance.battle.Win);

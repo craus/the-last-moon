@@ -91,15 +91,18 @@ public class Game : Singletone<Game>
     }
 
     public void PlayerUseAbility(Ability a, Creature t = null) {
+        var action = Promise.Resolved();
         if (Game.instance.battle != null) {
-            player.MakeMove(a, t);
+            action = action.Then(() => player.MakeMove(a, t));
         } else {
-            player.UseAbility(a, t);
+            action = action.Then(() => player.UseAbility(a, t));
         }
-        Debug.Log($"Check {a}");
-        if (!a.Available(player) && AbilitiesController.instance.currentAbility == a) {
-            AbilitiesController.instance.currentAbility = null;
-        }
+        action.Then(() => {
+            Debug.Log($"Check {a}");
+            if (!a.Available(player) && AbilitiesController.instance.currentAbility == a) {
+                AbilitiesController.instance.currentAbility = null;
+            }
+        });
     }
 
     public void EndGame() {

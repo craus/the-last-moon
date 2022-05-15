@@ -29,7 +29,7 @@ public class Creature : MonoBehaviour
 
     public GameObject moveImage;
 
-    public event Action<AbilityEffect> onDeath = (s) => { };
+    public event Action<IAttackSource> onDeath = (s) => { };
     public event Action onLevelUp = () => { };
 
     public Transform buffsFolder {
@@ -44,7 +44,7 @@ public class Creature : MonoBehaviour
     }
 
     public int buffPower<T>() where T : Buff {
-        return buffs.Where(b => b is T).Sum(b => b.power);
+        return buffs.Where(b => b is T).Sum(b => b.Power);
     }
 
     public T buff<T>() where T : Buff {
@@ -56,7 +56,7 @@ public class Creature : MonoBehaviour
         if (buff == null) {
             ApplyNewBuff<T>(power);
         } else {
-            buff.power += power;
+            buff.Power += power;
             buff.ExpireCheck();
         }
     }
@@ -65,7 +65,7 @@ public class Creature : MonoBehaviour
         var go = new GameObject(typeof(T).Name);
         go.transform.SetParent(buffsFolder);
         var buff = go.AddComponent<T>();
-        buff.power = power;
+        buff.Power = power;
         buff.owner = this;
         return buff;
     }
@@ -112,7 +112,7 @@ public class Creature : MonoBehaviour
     public void Hit(
         Creature attacker, 
         int damage = 1, 
-        AbilityEffect source = null, 
+        IAttackSource source = null, 
         Ability ability = null, 
         DamageType damageType = DamageType.Default
     ) {
@@ -128,15 +128,16 @@ public class Creature : MonoBehaviour
         GameManager.instance.ExecutePlannedActions();
     }
 
-    public void LoseHp(int damage, AbilityEffect source = null, Creature attacker = null) {
+    public void LoseHp(int damage, IAttackSource source = null, Creature attacker = null) {
         if (damage > hp) {
             damage = hp;
         }
         if (damage == 0) {
             return;
         }
+        var oldHp = hp;
         hp -= damage;
-        GameLog.Message($"{Text()} lost {damage} hp{(source == null ? (attacker == null ? "" : $" by {attacker.Text()}") : $" by {source}")}");
+        GameLog.Message($"{Text()} lost {damage} hp{(source == null ? (attacker == null ? "" : $" by {attacker.Text()}") : $" by {source}")} ({oldHp} -> {hp})");
         DeathCheck(source);
         GlobalEvents.instance.onLoseHp(this, damage, source);
     }
@@ -152,7 +153,7 @@ public class Creature : MonoBehaviour
         if (delta == 0) {
             return;
         }
-        GameLog.Message($"{name} healed by {delta}");
+        GameLog.Message($"{name} healed by {delta} ({oldhp} -> {hp})");
         DeathCheck();
     }
 
@@ -160,7 +161,7 @@ public class Creature : MonoBehaviour
         hp = Mathf.Clamp(hp, 0, maxHp);
     }
 
-    public void DeathCheck(AbilityEffect source = null) {
+    public void DeathCheck(IAttackSource source = null) {
         if (hp <= 0) {
             GameManager.instance.PlanAction(() => Die(source));
         }
@@ -170,7 +171,7 @@ public class Creature : MonoBehaviour
         Die(null);
     }
 
-    public virtual void Die(AbilityEffect source = null) {
+    public virtual void Die(IAttackSource source = null) {
         onDeath.Invoke(source);
         GlobalEvents.instance.onDeath(this, source);
         Destroy(gameObject);
@@ -186,8 +187,9 @@ public class Creature : MonoBehaviour
         afterAttack(this, target, damage);
     }
 
-    public void UseAbility(Ability ability, Creature target) {
+    public IPromise UseAbility(Ability ability, Creature target) {
         ability.Use(this, target);
+        return Promise.Resolved();
     }
 
     public virtual IPromise MakeMove(Action move) {

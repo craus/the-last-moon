@@ -9,7 +9,7 @@ public class Slow : Buff, IAttackModifier
     public void ModifyAttack(Attack attack) {
         if (attack.attacker == owner) {
             attack.Does(() => {
-                owner.ApplyBuff<Stunned>(power);
+                owner.ApplyBuff<Stunned>(Power);
             });
         }
     }

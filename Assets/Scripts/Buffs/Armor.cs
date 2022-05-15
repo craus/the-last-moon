@@ -9,7 +9,7 @@ public class Armor : Buff, IAttackModifier
     public void ModifyAttack(Attack attack) {
         if (attack.victim == owner) {
             var old = attack.damage;
-            attack.damage = Mathf.Clamp(attack.damage - power, 0, int.MaxValue);
+            attack.damage = Mathf.Clamp(attack.damage - Power, 0, int.MaxValue);
             var delta = attack.damage - old;
 
             attack.Does(() => {

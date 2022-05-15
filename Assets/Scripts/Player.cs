@@ -25,7 +25,7 @@ public class Player : Creature
         _instance = this;
     }
 
-    public override void Die(AbilityEffect source) {
+    public override void Die(IAttackSource source) {
         Game.instance.EndGame();
     }
 
@@ -57,8 +57,8 @@ public class Player : Creature
         Destroy(a.gameObject);
     }
 
-    public void MakeMove(Ability a, Creature target) {
-        GameManager.instance.PlanProcess(() => MakeMove(() => UseAbility(a, target)));
+    public IPromise MakeMove(Ability a, Creature target) {
+        return GameManager.instance.PlanProcess(() => MakeMove(() => UseAbility(a, target)));
     }
 
     public override IPromise AfterMove() {

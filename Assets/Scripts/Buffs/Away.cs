@@ -17,7 +17,7 @@ public class Away : Buff, IAttackModifier, IEndCombatModifier
     }
 
     public override void LogSpend(int delta, int oldPower) {
-        GameLog.Message(power > 0 ? $"{owner} is getting closer to battle ({oldPower} -> {power})" : $"{owner} enters the battle");
+        GameLog.Message(Power > 0 ? $"{owner} is getting closer to battle ({oldPower} -> {Power})" : $"{owner} enters the battle");
     }
 
     public void OnCombatEnd() {

@@ -13,7 +13,7 @@ public class OnPlayerHit : Common.Trigger
         GlobalEvents.instance.onHit += onHit;
     }
 
-    private void onHit(Creature c, int damage, AbilityEffect source) {
+    private void onHit(Creature c, int damage, IAttackSource source) {
         if (c is Player) {
             Run(damage);
             Run();

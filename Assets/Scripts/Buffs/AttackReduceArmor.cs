@@ -9,7 +9,7 @@ public class AttackReduceArmor : Buff, IAttackModifier
     public void ModifyAttack(Attack attack) {
         if (attack.attacker == owner) {
             attack.Does(() => {
-                attack.victim.ApplyBuff<Armor>(-power);
+                attack.victim.ApplyBuff<Armor>(-Power);
             });
         }
     }
