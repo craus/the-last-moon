@@ -12,6 +12,7 @@ public class Store : Singletone<Store>
     public Ability buyAbilitySample;
     public Transform buyAbilitiesFolder;
     public Transform goodsFolder;
+    public Transform sellFolder;
 
     public void Awake() {
         goodsFolder.gameObject.SetActive(false);
@@ -52,4 +53,12 @@ public class Store : Singletone<Store>
         });
     }
 #endif
+
+    public void SwitchSellModeOn() {
+        sellFolder.gameObject.SetActive(true);
+    }
+
+    public void SwitchSellModeOff() {
+        sellFolder.gameObject.SetActive(false);
+    }
 }
